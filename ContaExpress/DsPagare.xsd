@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsPagare" targetNamespace="http://tempuri.org/DsPagare.xsd" xmlns:mstns="http://tempuri.org/DsPagare.xsd" xmlns="http://tempuri.org/DsPagare.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VENTAS_PAGARETableAdapter" GeneratorDataComponentClassName="VENTAS_PAGARETableAdapter" Name="VENTAS_PAGARE" UserDataComponentName="VENTAS_PAGARETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.VENTAS_PAGARE.Codpagare, dbo.VENTAS_PAGARE.CodCliente, dbo.VENTAS_PAGARE.CodVenta, dbo.VENTAS_PAGARE.CodMoneda, dbo.VENTAS_PAGARE.Cotizacion, dbo.VENTAS_PAGARE.FechaCreacion, 
+                         dbo.VENTAS_PAGARE.FechaVencimiento, dbo.VENTAS_PAGARE.Valor, dbo.VENTAS_PAGARE.Observacion, dbo.VENTAS_PAGARE.Codestado, dbo.VENTAS.NUMVENTA, dbo.CLIENTES.NOMBRE, 
+                         dbo.VENTAS_PAGARE.NroCuota, dbo.VENTAS_PAGARE.NroPagare
+FROM            dbo.VENTAS_PAGARE INNER JOIN
+                         dbo.VENTAS ON dbo.VENTAS_PAGARE.CodVenta = dbo.VENTAS.CODVENTA INNER JOIN
+                         dbo.CLIENTES ON dbo.VENTAS.CODCLIENTE = dbo.CLIENTES.CODCLIENTE
+WHERE        (dbo.VENTAS_PAGARE.Codestado = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Codpagare" DataSetColumn="Codpagare" />
+              <Mapping SourceColumn="CodCliente" DataSetColumn="CodCliente" />
+              <Mapping SourceColumn="CodVenta" DataSetColumn="CodVenta" />
+              <Mapping SourceColumn="CodMoneda" DataSetColumn="CodMoneda" />
+              <Mapping SourceColumn="Cotizacion" DataSetColumn="Cotizacion" />
+              <Mapping SourceColumn="FechaCreacion" DataSetColumn="FechaCreacion" />
+              <Mapping SourceColumn="FechaVencimiento" DataSetColumn="FechaVencimiento" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+              <Mapping SourceColumn="Observacion" DataSetColumn="Observacion" />
+              <Mapping SourceColumn="Codestado" DataSetColumn="Codestado" />
+              <Mapping SourceColumn="NUMVENTA" DataSetColumn="NUMVENTA" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="NroCuota" DataSetColumn="NroCuota" />
+              <Mapping SourceColumn="NroPagare" DataSetColumn="NroPagare" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.VENTAS_PAGARE.Codpagare, dbo.VENTAS_PAGARE.CodCliente, dbo.VENTAS_PAGARE.CodVenta, dbo.VENTAS_PAGARE.CodMoneda, dbo.VENTAS_PAGARE.Cotizacion, dbo.VENTAS_PAGARE.FechaCreacion, 
+                         dbo.VENTAS_PAGARE.FechaVencimiento, dbo.VENTAS_PAGARE.Valor, dbo.VENTAS_PAGARE.Observacion, dbo.VENTAS_PAGARE.Codestado, dbo.VENTAS.NUMVENTA, dbo.CLIENTES.NOMBRE, 
+                         dbo.VENTAS_PAGARE.NroCuota, dbo.VENTAS_PAGARE.NroPagare
+FROM            dbo.VENTAS_PAGARE INNER JOIN
+                         dbo.VENTAS ON dbo.VENTAS_PAGARE.CodVenta = dbo.VENTAS.CODVENTA INNER JOIN
+                         dbo.CLIENTES ON dbo.VENTAS.CODCLIENTE = dbo.CLIENTES.CODCLIENTE
+WHERE        (dbo.VENTAS_PAGARE.Codestado &lt;&gt; 1) AND (dbo.VENTAS_PAGARE.FechaCreacion &gt;= CONVERT(DATETIME, @FECHA1, 103)) AND (dbo.VENTAS_PAGARE.FechaCreacion &lt;= CONVERT(DATETIME, @FECHA2, 103))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHA1" ColumnName="FechaCreacion" DataSourceName="CULTURAL.dbo.VENTAS_PAGARE" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FECHA1" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="FechaCreacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHA2" ColumnName="FechaCreacion" DataSourceName="CULTURAL.dbo.VENTAS_PAGARE" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FECHA2" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="FechaCreacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ESTADOTableAdapter" GeneratorDataComponentClassName="ESTADOTableAdapter" Name="ESTADO" UserDataComponentName="ESTADOTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="Guazu.dbo.ESTADO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [ESTADO] WHERE (([CODESTADO] = @Original_CODESTADO) AND ((@IsNull_DESCRIPCION = 1 AND [DESCRIPCION] IS NULL) OR ([DESCRIPCION] = @Original_DESCRIPCION)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CODESTADO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODESTADO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESCRIPCION" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESCRIPCION" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESCRIPCION" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESCRIPCION" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [ESTADO] ([CODESTADO], [DESCRIPCION]) VALUES (@CODESTADO, @DESCRIPCION);
+SELECT CODESTADO, DESCRIPCION FROM ESTADO WHERE (CODESTADO = @CODESTADO)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CODESTADO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODESTADO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESCRIPCION" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESCRIPCION" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ESTADO.*
+FROM            ESTADO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [ESTADO] SET [CODESTADO] = @CODESTADO, [DESCRIPCION] = @DESCRIPCION WHERE (([CODESTADO] = @Original_CODESTADO) AND ((@IsNull_DESCRIPCION = 1 AND [DESCRIPCION] IS NULL) OR ([DESCRIPCION] = @Original_DESCRIPCION)));
+SELECT CODESTADO, DESCRIPCION FROM ESTADO WHERE (CODESTADO = @CODESTADO)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CODESTADO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODESTADO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESCRIPCION" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESCRIPCION" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CODESTADO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODESTADO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESCRIPCION" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESCRIPCION" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESCRIPCION" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESCRIPCION" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODESTADO" DataSetColumn="CODESTADO" />
+              <Mapping SourceColumn="DESCRIPCION" DataSetColumn="DESCRIPCION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MONEDATableAdapter" GeneratorDataComponentClassName="MONEDATableAdapter" Name="MONEDA" UserDataComponentName="MONEDATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="Guazu.dbo.MONEDA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [MONEDA] WHERE (([CODMONEDA] = @Original_CODMONEDA) AND ((@IsNull_DESMONEDA = 1 AND [DESMONEDA] IS NULL) OR ([DESMONEDA] = @Original_DESMONEDA)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODMONEDA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODMONEDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESMONEDA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESMONEDA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESMONEDA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESMONEDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [MONEDA] ([CODMONEDA], [DESMONEDA]) VALUES (@CODMONEDA, @DESMONEDA);
+SELECT CODMONEDA, DESMONEDA FROM MONEDA WHERE (CODMONEDA = @CODMONEDA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODMONEDA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODMONEDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESMONEDA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESMONEDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODMONEDA, DESMONEDA
+FROM            MONEDA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [MONEDA] SET [CODMONEDA] = @CODMONEDA, [DESMONEDA] = @DESMONEDA WHERE (([CODMONEDA] = @Original_CODMONEDA) AND ((@IsNull_DESMONEDA = 1 AND [DESMONEDA] IS NULL) OR ([DESMONEDA] = @Original_DESMONEDA)));
+SELECT CODMONEDA, DESMONEDA FROM MONEDA WHERE (CODMONEDA = @CODMONEDA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODMONEDA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODMONEDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESMONEDA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESMONEDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODMONEDA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODMONEDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESMONEDA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESMONEDA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESMONEDA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESMONEDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODMONEDA" DataSetColumn="CODMONEDA" />
+              <Mapping SourceColumn="DESMONEDA" DataSetColumn="DESMONEDA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CLIENTESTableAdapter" GeneratorDataComponentClassName="CLIENTESTableAdapter" Name="CLIENTES" UserDataComponentName="CLIENTESTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="Guazu.dbo.CLIENTES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [CLIENTES] WHERE (([CODCLIENTE] = @Original_CODCLIENTE) AND ((@IsNull_NOMBRE = 1 AND [NOMBRE] IS NULL) OR ([NOMBRE] = @Original_NOMBRE)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODCLIENTE" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODCLIENTE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOMBRE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [CLIENTES] ([NOMBRE]) VALUES (@NOMBRE);
+SELECT CODCLIENTE, NOMBRE FROM CLIENTES WHERE (CODCLIENTE = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODCLIENTE, NOMBRE
+FROM            CLIENTES</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [CLIENTES] SET [NOMBRE] = @NOMBRE WHERE (([CODCLIENTE] = @Original_CODCLIENTE) AND ((@IsNull_NOMBRE = 1 AND [NOMBRE] IS NULL) OR ([NOMBRE] = @Original_NOMBRE)));
+SELECT CODCLIENTE, NOMBRE FROM CLIENTES WHERE (CODCLIENTE = @CODCLIENTE)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODCLIENTE" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODCLIENTE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOMBRE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CODCLIENTE" ColumnName="CODCLIENTE" DataSourceName="Guazu.dbo.CLIENTES" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@CODCLIENTE" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="CODCLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODCLIENTE" DataSetColumn="CODCLIENTE" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VENTASTableAdapter" GeneratorDataComponentClassName="VENTASTableAdapter" Name="VENTAS" UserDataComponentName="VENTASTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="Guazu.dbo.VENTAS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [VENTAS] WHERE (([CODVENTA] = @Original_CODVENTA) AND ((@IsNull_NUMVENTA = 1 AND [NUMVENTA] IS NULL) OR ([NUMVENTA] = @Original_NUMVENTA)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CODVENTA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODVENTA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NUMVENTA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NUMVENTA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NUMVENTA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NUMVENTA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [VENTAS] ([NUMVENTA]) VALUES (@NUMVENTA);
+SELECT CODVENTA, NUMVENTA FROM VENTAS WHERE (CODVENTA = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NUMVENTA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NUMVENTA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODVENTA, NUMVENTA
+FROM            VENTAS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [VENTAS] SET [NUMVENTA] = @NUMVENTA WHERE (([CODVENTA] = @Original_CODVENTA) AND ((@IsNull_NUMVENTA = 1 AND [NUMVENTA] IS NULL) OR ([NUMVENTA] = @Original_NUMVENTA)));
+SELECT CODVENTA, NUMVENTA FROM VENTAS WHERE (CODVENTA = @CODVENTA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NUMVENTA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NUMVENTA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CODVENTA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODVENTA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NUMVENTA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NUMVENTA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NUMVENTA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NUMVENTA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CODVENTA" ColumnName="CODVENTA" DataSourceName="Guazu.dbo.VENTAS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CODVENTA" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CODVENTA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODVENTA" DataSetColumn="CODVENTA" />
+              <Mapping SourceColumn="NUMVENTA" DataSetColumn="NUMVENTA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ImpPagareTableAdapter" GeneratorDataComponentClassName="ImpPagareTableAdapter" Name="ImpPagare" UserDataComponentName="ImpPagareTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        VENTAS_PAGARE.FechaVencimiento, VENTAS_PAGARE.Valor, VENTAS_PAGARE.NroCuota, VENTAS_PAGARE.NroPagare, CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.DIRECCION, CLIENTES.TELEFONO, 
+                         VENTAS.NUMVENTA, VENTAS_PAGARE.Codpagare, CIUDAD.DESCIUDAD
+FROM            VENTAS_PAGARE INNER JOIN
+                         CLIENTES ON VENTAS_PAGARE.CodCliente = CLIENTES.CODCLIENTE INNER JOIN
+                         VENTAS ON VENTAS_PAGARE.CodVenta = VENTAS.CODVENTA LEFT OUTER JOIN
+                         CIUDAD ON CLIENTES.CODCIUDAD = CIUDAD.CODCIUDAD
+WHERE        (VENTAS_PAGARE.Codpagare = @CODPAGARE)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CODPAGARE" ColumnName="Codpagare" DataSourceName="Fipar.dbo.VENTAS_PAGARE" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CODPAGARE" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Codpagare" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FechaVencimiento" DataSetColumn="FechaVencimiento" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+              <Mapping SourceColumn="NroCuota" DataSetColumn="NroCuota" />
+              <Mapping SourceColumn="NroPagare" DataSetColumn="NroPagare" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="RUC" DataSetColumn="RUC" />
+              <Mapping SourceColumn="DIRECCION" DataSetColumn="DIRECCION" />
+              <Mapping SourceColumn="TELEFONO" DataSetColumn="TELEFONO" />
+              <Mapping SourceColumn="NUMVENTA" DataSetColumn="NUMVENTA" />
+              <Mapping SourceColumn="Codpagare" DataSetColumn="Codpagare" />
+              <Mapping SourceColumn="DESCIUDAD" DataSetColumn="DESCIUDAD" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsPagare" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsPagare" msprop:Generator_UserDSName="DsPagare">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VENTAS_PAGARE" msprop:Generator_TableClassName="VENTAS_PAGAREDataTable" msprop:Generator_TableVarName="tableVENTAS_PAGARE" msprop:Generator_TablePropName="VENTAS_PAGARE" msprop:Generator_RowDeletingName="VENTAS_PAGARERowDeleting" msprop:Generator_RowChangingName="VENTAS_PAGARERowChanging" msprop:Generator_RowEvHandlerName="VENTAS_PAGARERowChangeEventHandler" msprop:Generator_RowDeletedName="VENTAS_PAGARERowDeleted" msprop:Generator_UserTableName="VENTAS_PAGARE" msprop:Generator_RowChangedName="VENTAS_PAGARERowChanged" msprop:Generator_RowEvArgName="VENTAS_PAGARERowChangeEvent" msprop:Generator_RowClassName="VENTAS_PAGARERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Codpagare" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodpagare" msprop:Generator_ColumnPropNameInRow="Codpagare" msprop:Generator_ColumnPropNameInTable="CodpagareColumn" msprop:Generator_UserColumnName="Codpagare" type="xs:int" />
+              <xs:element name="CodCliente" msprop:Generator_ColumnVarNameInTable="columnCodCliente" msprop:Generator_ColumnPropNameInRow="CodCliente" msprop:Generator_ColumnPropNameInTable="CodClienteColumn" msprop:Generator_UserColumnName="CodCliente" type="xs:int" minOccurs="0" />
+              <xs:element name="CodVenta" msprop:Generator_ColumnVarNameInTable="columnCodVenta" msprop:Generator_ColumnPropNameInRow="CodVenta" msprop:Generator_ColumnPropNameInTable="CodVentaColumn" msprop:Generator_UserColumnName="CodVenta" type="xs:int" minOccurs="0" />
+              <xs:element name="CodMoneda" msprop:Generator_ColumnVarNameInTable="columnCodMoneda" msprop:Generator_ColumnPropNameInRow="CodMoneda" msprop:Generator_ColumnPropNameInTable="CodMonedaColumn" msprop:Generator_UserColumnName="CodMoneda" type="xs:int" minOccurs="0" />
+              <xs:element name="Cotizacion" msprop:Generator_ColumnVarNameInTable="columnCotizacion" msprop:Generator_ColumnPropNameInRow="Cotizacion" msprop:Generator_ColumnPropNameInTable="CotizacionColumn" msprop:Generator_UserColumnName="Cotizacion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FechaCreacion" msprop:Generator_ColumnVarNameInTable="columnFechaCreacion" msprop:Generator_ColumnPropNameInRow="FechaCreacion" msprop:Generator_ColumnPropNameInTable="FechaCreacionColumn" msprop:Generator_UserColumnName="FechaCreacion" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaVencimiento" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Observacion" msprop:Generator_ColumnVarNameInTable="columnObservacion" msprop:Generator_ColumnPropNameInRow="Observacion" msprop:Generator_ColumnPropNameInTable="ObservacionColumn" msprop:Generator_UserColumnName="Observacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Codestado" msprop:Generator_ColumnVarNameInTable="columnCodestado" msprop:Generator_ColumnPropNameInRow="Codestado" msprop:Generator_ColumnPropNameInTable="CodestadoColumn" msprop:Generator_UserColumnName="Codestado" type="xs:int" minOccurs="0" />
+              <xs:element name="NUMVENTA" msprop:Generator_ColumnVarNameInTable="columnNUMVENTA" msprop:Generator_ColumnPropNameInRow="NUMVENTA" msprop:Generator_ColumnPropNameInTable="NUMVENTAColumn" msprop:Generator_UserColumnName="NUMVENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NroCuota" msprop:Generator_ColumnVarNameInTable="columnNroCuota" msprop:Generator_ColumnPropNameInRow="NroCuota" msprop:Generator_ColumnPropNameInTable="NroCuotaColumn" msprop:Generator_UserColumnName="NroCuota" type="xs:int" minOccurs="0" />
+              <xs:element name="NroPagare" msprop:Generator_ColumnVarNameInTable="columnNroPagare" msprop:Generator_ColumnPropNameInRow="NroPagare" msprop:Generator_ColumnPropNameInTable="NroPagareColumn" msprop:Generator_UserColumnName="NroPagare" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ESTADO" msprop:Generator_TableClassName="ESTADODataTable" msprop:Generator_TableVarName="tableESTADO" msprop:Generator_TablePropName="ESTADO" msprop:Generator_RowDeletingName="ESTADORowDeleting" msprop:Generator_RowChangingName="ESTADORowChanging" msprop:Generator_RowEvHandlerName="ESTADORowChangeEventHandler" msprop:Generator_RowDeletedName="ESTADORowDeleted" msprop:Generator_UserTableName="ESTADO" msprop:Generator_RowChangedName="ESTADORowChanged" msprop:Generator_RowEvArgName="ESTADORowChangeEvent" msprop:Generator_RowClassName="ESTADORow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODESTADO" msprop:Generator_ColumnVarNameInTable="columnCODESTADO" msprop:Generator_ColumnPropNameInRow="CODESTADO" msprop:Generator_ColumnPropNameInTable="CODESTADOColumn" msprop:Generator_UserColumnName="CODESTADO" type="xs:int" />
+              <xs:element name="DESCRIPCION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPCION" msprop:Generator_ColumnPropNameInRow="DESCRIPCION" msprop:Generator_ColumnPropNameInTable="DESCRIPCIONColumn" msprop:Generator_UserColumnName="DESCRIPCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MONEDA" msprop:Generator_TableClassName="MONEDADataTable" msprop:Generator_TableVarName="tableMONEDA" msprop:Generator_TablePropName="MONEDA" msprop:Generator_RowDeletingName="MONEDARowDeleting" msprop:Generator_RowChangingName="MONEDARowChanging" msprop:Generator_RowEvHandlerName="MONEDARowChangeEventHandler" msprop:Generator_RowDeletedName="MONEDARowDeleted" msprop:Generator_UserTableName="MONEDA" msprop:Generator_RowChangedName="MONEDARowChanged" msprop:Generator_RowEvArgName="MONEDARowChangeEvent" msprop:Generator_RowClassName="MONEDARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODMONEDA" msprop:Generator_ColumnVarNameInTable="columnCODMONEDA" msprop:Generator_ColumnPropNameInRow="CODMONEDA" msprop:Generator_ColumnPropNameInTable="CODMONEDAColumn" msprop:Generator_UserColumnName="CODMONEDA" type="xs:decimal" />
+              <xs:element name="DESMONEDA" msprop:Generator_ColumnVarNameInTable="columnDESMONEDA" msprop:Generator_ColumnPropNameInRow="DESMONEDA" msprop:Generator_ColumnPropNameInTable="DESMONEDAColumn" msprop:Generator_UserColumnName="DESMONEDA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CLIENTES" msprop:Generator_TableClassName="CLIENTESDataTable" msprop:Generator_TableVarName="tableCLIENTES" msprop:Generator_TablePropName="CLIENTES" msprop:Generator_RowDeletingName="CLIENTESRowDeleting" msprop:Generator_RowChangingName="CLIENTESRowChanging" msprop:Generator_RowEvHandlerName="CLIENTESRowChangeEventHandler" msprop:Generator_RowDeletedName="CLIENTESRowDeleted" msprop:Generator_UserTableName="CLIENTES" msprop:Generator_RowChangedName="CLIENTESRowChanged" msprop:Generator_RowEvArgName="CLIENTESRowChangeEvent" msprop:Generator_RowClassName="CLIENTESRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODCLIENTE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCLIENTE" msprop:Generator_ColumnPropNameInRow="CODCLIENTE" msprop:Generator_ColumnPropNameInTable="CODCLIENTEColumn" msprop:Generator_UserColumnName="CODCLIENTE" type="xs:decimal" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VENTAS" msprop:Generator_TableClassName="VENTASDataTable" msprop:Generator_TableVarName="tableVENTAS" msprop:Generator_TablePropName="VENTAS" msprop:Generator_RowDeletingName="VENTASRowDeleting" msprop:Generator_RowChangingName="VENTASRowChanging" msprop:Generator_RowEvHandlerName="VENTASRowChangeEventHandler" msprop:Generator_RowDeletedName="VENTASRowDeleted" msprop:Generator_UserTableName="VENTAS" msprop:Generator_RowChangedName="VENTASRowChanged" msprop:Generator_RowEvArgName="VENTASRowChangeEvent" msprop:Generator_RowClassName="VENTASRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODVENTA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODVENTA" msprop:Generator_ColumnPropNameInRow="CODVENTA" msprop:Generator_ColumnPropNameInTable="CODVENTAColumn" msprop:Generator_UserColumnName="CODVENTA" type="xs:int" />
+              <xs:element name="NUMVENTA" msprop:Generator_ColumnVarNameInTable="columnNUMVENTA" msprop:Generator_ColumnPropNameInRow="NUMVENTA" msprop:Generator_ColumnPropNameInTable="NUMVENTAColumn" msprop:Generator_UserColumnName="NUMVENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImpPagare" msprop:Generator_TableClassName="ImpPagareDataTable" msprop:Generator_TableVarName="tableImpPagare" msprop:Generator_TablePropName="ImpPagare" msprop:Generator_RowDeletingName="ImpPagareRowDeleting" msprop:Generator_RowChangingName="ImpPagareRowChanging" msprop:Generator_RowEvHandlerName="ImpPagareRowChangeEventHandler" msprop:Generator_RowDeletedName="ImpPagareRowDeleted" msprop:Generator_UserTableName="ImpPagare" msprop:Generator_RowChangedName="ImpPagareRowChanged" msprop:Generator_RowEvArgName="ImpPagareRowChangeEvent" msprop:Generator_RowClassName="ImpPagareRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FechaVencimiento" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NroCuota" msprop:Generator_ColumnVarNameInTable="columnNroCuota" msprop:Generator_ColumnPropNameInRow="NroCuota" msprop:Generator_ColumnPropNameInTable="NroCuotaColumn" msprop:Generator_UserColumnName="NroCuota" type="xs:int" minOccurs="0" />
+              <xs:element name="NroPagare" msprop:Generator_ColumnVarNameInTable="columnNroPagare" msprop:Generator_ColumnPropNameInRow="NroPagare" msprop:Generator_ColumnPropNameInTable="NroPagareColumn" msprop:Generator_UserColumnName="NroPagare" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUC" msprop:Generator_ColumnVarNameInTable="columnRUC" msprop:Generator_ColumnPropNameInRow="RUC" msprop:Generator_ColumnPropNameInTable="RUCColumn" msprop:Generator_UserColumnName="RUC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIRECCION" msprop:Generator_ColumnVarNameInTable="columnDIRECCION" msprop:Generator_ColumnPropNameInRow="DIRECCION" msprop:Generator_ColumnPropNameInTable="DIRECCIONColumn" msprop:Generator_UserColumnName="DIRECCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TELEFONO" msprop:Generator_ColumnVarNameInTable="columnTELEFONO" msprop:Generator_ColumnPropNameInRow="TELEFONO" msprop:Generator_ColumnPropNameInTable="TELEFONOColumn" msprop:Generator_UserColumnName="TELEFONO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMVENTA" msprop:Generator_ColumnVarNameInTable="columnNUMVENTA" msprop:Generator_ColumnPropNameInRow="NUMVENTA" msprop:Generator_ColumnPropNameInTable="NUMVENTAColumn" msprop:Generator_UserColumnName="NUMVENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Codpagare" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodpagare" msprop:Generator_ColumnPropNameInRow="Codpagare" msprop:Generator_ColumnPropNameInTable="CodpagareColumn" msprop:Generator_UserColumnName="Codpagare" type="xs:int" />
+              <xs:element name="DESCIUDAD" msprop:Generator_ColumnVarNameInTable="columnDESCIUDAD" msprop:Generator_ColumnPropNameInRow="DESCIUDAD" msprop:Generator_ColumnPropNameInTable="DESCIUDADColumn" msprop:Generator_UserColumnName="DESCIUDAD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VENTAS_PAGARE" />
+      <xs:field xpath="mstns:Codpagare" />
+    </xs:unique>
+    <xs:unique name="ESTADO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ESTADO" />
+      <xs:field xpath="mstns:CODESTADO" />
+    </xs:unique>
+    <xs:unique name="MONEDA_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MONEDA" />
+      <xs:field xpath="mstns:CODMONEDA" />
+    </xs:unique>
+    <xs:unique name="CLIENTES_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CLIENTES" />
+      <xs:field xpath="mstns:CODCLIENTE" />
+    </xs:unique>
+    <xs:unique name="VENTAS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VENTAS" />
+      <xs:field xpath="mstns:CODVENTA" />
+    </xs:unique>
+    <xs:unique name="ImpPagare_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ImpPagare" />
+      <xs:field xpath="mstns:Codpagare" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

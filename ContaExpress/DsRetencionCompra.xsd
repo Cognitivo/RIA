@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsRetencionCompra" targetNamespace="http://tempuri.org/DsRetencionCompra.xsd" xmlns:mstns="http://tempuri.org/DsRetencionCompra.xsd" xmlns="http://tempuri.org/DsRetencionCompra.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RETENCIONCOMPRATableAdapter" GeneratorDataComponentClassName="RETENCIONCOMPRATableAdapter" Name="RETENCIONCOMPRA" UserDataComponentName="RETENCIONCOMPRATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RETENCIONCOMPRA.CODRETENCION, RETENCIONCOMPRA.CODPROVEEDOR, RETENCIONCOMPRA.NUMRETENCION, RETENCIONCOMPRA.FECHARETENCION, 
+                         RETENCIONCOMPRA.DESCRIPCIONRET, RETENCIONCOMPRA.IMPORTERETTOTAL, RETENCIONCOMPRA.IMPORTERETSINIVA, 
+                         RETENCIONCOMPRA.IMPORTERETIVA, RETENCIONCOMPRA.TOTALRETENCION, RETENCIONCOMPRA.TIPORETENCION, RETENCIONCOMPRA.CODUSUARIO, 
+                         RETENCIONCOMPRA.CODRANGO, PROVEEDOR.NOMBRE, USUARIO.DESUSUARIO, RETENCIONCOMPRA.ESTADO
+FROM            RETENCIONCOMPRA INNER JOIN
+                         USUARIO ON RETENCIONCOMPRA.CODUSUARIO = USUARIO.CODUSUARIO LEFT OUTER JOIN
+                         PROVEEDOR ON RETENCIONCOMPRA.CODPROVEEDOR = PROVEEDOR.CODPROVEEDOR
+ORDER BY NUMRETENCION
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODRETENCION" DataSetColumn="CODRETENCION" />
+              <Mapping SourceColumn="CODPROVEEDOR" DataSetColumn="CODPROVEEDOR" />
+              <Mapping SourceColumn="NUMRETENCION" DataSetColumn="NUMRETENCION" />
+              <Mapping SourceColumn="FECHARETENCION" DataSetColumn="FECHARETENCION" />
+              <Mapping SourceColumn="DESCRIPCIONRET" DataSetColumn="DESCRIPCIONRET" />
+              <Mapping SourceColumn="IMPORTERETTOTAL" DataSetColumn="IMPORTERETTOTAL" />
+              <Mapping SourceColumn="IMPORTERETSINIVA" DataSetColumn="IMPORTERETSINIVA" />
+              <Mapping SourceColumn="IMPORTERETIVA" DataSetColumn="IMPORTERETIVA" />
+              <Mapping SourceColumn="TOTALRETENCION" DataSetColumn="TOTALRETENCION" />
+              <Mapping SourceColumn="TIPORETENCION" DataSetColumn="TIPORETENCION" />
+              <Mapping SourceColumn="CODUSUARIO" DataSetColumn="CODUSUARIO" />
+              <Mapping SourceColumn="CODRANGO" DataSetColumn="CODRANGO" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="DESUSUARIO" DataSetColumn="DESUSUARIO" />
+              <Mapping SourceColumn="ESTADO" DataSetColumn="ESTADO" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByFecha" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByFecha" GeneratorSourceName="FillByFecha" GetMethodModifier="Public" GetMethodName="GetDataByFecha" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByFecha" UserSourceName="FillByFecha">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RETENCIONCOMPRA.CODRETENCION, RETENCIONCOMPRA.CODPROVEEDOR, RETENCIONCOMPRA.NUMRETENCION, RETENCIONCOMPRA.FECHARETENCION, 
+                         RETENCIONCOMPRA.DESCRIPCIONRET, RETENCIONCOMPRA.IMPORTERETTOTAL, RETENCIONCOMPRA.IMPORTERETSINIVA, 
+                         RETENCIONCOMPRA.IMPORTERETIVA, RETENCIONCOMPRA.TOTALRETENCION, RETENCIONCOMPRA.TIPORETENCION, RETENCIONCOMPRA.CODUSUARIO, 
+                         RETENCIONCOMPRA.CODRANGO, PROVEEDOR.NOMBRE, USUARIO.DESUSUARIO, RETENCIONCOMPRA.ESTADO
+FROM            RETENCIONCOMPRA INNER JOIN
+                         USUARIO ON RETENCIONCOMPRA.CODUSUARIO = USUARIO.CODUSUARIO LEFT OUTER JOIN
+                         PROVEEDOR ON RETENCIONCOMPRA.CODPROVEEDOR = PROVEEDOR.CODPROVEEDOR
+WHERE        (RETENCIONCOMPRA.FECHARETENCION &gt;= CONVERT(datetime, @FECHA1, 103)) AND (RETENCIONCOMPRA.FECHARETENCION &lt;= CONVERT(datetime, @FECHA2, 
+                         103))
+ORDER BY NUMRETENCION</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHA1" ColumnName="FECHARETENCION" DataSourceName="GuazuNuevo.dbo.RETENCIONCOMPRA" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FECHA1" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHARETENCION" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHA2" ColumnName="FECHARETENCION" DataSourceName="GuazuNuevo.dbo.RETENCIONCOMPRA" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FECHA2" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHARETENCION" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RETCOMPTIPOCOMPROBANTETableAdapter" GeneratorDataComponentClassName="RETCOMPTIPOCOMPROBANTETableAdapter" Name="RETCOMPTIPOCOMPROBANTE" UserDataComponentName="RETCOMPTIPOCOMPROBANTETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DETPC.RANDOID, DETPC.IP, PC.NOMBRE, DETPC.CODCOMPROBANTE, TIPOCOMPROBANTE.DESCOMPROBANTE, 
+                         TIPOCOMPROBANTE.DESCOMPROBANTE + '/' + PC.NOMBRE AS COMPMAQUINA, DETPC.ACTIVO, DETPC.RANGO1, DETPC.ULTIMO, DETPC.IMPRESORA, 
+                         DETPC.FECHAVALIDEZ, DETPC.TIMBRADO, DETPC.IMPRIMIR, DETPC.NRODIGITOS, PC.IP AS Expr1, PC.IPMAQUINA, 
+                         TIPOCOMPROBANTE.FORMAIMPRESION, TIPOCOMPROBANTE.VALORFISCAL, TIPOCOMPROBANTE.CANTIDADIMPRESION
+FROM            DETPC INNER JOIN
+                         PC ON DETPC.IP = PC.IP AND DETPC.CODEMPRESA = PC.CODEMPRESA AND DETPC.CODSUCURSAL = PC.CODSUCURSAL INNER JOIN
+                         TIPOCOMPROBANTE ON DETPC.CODCOMPROBANTE = TIPOCOMPROBANTE.CODCOMPROBANTE
+WHERE        (TIPOCOMPROBANTE.RETENCION = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="RANDOID" DataSetColumn="RANDOID" />
+              <Mapping SourceColumn="IP" DataSetColumn="IP" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="CODCOMPROBANTE" DataSetColumn="CODCOMPROBANTE" />
+              <Mapping SourceColumn="DESCOMPROBANTE" DataSetColumn="DESCOMPROBANTE" />
+              <Mapping SourceColumn="COMPMAQUINA" DataSetColumn="COMPMAQUINA" />
+              <Mapping SourceColumn="ACTIVO" DataSetColumn="ACTIVO" />
+              <Mapping SourceColumn="RANGO1" DataSetColumn="RANGO1" />
+              <Mapping SourceColumn="ULTIMO" DataSetColumn="ULTIMO" />
+              <Mapping SourceColumn="IMPRESORA" DataSetColumn="IMPRESORA" />
+              <Mapping SourceColumn="FECHAVALIDEZ" DataSetColumn="FECHAVALIDEZ" />
+              <Mapping SourceColumn="TIMBRADO" DataSetColumn="TIMBRADO" />
+              <Mapping SourceColumn="IMPRIMIR" DataSetColumn="IMPRIMIR" />
+              <Mapping SourceColumn="NRODIGITOS" DataSetColumn="NRODIGITOS" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="IPMAQUINA" DataSetColumn="IPMAQUINA" />
+              <Mapping SourceColumn="FORMAIMPRESION" DataSetColumn="FORMAIMPRESION" />
+              <Mapping SourceColumn="VALORFISCAL" DataSetColumn="VALORFISCAL" />
+              <Mapping SourceColumn="CANTIDADIMPRESION" DataSetColumn="CANTIDADIMPRESION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RETCOMPPROVEEDORTableAdapter" GeneratorDataComponentClassName="RETCOMPPROVEEDORTableAdapter" Name="RETCOMPPROVEEDOR" UserDataComponentName="RETCOMPPROVEEDORTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="Guazu.dbo.PROVEEDOR" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [PROVEEDOR] WHERE (([CODPROVEEDOR] = @Original_CODPROVEEDOR) AND ((@IsNull_NUMPROVEEDOR = 1 AND [NUMPROVEEDOR] IS NULL) OR ([NUMPROVEEDOR] = @Original_NUMPROVEEDOR)) AND ((@IsNull_NOMBRE = 1 AND [NOMBRE] IS NULL) OR ([NOMBRE] = @Original_NOMBRE)) AND ((@IsNull_RUC_CIN = 1 AND [RUC_CIN] IS NULL) OR ([RUC_CIN] = @Original_RUC_CIN)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODPROVEEDOR" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODPROVEEDOR" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NUMPROVEEDOR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NUMPROVEEDOR" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NUMPROVEEDOR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NUMPROVEEDOR" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOMBRE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RUC_CIN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RUC_CIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RUC_CIN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RUC_CIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [PROVEEDOR] ([CODPROVEEDOR], [NUMPROVEEDOR], [NOMBRE], [RUC_CIN]) VALUES (@CODPROVEEDOR, @NUMPROVEEDOR, @NOMBRE, @RUC_CIN);
+SELECT CODPROVEEDOR, NUMPROVEEDOR, NOMBRE, RUC_CIN FROM PROVEEDOR WHERE (CODPROVEEDOR = @CODPROVEEDOR) ORDER BY NOMBRE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODPROVEEDOR" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODPROVEEDOR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NUMPROVEEDOR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NUMPROVEEDOR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RUC_CIN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RUC_CIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODPROVEEDOR, NUMPROVEEDOR, NOMBRE, RUC_CIN
+FROM            PROVEEDOR
+order by nombre</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [PROVEEDOR] SET [CODPROVEEDOR] = @CODPROVEEDOR, [NUMPROVEEDOR] = @NUMPROVEEDOR, [NOMBRE] = @NOMBRE, [RUC_CIN] = @RUC_CIN WHERE (([CODPROVEEDOR] = @Original_CODPROVEEDOR) AND ((@IsNull_NUMPROVEEDOR = 1 AND [NUMPROVEEDOR] IS NULL) OR ([NUMPROVEEDOR] = @Original_NUMPROVEEDOR)) AND ((@IsNull_NOMBRE = 1 AND [NOMBRE] IS NULL) OR ([NOMBRE] = @Original_NOMBRE)) AND ((@IsNull_RUC_CIN = 1 AND [RUC_CIN] IS NULL) OR ([RUC_CIN] = @Original_RUC_CIN)));
+SELECT CODPROVEEDOR, NUMPROVEEDOR, NOMBRE, RUC_CIN FROM PROVEEDOR WHERE (CODPROVEEDOR = @CODPROVEEDOR) ORDER BY NOMBRE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODPROVEEDOR" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODPROVEEDOR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NUMPROVEEDOR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NUMPROVEEDOR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RUC_CIN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RUC_CIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODPROVEEDOR" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODPROVEEDOR" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NUMPROVEEDOR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NUMPROVEEDOR" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NUMPROVEEDOR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NUMPROVEEDOR" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOMBRE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NOMBRE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NOMBRE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RUC_CIN" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RUC_CIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_RUC_CIN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RUC_CIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODPROVEEDOR" DataSetColumn="CODPROVEEDOR" />
+              <Mapping SourceColumn="NUMPROVEEDOR" DataSetColumn="NUMPROVEEDOR" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="RUC_CIN" DataSetColumn="RUC_CIN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EMPRESATableAdapter" GeneratorDataComponentClassName="EMPRESATableAdapter" Name="EMPRESA" UserDataComponentName="EMPRESATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="Guazu0710.dbo.EMPRESA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PORRETENCIO, PORCRETRENTA
+FROM            EMPRESA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PORRETENCIO" DataSetColumn="PORRETENCIO" />
+              <Mapping SourceColumn="PORCRETRENTA" DataSetColumn="PORCRETRENTA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsRetencionCompra" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DsRetencionCompra" msprop:Generator_UserDSName="DsRetencionCompra">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RETENCIONCOMPRA" msprop:Generator_TableClassName="RETENCIONCOMPRADataTable" msprop:Generator_TableVarName="tableRETENCIONCOMPRA" msprop:Generator_RowChangedName="RETENCIONCOMPRARowChanged" msprop:Generator_TablePropName="RETENCIONCOMPRA" msprop:Generator_RowDeletingName="RETENCIONCOMPRARowDeleting" msprop:Generator_RowChangingName="RETENCIONCOMPRARowChanging" msprop:Generator_RowEvHandlerName="RETENCIONCOMPRARowChangeEventHandler" msprop:Generator_RowDeletedName="RETENCIONCOMPRARowDeleted" msprop:Generator_RowClassName="RETENCIONCOMPRARow" msprop:Generator_UserTableName="RETENCIONCOMPRA" msprop:Generator_RowEvArgName="RETENCIONCOMPRARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODRETENCION" msprop:Generator_ColumnVarNameInTable="columnCODRETENCION" msprop:Generator_ColumnPropNameInRow="CODRETENCION" msprop:Generator_ColumnPropNameInTable="CODRETENCIONColumn" msprop:Generator_UserColumnName="CODRETENCION" type="xs:int" />
+              <xs:element name="CODPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnCODPROVEEDOR" msprop:Generator_ColumnPropNameInRow="CODPROVEEDOR" msprop:Generator_ColumnPropNameInTable="CODPROVEEDORColumn" msprop:Generator_UserColumnName="CODPROVEEDOR" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NUMRETENCION" msprop:Generator_ColumnVarNameInTable="columnNUMRETENCION" msprop:Generator_ColumnPropNameInRow="NUMRETENCION" msprop:Generator_ColumnPropNameInTable="NUMRETENCIONColumn" msprop:Generator_UserColumnName="NUMRETENCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FECHARETENCION" msprop:Generator_ColumnVarNameInTable="columnFECHARETENCION" msprop:Generator_ColumnPropNameInRow="FECHARETENCION" msprop:Generator_ColumnPropNameInTable="FECHARETENCIONColumn" msprop:Generator_UserColumnName="FECHARETENCION" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DESCRIPCIONRET" msprop:Generator_ColumnVarNameInTable="columnDESCRIPCIONRET" msprop:Generator_ColumnPropNameInRow="DESCRIPCIONRET" msprop:Generator_ColumnPropNameInTable="DESCRIPCIONRETColumn" msprop:Generator_UserColumnName="DESCRIPCIONRET" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IMPORTERETTOTAL" msprop:Generator_ColumnVarNameInTable="columnIMPORTERETTOTAL" msprop:Generator_ColumnPropNameInRow="IMPORTERETTOTAL" msprop:Generator_ColumnPropNameInTable="IMPORTERETTOTALColumn" msprop:Generator_UserColumnName="IMPORTERETTOTAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTERETSINIVA" msprop:Generator_ColumnVarNameInTable="columnIMPORTERETSINIVA" msprop:Generator_ColumnPropNameInRow="IMPORTERETSINIVA" msprop:Generator_ColumnPropNameInTable="IMPORTERETSINIVAColumn" msprop:Generator_UserColumnName="IMPORTERETSINIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTERETIVA" msprop:Generator_ColumnVarNameInTable="columnIMPORTERETIVA" msprop:Generator_ColumnPropNameInRow="IMPORTERETIVA" msprop:Generator_ColumnPropNameInTable="IMPORTERETIVAColumn" msprop:Generator_UserColumnName="IMPORTERETIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALRETENCION" msprop:Generator_ColumnVarNameInTable="columnTOTALRETENCION" msprop:Generator_ColumnPropNameInRow="TOTALRETENCION" msprop:Generator_ColumnPropNameInTable="TOTALRETENCIONColumn" msprop:Generator_UserColumnName="TOTALRETENCION" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TIPORETENCION" msprop:Generator_ColumnVarNameInTable="columnTIPORETENCION" msprop:Generator_ColumnPropNameInRow="TIPORETENCION" msprop:Generator_ColumnPropNameInTable="TIPORETENCIONColumn" msprop:Generator_UserColumnName="TIPORETENCION" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CODUSUARIO" msprop:Generator_ColumnVarNameInTable="columnCODUSUARIO" msprop:Generator_ColumnPropNameInRow="CODUSUARIO" msprop:Generator_ColumnPropNameInTable="CODUSUARIOColumn" msprop:Generator_UserColumnName="CODUSUARIO" type="xs:int" minOccurs="0" />
+              <xs:element name="CODRANGO" msprop:Generator_ColumnVarNameInTable="columnCODRANGO" msprop:Generator_ColumnPropNameInRow="CODRANGO" msprop:Generator_ColumnPropNameInTable="CODRANGOColumn" msprop:Generator_UserColumnName="CODRANGO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESUSUARIO" msprop:Generator_ColumnVarNameInTable="columnDESUSUARIO" msprop:Generator_ColumnPropNameInRow="DESUSUARIO" msprop:Generator_ColumnPropNameInTable="DESUSUARIOColumn" msprop:Generator_UserColumnName="DESUSUARIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_UserColumnName="ESTADO" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RETCOMPTIPOCOMPROBANTE" msprop:Generator_TableClassName="RETCOMPTIPOCOMPROBANTEDataTable" msprop:Generator_TableVarName="tableRETCOMPTIPOCOMPROBANTE" msprop:Generator_RowChangedName="RETCOMPTIPOCOMPROBANTERowChanged" msprop:Generator_TablePropName="RETCOMPTIPOCOMPROBANTE" msprop:Generator_RowDeletingName="RETCOMPTIPOCOMPROBANTERowDeleting" msprop:Generator_RowChangingName="RETCOMPTIPOCOMPROBANTERowChanging" msprop:Generator_RowEvHandlerName="RETCOMPTIPOCOMPROBANTERowChangeEventHandler" msprop:Generator_RowDeletedName="RETCOMPTIPOCOMPROBANTERowDeleted" msprop:Generator_RowClassName="RETCOMPTIPOCOMPROBANTERow" msprop:Generator_UserTableName="RETCOMPTIPOCOMPROBANTE" msprop:Generator_RowEvArgName="RETCOMPTIPOCOMPROBANTERowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RANDOID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRANDOID" msprop:Generator_ColumnPropNameInRow="RANDOID" msprop:Generator_ColumnPropNameInTable="RANDOIDColumn" msprop:Generator_UserColumnName="RANDOID" type="xs:decimal" />
+              <xs:element name="IP" msprop:Generator_ColumnVarNameInTable="columnIP" msprop:Generator_ColumnPropNameInRow="IP" msprop:Generator_ColumnPropNameInTable="IPColumn" msprop:Generator_UserColumnName="IP" type="xs:decimal" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODCOMPROBANTE" msprop:Generator_ColumnVarNameInTable="columnCODCOMPROBANTE" msprop:Generator_ColumnPropNameInRow="CODCOMPROBANTE" msprop:Generator_ColumnPropNameInTable="CODCOMPROBANTEColumn" msprop:Generator_UserColumnName="CODCOMPROBANTE" type="xs:decimal" />
+              <xs:element name="DESCOMPROBANTE" msprop:Generator_ColumnVarNameInTable="columnDESCOMPROBANTE" msprop:Generator_ColumnPropNameInRow="DESCOMPROBANTE" msprop:Generator_ColumnPropNameInTable="DESCOMPROBANTEColumn" msprop:Generator_UserColumnName="DESCOMPROBANTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMPMAQUINA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOMPMAQUINA" msprop:Generator_ColumnPropNameInRow="COMPMAQUINA" msprop:Generator_ColumnPropNameInTable="COMPMAQUINAColumn" msprop:Generator_UserColumnName="COMPMAQUINA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACTIVO" msprop:Generator_ColumnVarNameInTable="columnACTIVO" msprop:Generator_ColumnPropNameInRow="ACTIVO" msprop:Generator_ColumnPropNameInTable="ACTIVOColumn" msprop:Generator_UserColumnName="ACTIVO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="RANGO1" msprop:Generator_ColumnVarNameInTable="columnRANGO1" msprop:Generator_ColumnPropNameInRow="RANGO1" msprop:Generator_ColumnPropNameInTable="RANGO1Column" msprop:Generator_UserColumnName="RANGO1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ULTIMO" msprop:Generator_ColumnVarNameInTable="columnULTIMO" msprop:Generator_ColumnPropNameInRow="ULTIMO" msprop:Generator_ColumnPropNameInTable="ULTIMOColumn" msprop:Generator_UserColumnName="ULTIMO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPRESORA" msprop:Generator_ColumnVarNameInTable="columnIMPRESORA" msprop:Generator_ColumnPropNameInRow="IMPRESORA" msprop:Generator_ColumnPropNameInTable="IMPRESORAColumn" msprop:Generator_UserColumnName="IMPRESORA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FECHAVALIDEZ" msprop:Generator_ColumnVarNameInTable="columnFECHAVALIDEZ" msprop:Generator_ColumnPropNameInRow="FECHAVALIDEZ" msprop:Generator_ColumnPropNameInTable="FECHAVALIDEZColumn" msprop:Generator_UserColumnName="FECHAVALIDEZ" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TIMBRADO" msprop:Generator_ColumnVarNameInTable="columnTIMBRADO" msprop:Generator_ColumnPropNameInRow="TIMBRADO" msprop:Generator_ColumnPropNameInTable="TIMBRADOColumn" msprop:Generator_UserColumnName="TIMBRADO" type="xs:decimal" />
+              <xs:element name="IMPRIMIR" msprop:Generator_ColumnVarNameInTable="columnIMPRIMIR" msprop:Generator_ColumnPropNameInRow="IMPRIMIR" msprop:Generator_ColumnPropNameInTable="IMPRIMIRColumn" msprop:Generator_UserColumnName="IMPRIMIR" type="xs:int" minOccurs="0" />
+              <xs:element name="NRODIGITOS" msprop:Generator_ColumnVarNameInTable="columnNRODIGITOS" msprop:Generator_ColumnPropNameInRow="NRODIGITOS" msprop:Generator_ColumnPropNameInTable="NRODIGITOSColumn" msprop:Generator_UserColumnName="NRODIGITOS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:decimal" />
+              <xs:element name="IPMAQUINA" msprop:Generator_ColumnVarNameInTable="columnIPMAQUINA" msprop:Generator_ColumnPropNameInRow="IPMAQUINA" msprop:Generator_ColumnPropNameInTable="IPMAQUINAColumn" msprop:Generator_UserColumnName="IPMAQUINA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FORMAIMPRESION" msprop:Generator_ColumnVarNameInTable="columnFORMAIMPRESION" msprop:Generator_ColumnPropNameInRow="FORMAIMPRESION" msprop:Generator_ColumnPropNameInTable="FORMAIMPRESIONColumn" msprop:Generator_UserColumnName="FORMAIMPRESION" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="VALORFISCAL" msprop:Generator_ColumnVarNameInTable="columnVALORFISCAL" msprop:Generator_ColumnPropNameInRow="VALORFISCAL" msprop:Generator_ColumnPropNameInTable="VALORFISCALColumn" msprop:Generator_UserColumnName="VALORFISCAL" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CANTIDADIMPRESION" msprop:Generator_ColumnVarNameInTable="columnCANTIDADIMPRESION" msprop:Generator_ColumnPropNameInRow="CANTIDADIMPRESION" msprop:Generator_ColumnPropNameInTable="CANTIDADIMPRESIONColumn" msprop:Generator_UserColumnName="CANTIDADIMPRESION" type="xs:unsignedByte" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RETCOMPPROVEEDOR" msprop:Generator_TableClassName="RETCOMPPROVEEDORDataTable" msprop:Generator_TableVarName="tableRETCOMPPROVEEDOR" msprop:Generator_RowChangedName="RETCOMPPROVEEDORRowChanged" msprop:Generator_TablePropName="RETCOMPPROVEEDOR" msprop:Generator_RowDeletingName="RETCOMPPROVEEDORRowDeleting" msprop:Generator_RowChangingName="RETCOMPPROVEEDORRowChanging" msprop:Generator_RowEvHandlerName="RETCOMPPROVEEDORRowChangeEventHandler" msprop:Generator_RowDeletedName="RETCOMPPROVEEDORRowDeleted" msprop:Generator_RowClassName="RETCOMPPROVEEDORRow" msprop:Generator_UserTableName="RETCOMPPROVEEDOR" msprop:Generator_RowEvArgName="RETCOMPPROVEEDORRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnCODPROVEEDOR" msprop:Generator_ColumnPropNameInRow="CODPROVEEDOR" msprop:Generator_ColumnPropNameInTable="CODPROVEEDORColumn" msprop:Generator_UserColumnName="CODPROVEEDOR" type="xs:decimal" />
+              <xs:element name="NUMPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnNUMPROVEEDOR" msprop:Generator_ColumnPropNameInRow="NUMPROVEEDOR" msprop:Generator_ColumnPropNameInTable="NUMPROVEEDORColumn" msprop:Generator_UserColumnName="NUMPROVEEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUC_CIN" msprop:Generator_ColumnVarNameInTable="columnRUC_CIN" msprop:Generator_ColumnPropNameInRow="RUC_CIN" msprop:Generator_ColumnPropNameInTable="RUC_CINColumn" msprop:Generator_UserColumnName="RUC_CIN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EMPRESA" msprop:Generator_TableClassName="EMPRESADataTable" msprop:Generator_TableVarName="tableEMPRESA" msprop:Generator_RowChangedName="EMPRESARowChanged" msprop:Generator_TablePropName="EMPRESA" msprop:Generator_RowDeletingName="EMPRESARowDeleting" msprop:Generator_RowChangingName="EMPRESARowChanging" msprop:Generator_RowEvHandlerName="EMPRESARowChangeEventHandler" msprop:Generator_RowDeletedName="EMPRESARowDeleted" msprop:Generator_RowClassName="EMPRESARow" msprop:Generator_UserTableName="EMPRESA" msprop:Generator_RowEvArgName="EMPRESARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PORRETENCIO" msprop:Generator_ColumnVarNameInTable="columnPORRETENCIO" msprop:Generator_ColumnPropNameInRow="PORRETENCIO" msprop:Generator_ColumnPropNameInTable="PORRETENCIOColumn" msprop:Generator_UserColumnName="PORRETENCIO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PORCRETRENTA" msprop:Generator_ColumnVarNameInTable="columnPORCRETRENTA" msprop:Generator_ColumnPropNameInRow="PORCRETRENTA" msprop:Generator_ColumnPropNameInTable="PORCRETRENTAColumn" msprop:Generator_UserColumnName="PORCRETRENTA" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RETCOMPPROVEEDOR" />
+      <xs:field xpath="mstns:CODPROVEEDOR" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_RETENCIONCOMPRA_DETPC" msdata:parent="RETCOMPTIPOCOMPROBANTE" msdata:child="RETENCIONCOMPRA" msdata:parentkey="RANDOID" msdata:childkey="CODRANGO" msprop:Generator_UserChildTable="RETENCIONCOMPRA" msprop:Generator_ChildPropName="GetRETENCIONCOMPRARows" msprop:Generator_UserRelationName="FK_RETENCIONCOMPRA_DETPC" msprop:Generator_ParentPropName="RETCOMPTIPOCOMPROBANTERow" msprop:Generator_RelationVarName="relationFK_RETENCIONCOMPRA_DETPC" msprop:Generator_UserParentTable="RETCOMPTIPOCOMPROBANTE" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

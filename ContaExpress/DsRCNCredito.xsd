@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsRCNCredito" targetNamespace="http://tempuri.org/DsRCNCredito.xsd" xmlns:mstns="http://tempuri.org/DsRCNCredito.xsd" xmlns="http://tempuri.org/DsRCNCredito.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RCIVANCREDITOCOMPRASTableAdapter" GeneratorDataComponentClassName="RCIVANCREDITOCOMPRASTableAdapter" Name="RCIVANCREDITOCOMPRAS" UserDataComponentName="RCIVANCREDITOCOMPRASTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT DEV.FECHADEVOLUCION AS FECHA, SUBSTRING(DEV.NUMDEVOLUCION, LEN(DEV.NUMDEVOLUCION) - 5, 6) AS NUMDEVOLUCION, 
+                         dbo.PROVEEDOR.NUMPROVEEDOR, dbo.PROVEEDOR.NOMBRE, dbo.MONEDA.SIMBOLO, 
+                         CASE COMPRAS.MODALIDADPAGO WHEN 2 THEN 'NC_BONIF' WHEN 3 THEN 'NC_CAMBIO' WHEN 4 THEN 'NC_OTROS' ELSE 'NC_COMPRAS' END AS TIPO, 
+                         CASE IVA WHEN 10 THEN - (SUM(dbo.DEVOLUCIONCOMPRADETALLE.PRECIONETO * dbo.DEVOLUCIONCOMPRADETALLE.CANTIDADDEVUELTA) 
+                         - SUM(dbo.DEVOLUCIONCOMPRADETALLE.PRECIONETO * dbo.DEVOLUCIONCOMPRADETALLE.CANTIDADDEVUELTA) / 11) 
+                         WHEN 5 THEN - (SUM(dbo.DEVOLUCIONCOMPRADETALLE.PRECIONETO * dbo.DEVOLUCIONCOMPRADETALLE.CANTIDADDEVUELTA) 
+                         - SUM(dbo.DEVOLUCIONCOMPRADETALLE.PRECIONETO * dbo.DEVOLUCIONCOMPRADETALLE.CANTIDADDEVUELTA) / 21) END AS NETO, 
+                         dbo.DEVOLUCIONCOMPRADETALLE.IVA, DEV.CODPROVEEDOR, 
+                         CASE IVA WHEN 10 THEN - (SUM(dbo.DEVOLUCIONCOMPRADETALLE.PRECIONETO * dbo.DEVOLUCIONCOMPRADETALLE.CANTIDADDEVUELTA) / 11) END AS IVA10, 
+                         CASE IVA WHEN 5 THEN - (SUM(dbo.DEVOLUCIONCOMPRADETALLE.PRECIONETO * dbo.DEVOLUCIONCOMPRADETALLE.CANTIDADDEVUELTA) / 21) END AS IVA5, 
+                         DEV.CODDEVOLUCION, 
+                         CASE IVA WHEN 10 THEN - (SUM(dbo.DEVOLUCIONCOMPRADETALLE.PRECIONETO * dbo.DEVOLUCIONCOMPRADETALLE.CANTIDADDEVUELTA)) 
+                         END AS TOTALGRAB10, 
+                         CASE IVA WHEN 5 THEN - (SUM(dbo.DEVOLUCIONCOMPRADETALLE.PRECIONETO * dbo.DEVOLUCIONCOMPRADETALLE.CANTIDADDEVUELTA)) 
+                         END AS TOTALGRAV5
+FROM            dbo.DEVOLUCIONCOMPRA AS DEV LEFT OUTER JOIN
+                         dbo.SUCURSAL ON DEV.CODSUCURSAL = dbo.SUCURSAL.CODSUCURSAL INNER JOIN
+                         dbo.PROVEEDOR ON DEV.CODPROVEEDOR = dbo.PROVEEDOR.CODPROVEEDOR INNER JOIN
+                         dbo.DEVOLUCIONCOMPRADETALLE ON DEV.CODDEVOLUCION = dbo.DEVOLUCIONCOMPRADETALLE.CODDEVOLUCION LEFT OUTER JOIN
+                         dbo.COMPRAS ON DEV.CODCOMPRA = dbo.COMPRAS.CODCOMPRA LEFT OUTER JOIN
+                         dbo.TIPOCOMPROBANTE ON DEV.CODCOMPROBANTE = dbo.TIPOCOMPROBANTE.CODCOMPROBANTE LEFT OUTER JOIN
+                         dbo.MONEDA ON dbo.COMPRAS.CODMONEDA = dbo.MONEDA.CODMONEDA AND DEV.CODMONEDA = dbo.MONEDA.CODMONEDA
+WHERE        (DEV.ESTADO = 1) AND (dbo.DEVOLUCIONCOMPRADETALLE.IVA &lt;&gt; 0)
+GROUP BY DEV.FECHADEVOLUCION, DEV.NUMDEVOLUCION, dbo.PROVEEDOR.NUMPROVEEDOR, DEV.COTIZACION1, dbo.MONEDA.SIMBOLO, dbo.PROVEEDOR.NOMBRE, 
+                         dbo.DEVOLUCIONCOMPRADETALLE.IVA, DEV.CODPROVEEDOR, DEV.CODDEVOLUCION, dbo.COMPRAS.MODALIDADPAGO
+ORDER BY FECHA, NUMDEVOLUCION</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FECHA" DataSetColumn="FECHA" />
+              <Mapping SourceColumn="NUMDEVOLUCION" DataSetColumn="NUMDEVOLUCION" />
+              <Mapping SourceColumn="NUMPROVEEDOR" DataSetColumn="NUMPROVEEDOR" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="SIMBOLO" DataSetColumn="SIMBOLO" />
+              <Mapping SourceColumn="TIPO" DataSetColumn="TIPO" />
+              <Mapping SourceColumn="NETO" DataSetColumn="NETO" />
+              <Mapping SourceColumn="IVA" DataSetColumn="IVA" />
+              <Mapping SourceColumn="CODPROVEEDOR" DataSetColumn="CODPROVEEDOR" />
+              <Mapping SourceColumn="IVA10" DataSetColumn="IVA10" />
+              <Mapping SourceColumn="IVA5" DataSetColumn="IVA5" />
+              <Mapping SourceColumn="CODDEVOLUCION" DataSetColumn="CODDEVOLUCION" />
+              <Mapping SourceColumn="TOTALGRAB10" DataSetColumn="TOTALGRAB10" />
+              <Mapping SourceColumn="TOTALGRAV5" DataSetColumn="TOTALGRAV5" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsRCNCredito" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DsRCNCredito" msprop:Generator_UserDSName="DsRCNCredito">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RCIVANCREDITOCOMPRAS" msprop:Generator_TableClassName="RCIVANCREDITOCOMPRASDataTable" msprop:Generator_TableVarName="tableRCIVANCREDITOCOMPRAS" msprop:Generator_TablePropName="RCIVANCREDITOCOMPRAS" msprop:Generator_RowDeletingName="RCIVANCREDITOCOMPRASRowDeleting" msprop:Generator_UserTableName="RCIVANCREDITOCOMPRAS" msprop:Generator_RowChangingName="RCIVANCREDITOCOMPRASRowChanging" msprop:Generator_RowEvHandlerName="RCIVANCREDITOCOMPRASRowChangeEventHandler" msprop:Generator_RowDeletedName="RCIVANCREDITOCOMPRASRowDeleted" msprop:Generator_RowEvArgName="RCIVANCREDITOCOMPRASRowChangeEvent" msprop:Generator_RowChangedName="RCIVANCREDITOCOMPRASRowChanged" msprop:Generator_RowClassName="RCIVANCREDITOCOMPRASRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FECHA" msprop:Generator_ColumnVarNameInTable="columnFECHA" msprop:Generator_ColumnPropNameInRow="FECHA" msprop:Generator_ColumnPropNameInTable="FECHAColumn" msprop:Generator_UserColumnName="FECHA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NUMDEVOLUCION" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNUMDEVOLUCION" msprop:Generator_ColumnPropNameInRow="NUMDEVOLUCION" msprop:Generator_ColumnPropNameInTable="NUMDEVOLUCIONColumn" msprop:Generator_UserColumnName="NUMDEVOLUCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnNUMPROVEEDOR" msprop:Generator_ColumnPropNameInRow="NUMPROVEEDOR" msprop:Generator_ColumnPropNameInTable="NUMPROVEEDORColumn" msprop:Generator_UserColumnName="NUMPROVEEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SIMBOLO" msprop:Generator_ColumnVarNameInTable="columnSIMBOLO" msprop:Generator_ColumnPropNameInRow="SIMBOLO" msprop:Generator_ColumnPropNameInTable="SIMBOLOColumn" msprop:Generator_UserColumnName="SIMBOLO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIPO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTIPO" msprop:Generator_ColumnPropNameInRow="TIPO" msprop:Generator_ColumnPropNameInTable="TIPOColumn" msprop:Generator_UserColumnName="TIPO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NETO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNETO" msprop:Generator_ColumnPropNameInRow="NETO" msprop:Generator_ColumnPropNameInTable="NETOColumn" msprop:Generator_UserColumnName="NETO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IVA" msprop:Generator_ColumnVarNameInTable="columnIVA" msprop:Generator_ColumnPropNameInRow="IVA" msprop:Generator_ColumnPropNameInTable="IVAColumn" msprop:Generator_UserColumnName="IVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnCODPROVEEDOR" msprop:Generator_ColumnPropNameInRow="CODPROVEEDOR" msprop:Generator_ColumnPropNameInTable="CODPROVEEDORColumn" msprop:Generator_UserColumnName="CODPROVEEDOR" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IVA10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIVA10" msprop:Generator_ColumnPropNameInRow="IVA10" msprop:Generator_ColumnPropNameInTable="IVA10Column" msprop:Generator_UserColumnName="IVA10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IVA5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIVA5" msprop:Generator_ColumnPropNameInRow="IVA5" msprop:Generator_ColumnPropNameInTable="IVA5Column" msprop:Generator_UserColumnName="IVA5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODDEVOLUCION" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODDEVOLUCION" msprop:Generator_ColumnPropNameInRow="CODDEVOLUCION" msprop:Generator_ColumnPropNameInTable="CODDEVOLUCIONColumn" msprop:Generator_UserColumnName="CODDEVOLUCION" type="xs:decimal" />
+              <xs:element name="TOTALGRAB10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALGRAB10" msprop:Generator_ColumnPropNameInRow="TOTALGRAB10" msprop:Generator_ColumnPropNameInTable="TOTALGRAB10Column" msprop:Generator_UserColumnName="TOTALGRAB10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALGRAV5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALGRAV5" msprop:Generator_ColumnPropNameInRow="TOTALGRAV5" msprop:Generator_ColumnPropNameInTable="TOTALGRAV5Column" msprop:Generator_UserColumnName="TOTALGRAV5" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RCIVANCREDITOCOMPRAS" />
+      <xs:field xpath="mstns:CODDEVOLUCION" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

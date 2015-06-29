@@ -1,0 +1,24 @@
+C:\Users\Javier\Desktop\Nuevo Proyecto\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.Resources.resources
+C:\Users\Javier\Desktop\Nuevo Proyecto\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.vbproj.GenerateResource.Cache
+C:\Users\Javier\Desktop\Nuevo Proyecto\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.pdb
+C:\Users\Javier\Desktop\RIA\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.dll
+C:\Users\Javier\Desktop\RIA\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.pdb
+C:\Users\Javier\Desktop\RIA\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.xml
+C:\Users\Javier\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.Resources.resources
+C:\Users\Javier\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.vbproj.GenerateResource.Cache
+C:\Users\Javier\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.dll
+C:\Users\Javier\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.xml
+C:\Users\Javier\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.pdb
+C:\Users\Yolanda\Desktop\RIA\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.dll
+C:\Users\Yolanda\Desktop\RIA\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.pdb
+C:\Users\Yolanda\Desktop\RIA\ReportesPersonalizados\bin\Debug\ReportesPersonalizados.xml
+C:\Users\Yolanda\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.Resources.resources
+C:\Users\Yolanda\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.dll
+C:\Users\Yolanda\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.xml
+C:\Users\Yolanda\Desktop\RIA\ReportesPersonalizados\obj\Debug\ReportesPersonalizados.pdb

@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCombos" targetNamespace="http://tempuri.org/dsCombos.xsd" xmlns:mstns="http://tempuri.org/dsCombos.xsd" xmlns="http://tempuri.org/dsCombos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LISTACOMBOSTableAdapter" GeneratorDataComponentClassName="LISTACOMBOSTableAdapter" Name="LISTACOMBOS" UserDataComponentName="LISTACOMBOSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT    DISTINCT P.CODPRODUCTO, P.IS_COMBO, C.CODIGO, C.CODCODIGO, P.DESPRODUCTO, P.CODIVA, P.CODMEDIDA
+FROM            PRODUCTOS P INNER JOIN
+                         CODIGOS C ON  P.CODPRODUCTO = C.CODPRODUCTO
+WHERE        ( P.IS_COMBO = 1 AND  P.PRODUCTO = 4)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODPRODUCTO" DataSetColumn="CODPRODUCTO" />
+              <Mapping SourceColumn="IS_COMBO" DataSetColumn="IS_COMBO" />
+              <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
+              <Mapping SourceColumn="CODCODIGO" DataSetColumn="CODCODIGO" />
+              <Mapping SourceColumn="DESPRODUCTO" DataSetColumn="DESPRODUCTO" />
+              <Mapping SourceColumn="CODIVA" DataSetColumn="CODIVA" />
+              <Mapping SourceColumn="CODMEDIDA" DataSetColumn="CODMEDIDA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LISTAPRODUCTOSTableAdapter" GeneratorDataComponentClassName="LISTAPRODUCTOSTableAdapter" Name="LISTAPRODUCTOS" UserDataComponentName="LISTAPRODUCTOSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODIGOS.CODCODIGO, PRODUCTOS.CODPRODUCTO, CODIGOS.CODIGO, PRODUCTOS.IS_COMBO, PRODUCTOS.DESPRODUCTO, PRODUCTOS.CODIVA, PRODUCTOS.CODMEDIDA, PRODUCTOS.ESTADO
+FROM            PRODUCTOS INNER JOIN
+                         CODIGOS ON PRODUCTOS.CODPRODUCTO = CODIGOS.CODPRODUCTO
+WHERE        (PRODUCTOS.IS_COMBO &lt;&gt; 1) AND (PRODUCTOS.ESTADO = 0) OR
+                         (PRODUCTOS.IS_COMBO IS NULL)
+ORDER BY PRODUCTOS.DESPRODUCTO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODCODIGO" DataSetColumn="CODCODIGO" />
+              <Mapping SourceColumn="CODPRODUCTO" DataSetColumn="CODPRODUCTO" />
+              <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
+              <Mapping SourceColumn="IS_COMBO" DataSetColumn="IS_COMBO" />
+              <Mapping SourceColumn="DESPRODUCTO" DataSetColumn="DESPRODUCTO" />
+              <Mapping SourceColumn="CODIVA" DataSetColumn="CODIVA" />
+              <Mapping SourceColumn="CODMEDIDA" DataSetColumn="CODMEDIDA" />
+              <Mapping SourceColumn="ESTADO" DataSetColumn="ESTADO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="COMBOSDETTableAdapter" GeneratorDataComponentClassName="COMBOSDETTableAdapter" Name="COMBOSDET" UserDataComponentName="COMBOSDETTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COMBOS.SUBCODCODIGO, COMBOS.CANTIDAD, CODIGOS.CODIGO, COMBOS.CODPRODUCTO, PRODUCTOS.DESPRODUCTO, COMBOS.CODSUCURSAL, SUCURSAL.DESSUCURSAL
+FROM            CODIGOS INNER JOIN
+                         COMBOS ON CODIGOS.CODCODIGO = COMBOS.SUBCODCODIGO INNER JOIN
+                         PRODUCTOS ON CODIGOS.CODPRODUCTO = PRODUCTOS.CODPRODUCTO INNER JOIN
+                         SUCURSAL ON COMBOS.CODSUCURSAL = SUCURSAL.CODSUCURSAL
+WHERE        (COMBOS.CODPRODUCTO = @CODPRODUCTO)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="CODPRODUCTO" ColumnName="CODPRODUCTO" DataSourceName="ENVASESPARAGUAYOS.dbo.COMBOS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CODPRODUCTO" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CODPRODUCTO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SUBCODCODIGO" DataSetColumn="SUBCODCODIGO" />
+              <Mapping SourceColumn="CANTIDAD" DataSetColumn="CANTIDAD" />
+              <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
+              <Mapping SourceColumn="DESPRODUCTO" DataSetColumn="DESPRODUCTO" />
+              <Mapping SourceColumn="CODPRODUCTO" DataSetColumn="CODPRODUCTO" />
+              <Mapping SourceColumn="CODSUCURSAL" DataSetColumn="CODSUCURSAL" />
+              <Mapping SourceColumn="DESSUCURSAL" DataSetColumn="DESSUCURSAL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IVATableAdapter" GeneratorDataComponentClassName="IVATableAdapter" Name="IVA" UserDataComponentName="IVATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="ENVASESPARAGUAYOS.dbo.IVA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [IVA] WHERE (([CODIVA] = @Original_CODIVA) AND ((@IsNull_DESIVA = 1 AND [DESIVA] IS NULL) OR ([DESIVA] = @Original_DESIVA)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODIVA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODIVA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESIVA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESIVA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESIVA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESIVA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [IVA] ([CODIVA], [DESIVA]) VALUES (@CODIVA, @DESIVA);
+SELECT CODIVA, DESIVA FROM IVA WHERE (CODIVA = @CODIVA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODIVA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODIVA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESIVA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESIVA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODIVA, DESIVA
+FROM            IVA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [IVA] SET [CODIVA] = @CODIVA, [DESIVA] = @DESIVA WHERE (([CODIVA] = @Original_CODIVA) AND ((@IsNull_DESIVA = 1 AND [DESIVA] IS NULL) OR ([DESIVA] = @Original_DESIVA)));
+SELECT CODIVA, DESIVA FROM IVA WHERE (CODIVA = @CODIVA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODIVA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODIVA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESIVA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESIVA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODIVA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODIVA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESIVA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESIVA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESIVA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESIVA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODIVA" DataSetColumn="CODIVA" />
+              <Mapping SourceColumn="DESIVA" DataSetColumn="DESIVA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UNIDADMEDIDATableAdapter" GeneratorDataComponentClassName="UNIDADMEDIDATableAdapter" Name="UNIDADMEDIDA" UserDataComponentName="UNIDADMEDIDATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="ENVASESPARAGUAYOS.dbo.UNIDADMEDIDA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [UNIDADMEDIDA] WHERE (([CODMEDIDA] = @Original_CODMEDIDA) AND ((@IsNull_DESMEDIDA = 1 AND [DESMEDIDA] IS NULL) OR ([DESMEDIDA] = @Original_DESMEDIDA)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODMEDIDA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODMEDIDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESMEDIDA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESMEDIDA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESMEDIDA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESMEDIDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [UNIDADMEDIDA] ([CODMEDIDA], [DESMEDIDA]) VALUES (@CODMEDIDA, @DESMEDIDA);
+SELECT CODMEDIDA, DESMEDIDA FROM UNIDADMEDIDA WHERE (CODMEDIDA = @CODMEDIDA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODMEDIDA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODMEDIDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESMEDIDA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESMEDIDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODMEDIDA, DESMEDIDA
+FROM            UNIDADMEDIDA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [UNIDADMEDIDA] SET [CODMEDIDA] = @CODMEDIDA, [DESMEDIDA] = @DESMEDIDA WHERE (([CODMEDIDA] = @Original_CODMEDIDA) AND ((@IsNull_DESMEDIDA = 1 AND [DESMEDIDA] IS NULL) OR ([DESMEDIDA] = @Original_DESMEDIDA)));
+SELECT CODMEDIDA, DESMEDIDA FROM UNIDADMEDIDA WHERE (CODMEDIDA = @CODMEDIDA)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODMEDIDA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODMEDIDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESMEDIDA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESMEDIDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODMEDIDA" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODMEDIDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESMEDIDA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESMEDIDA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESMEDIDA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESMEDIDA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODMEDIDA" DataSetColumn="CODMEDIDA" />
+              <Mapping SourceColumn="DESMEDIDA" DataSetColumn="DESMEDIDA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LISTADEPRECIOTableAdapter" GeneratorDataComponentClassName="LISTADEPRECIOTableAdapter" Name="LISTADEPRECIO" UserDataComponentName="LISTADEPRECIOTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="ENVASESPARAGUAYOS.dbo.TIPOCLIENTE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [TIPOCLIENTE] WHERE (([CODTIPOCLIENTE] = @Original_CODTIPOCLIENTE) AND ((@IsNull_DESTIPOCLIENTE = 1 AND [DESTIPOCLIENTE] IS NULL) OR ([DESTIPOCLIENTE] = @Original_DESTIPOCLIENTE)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODTIPOCLIENTE" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODTIPOCLIENTE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESTIPOCLIENTE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESTIPOCLIENTE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESTIPOCLIENTE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESTIPOCLIENTE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [TIPOCLIENTE] ([CODTIPOCLIENTE], [DESTIPOCLIENTE]) VALUES (@CODTIPOCLIENTE, @DESTIPOCLIENTE);
+SELECT CODTIPOCLIENTE, DESTIPOCLIENTE FROM TIPOCLIENTE WHERE (CODTIPOCLIENTE = @CODTIPOCLIENTE)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODTIPOCLIENTE" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODTIPOCLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESTIPOCLIENTE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESTIPOCLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODTIPOCLIENTE, DESTIPOCLIENTE
+FROM            TIPOCLIENTE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [TIPOCLIENTE] SET [CODTIPOCLIENTE] = @CODTIPOCLIENTE, [DESTIPOCLIENTE] = @DESTIPOCLIENTE WHERE (([CODTIPOCLIENTE] = @Original_CODTIPOCLIENTE) AND ((@IsNull_DESTIPOCLIENTE = 1 AND [DESTIPOCLIENTE] IS NULL) OR ([DESTIPOCLIENTE] = @Original_DESTIPOCLIENTE)));
+SELECT CODTIPOCLIENTE, DESTIPOCLIENTE FROM TIPOCLIENTE WHERE (CODTIPOCLIENTE = @CODTIPOCLIENTE)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CODTIPOCLIENTE" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODTIPOCLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESTIPOCLIENTE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESTIPOCLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CODTIPOCLIENTE" Precision="9" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="CODTIPOCLIENTE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESTIPOCLIENTE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESTIPOCLIENTE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESTIPOCLIENTE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESTIPOCLIENTE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODTIPOCLIENTE" DataSetColumn="CODTIPOCLIENTE" />
+              <Mapping SourceColumn="DESTIPOCLIENTE" DataSetColumn="DESTIPOCLIENTE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PRECIOSDETTableAdapter" GeneratorDataComponentClassName="PRECIOSDETTableAdapter" Name="PRECIOSDET" UserDataComponentName="PRECIOSDETTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TIPOCLIENTE.DESTIPOCLIENTE, TIPOCLIENTE.CODTIPOCLIENTE, PRECIO.PRECIOVENTA, PRECIO.CODPRODUCTO
+FROM            TIPOCLIENTE INNER JOIN
+                         PRECIO ON TIPOCLIENTE.CODTIPOCLIENTE = PRECIO.CODTIPOCLIENTE
+WHERE        (PRECIO.CODPRODUCTO = @CODPRODUCTO)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CODPRODUCTO" ColumnName="CODPRODUCTO" DataSourceName="ENVASESPARAGUAYOS.dbo.PRECIO" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@CODPRODUCTO" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="CODPRODUCTO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DESTIPOCLIENTE" DataSetColumn="DESTIPOCLIENTE" />
+              <Mapping SourceColumn="CODTIPOCLIENTE" DataSetColumn="CODTIPOCLIENTE" />
+              <Mapping SourceColumn="PRECIOVENTA" DataSetColumn="PRECIOVENTA" />
+              <Mapping SourceColumn="CODPRODUCTO" DataSetColumn="CODPRODUCTO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DEPOSITOTableAdapter" GeneratorDataComponentClassName="DEPOSITOTableAdapter" Name="DEPOSITO" UserDataComponentName="DEPOSITOTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="ENVASESPARAGUAYOS.dbo.SUCURSAL" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [SUCURSAL] WHERE (([CODSUCURSAL] = @Original_CODSUCURSAL) AND ((@IsNull_DESSUCURSAL = 1 AND [DESSUCURSAL] IS NULL) OR ([DESSUCURSAL] = @Original_DESSUCURSAL)) AND ((@IsNull_TIPOSUCURSAL = 1 AND [TIPOSUCURSAL] IS NULL) OR ([TIPOSUCURSAL] = @Original_TIPOSUCURSAL)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CODSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESSUCURSAL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESSUCURSAL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TIPOSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TIPOSUCURSAL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TIPOSUCURSAL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TIPOSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [SUCURSAL] ([CODSUCURSAL], [DESSUCURSAL], [TIPOSUCURSAL]) VALUES (@CODSUCURSAL, @DESSUCURSAL, @TIPOSUCURSAL);
+SELECT CODSUCURSAL, DESSUCURSAL, TIPOSUCURSAL FROM SUCURSAL WHERE (CODSUCURSAL = @CODSUCURSAL)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CODSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESSUCURSAL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TIPOSUCURSAL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TIPOSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODSUCURSAL, DESSUCURSAL, TIPOSUCURSAL
+FROM            SUCURSAL
+WHERE        (TIPOSUCURSAL = 'Factura y Stock') OR
+                         (TIPOSUCURSAL = 'Solo Stock')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [SUCURSAL] SET [CODSUCURSAL] = @CODSUCURSAL, [DESSUCURSAL] = @DESSUCURSAL, [TIPOSUCURSAL] = @TIPOSUCURSAL WHERE (([CODSUCURSAL] = @Original_CODSUCURSAL) AND ((@IsNull_DESSUCURSAL = 1 AND [DESSUCURSAL] IS NULL) OR ([DESSUCURSAL] = @Original_DESSUCURSAL)) AND ((@IsNull_TIPOSUCURSAL = 1 AND [TIPOSUCURSAL] IS NULL) OR ([TIPOSUCURSAL] = @Original_TIPOSUCURSAL)));
+SELECT CODSUCURSAL, DESSUCURSAL, TIPOSUCURSAL FROM SUCURSAL WHERE (CODSUCURSAL = @CODSUCURSAL)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CODSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DESSUCURSAL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TIPOSUCURSAL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TIPOSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CODSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CODSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DESSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DESSUCURSAL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DESSUCURSAL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DESSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TIPOSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TIPOSUCURSAL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TIPOSUCURSAL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TIPOSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODSUCURSAL" DataSetColumn="CODSUCURSAL" />
+              <Mapping SourceColumn="DESSUCURSAL" DataSetColumn="DESSUCURSAL" />
+              <Mapping SourceColumn="TIPOSUCURSAL" DataSetColumn="TIPOSUCURSAL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCombos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCombos" msprop:Generator_UserDSName="dsCombos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LISTACOMBOS" msprop:Generator_TableClassName="LISTACOMBOSDataTable" msprop:Generator_TableVarName="tableLISTACOMBOS" msprop:Generator_TablePropName="LISTACOMBOS" msprop:Generator_RowDeletingName="LISTACOMBOSRowDeleting" msprop:Generator_RowChangingName="LISTACOMBOSRowChanging" msprop:Generator_RowEvHandlerName="LISTACOMBOSRowChangeEventHandler" msprop:Generator_RowDeletedName="LISTACOMBOSRowDeleted" msprop:Generator_UserTableName="LISTACOMBOS" msprop:Generator_RowChangedName="LISTACOMBOSRowChanged" msprop:Generator_RowEvArgName="LISTACOMBOSRowChangeEvent" msprop:Generator_RowClassName="LISTACOMBOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODPRODUCTO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODPRODUCTO" msprop:Generator_ColumnPropNameInRow="CODPRODUCTO" msprop:Generator_ColumnPropNameInTable="CODPRODUCTOColumn" msprop:Generator_UserColumnName="CODPRODUCTO" type="xs:decimal" />
+              <xs:element name="IS_COMBO" msprop:Generator_ColumnVarNameInTable="columnIS_COMBO" msprop:Generator_ColumnPropNameInRow="IS_COMBO" msprop:Generator_ColumnPropNameInTable="IS_COMBOColumn" msprop:Generator_UserColumnName="IS_COMBO" type="xs:int" minOccurs="0" />
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODCODIGO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCODIGO" msprop:Generator_ColumnPropNameInRow="CODCODIGO" msprop:Generator_ColumnPropNameInTable="CODCODIGOColumn" msprop:Generator_UserColumnName="CODCODIGO" type="xs:int" />
+              <xs:element name="DESPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnDESPRODUCTO" msprop:Generator_ColumnPropNameInRow="DESPRODUCTO" msprop:Generator_ColumnPropNameInTable="DESPRODUCTOColumn" msprop:Generator_UserColumnName="DESPRODUCTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODIVA" msprop:Generator_ColumnVarNameInTable="columnCODIVA" msprop:Generator_ColumnPropNameInRow="CODIVA" msprop:Generator_ColumnPropNameInTable="CODIVAColumn" msprop:Generator_UserColumnName="CODIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODMEDIDA" msprop:Generator_ColumnVarNameInTable="columnCODMEDIDA" msprop:Generator_ColumnPropNameInRow="CODMEDIDA" msprop:Generator_ColumnPropNameInTable="CODMEDIDAColumn" msprop:Generator_UserColumnName="CODMEDIDA" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LISTAPRODUCTOS" msprop:Generator_TableClassName="LISTAPRODUCTOSDataTable" msprop:Generator_TableVarName="tableLISTAPRODUCTOS" msprop:Generator_TablePropName="LISTAPRODUCTOS" msprop:Generator_RowDeletingName="LISTAPRODUCTOSRowDeleting" msprop:Generator_RowChangingName="LISTAPRODUCTOSRowChanging" msprop:Generator_RowEvHandlerName="LISTAPRODUCTOSRowChangeEventHandler" msprop:Generator_RowDeletedName="LISTAPRODUCTOSRowDeleted" msprop:Generator_UserTableName="LISTAPRODUCTOS" msprop:Generator_RowChangedName="LISTAPRODUCTOSRowChanged" msprop:Generator_RowEvArgName="LISTAPRODUCTOSRowChangeEvent" msprop:Generator_RowClassName="LISTAPRODUCTOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODCODIGO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCODIGO" msprop:Generator_ColumnPropNameInRow="CODCODIGO" msprop:Generator_ColumnPropNameInTable="CODCODIGOColumn" msprop:Generator_UserColumnName="CODCODIGO" type="xs:int" />
+              <xs:element name="CODPRODUCTO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODPRODUCTO" msprop:Generator_ColumnPropNameInRow="CODPRODUCTO" msprop:Generator_ColumnPropNameInTable="CODPRODUCTOColumn" msprop:Generator_UserColumnName="CODPRODUCTO" type="xs:decimal" />
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IS_COMBO" msprop:Generator_ColumnVarNameInTable="columnIS_COMBO" msprop:Generator_ColumnPropNameInRow="IS_COMBO" msprop:Generator_ColumnPropNameInTable="IS_COMBOColumn" msprop:Generator_UserColumnName="IS_COMBO" type="xs:int" minOccurs="0" />
+              <xs:element name="DESPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnDESPRODUCTO" msprop:Generator_ColumnPropNameInRow="DESPRODUCTO" msprop:Generator_ColumnPropNameInTable="DESPRODUCTOColumn" msprop:Generator_UserColumnName="DESPRODUCTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODIVA" msprop:Generator_ColumnVarNameInTable="columnCODIVA" msprop:Generator_ColumnPropNameInRow="CODIVA" msprop:Generator_ColumnPropNameInTable="CODIVAColumn" msprop:Generator_UserColumnName="CODIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODMEDIDA" msprop:Generator_ColumnVarNameInTable="columnCODMEDIDA" msprop:Generator_ColumnPropNameInRow="CODMEDIDA" msprop:Generator_ColumnPropNameInTable="CODMEDIDAColumn" msprop:Generator_UserColumnName="CODMEDIDA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_UserColumnName="ESTADO" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="COMBOSDET" msprop:Generator_TableClassName="COMBOSDETDataTable" msprop:Generator_TableVarName="tableCOMBOSDET" msprop:Generator_TablePropName="COMBOSDET" msprop:Generator_RowDeletingName="COMBOSDETRowDeleting" msprop:Generator_RowChangingName="COMBOSDETRowChanging" msprop:Generator_RowEvHandlerName="COMBOSDETRowChangeEventHandler" msprop:Generator_RowDeletedName="COMBOSDETRowDeleted" msprop:Generator_UserTableName="COMBOSDET" msprop:Generator_RowChangedName="COMBOSDETRowChanged" msprop:Generator_RowEvArgName="COMBOSDETRowChangeEvent" msprop:Generator_RowClassName="COMBOSDETRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SUBCODCODIGO" msprop:Generator_ColumnVarNameInTable="columnSUBCODCODIGO" msprop:Generator_ColumnPropNameInRow="SUBCODCODIGO" msprop:Generator_ColumnPropNameInTable="SUBCODCODIGOColumn" msprop:Generator_UserColumnName="SUBCODCODIGO" type="xs:int" minOccurs="0" />
+              <xs:element name="CANTIDAD" msprop:Generator_ColumnVarNameInTable="columnCANTIDAD" msprop:Generator_ColumnPropNameInRow="CANTIDAD" msprop:Generator_ColumnPropNameInTable="CANTIDADColumn" msprop:Generator_UserColumnName="CANTIDAD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnDESPRODUCTO" msprop:Generator_ColumnPropNameInRow="DESPRODUCTO" msprop:Generator_ColumnPropNameInTable="DESPRODUCTOColumn" msprop:Generator_UserColumnName="DESPRODUCTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnCODPRODUCTO" msprop:Generator_ColumnPropNameInRow="CODPRODUCTO" msprop:Generator_ColumnPropNameInTable="CODPRODUCTOColumn" msprop:Generator_UserColumnName="CODPRODUCTO" type="xs:int" minOccurs="0" />
+              <xs:element name="CODSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnCODSUCURSAL" msprop:Generator_ColumnPropNameInRow="CODSUCURSAL" msprop:Generator_ColumnPropNameInTable="CODSUCURSALColumn" msprop:Generator_UserColumnName="CODSUCURSAL" type="xs:int" minOccurs="0" />
+              <xs:element name="DESSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnDESSUCURSAL" msprop:Generator_ColumnPropNameInRow="DESSUCURSAL" msprop:Generator_ColumnPropNameInTable="DESSUCURSALColumn" msprop:Generator_UserColumnName="DESSUCURSAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IVA" msprop:Generator_TableClassName="IVADataTable" msprop:Generator_TableVarName="tableIVA" msprop:Generator_TablePropName="IVA" msprop:Generator_RowDeletingName="IVARowDeleting" msprop:Generator_RowChangingName="IVARowChanging" msprop:Generator_RowEvHandlerName="IVARowChangeEventHandler" msprop:Generator_RowDeletedName="IVARowDeleted" msprop:Generator_UserTableName="IVA" msprop:Generator_RowChangedName="IVARowChanged" msprop:Generator_RowEvArgName="IVARowChangeEvent" msprop:Generator_RowClassName="IVARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODIVA" msprop:Generator_ColumnVarNameInTable="columnCODIVA" msprop:Generator_ColumnPropNameInRow="CODIVA" msprop:Generator_ColumnPropNameInTable="CODIVAColumn" msprop:Generator_UserColumnName="CODIVA" type="xs:decimal" />
+              <xs:element name="DESIVA" msprop:Generator_ColumnVarNameInTable="columnDESIVA" msprop:Generator_ColumnPropNameInRow="DESIVA" msprop:Generator_ColumnPropNameInTable="DESIVAColumn" msprop:Generator_UserColumnName="DESIVA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UNIDADMEDIDA" msprop:Generator_TableClassName="UNIDADMEDIDADataTable" msprop:Generator_TableVarName="tableUNIDADMEDIDA" msprop:Generator_RowChangedName="UNIDADMEDIDARowChanged" msprop:Generator_TablePropName="UNIDADMEDIDA" msprop:Generator_RowDeletingName="UNIDADMEDIDARowDeleting" msprop:Generator_RowChangingName="UNIDADMEDIDARowChanging" msprop:Generator_RowEvHandlerName="UNIDADMEDIDARowChangeEventHandler" msprop:Generator_RowDeletedName="UNIDADMEDIDARowDeleted" msprop:Generator_RowClassName="UNIDADMEDIDARow" msprop:Generator_UserTableName="UNIDADMEDIDA" msprop:Generator_RowEvArgName="UNIDADMEDIDARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODMEDIDA" msprop:Generator_ColumnVarNameInTable="columnCODMEDIDA" msprop:Generator_ColumnPropNameInRow="CODMEDIDA" msprop:Generator_ColumnPropNameInTable="CODMEDIDAColumn" msprop:Generator_UserColumnName="CODMEDIDA" type="xs:decimal" />
+              <xs:element name="DESMEDIDA" msprop:Generator_ColumnVarNameInTable="columnDESMEDIDA" msprop:Generator_ColumnPropNameInRow="DESMEDIDA" msprop:Generator_ColumnPropNameInTable="DESMEDIDAColumn" msprop:Generator_UserColumnName="DESMEDIDA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LISTADEPRECIO" msprop:Generator_TableClassName="LISTADEPRECIODataTable" msprop:Generator_TableVarName="tableLISTADEPRECIO" msprop:Generator_RowChangedName="LISTADEPRECIORowChanged" msprop:Generator_TablePropName="LISTADEPRECIO" msprop:Generator_RowDeletingName="LISTADEPRECIORowDeleting" msprop:Generator_RowChangingName="LISTADEPRECIORowChanging" msprop:Generator_RowEvHandlerName="LISTADEPRECIORowChangeEventHandler" msprop:Generator_RowDeletedName="LISTADEPRECIORowDeleted" msprop:Generator_RowClassName="LISTADEPRECIORow" msprop:Generator_UserTableName="LISTADEPRECIO" msprop:Generator_RowEvArgName="LISTADEPRECIORowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODTIPOCLIENTE" msprop:Generator_ColumnVarNameInTable="columnCODTIPOCLIENTE" msprop:Generator_ColumnPropNameInRow="CODTIPOCLIENTE" msprop:Generator_ColumnPropNameInTable="CODTIPOCLIENTEColumn" msprop:Generator_UserColumnName="CODTIPOCLIENTE" type="xs:decimal" />
+              <xs:element name="DESTIPOCLIENTE" msprop:Generator_ColumnVarNameInTable="columnDESTIPOCLIENTE" msprop:Generator_ColumnPropNameInRow="DESTIPOCLIENTE" msprop:Generator_ColumnPropNameInTable="DESTIPOCLIENTEColumn" msprop:Generator_UserColumnName="DESTIPOCLIENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PRECIOSDET" msprop:Generator_TableClassName="PRECIOSDETDataTable" msprop:Generator_TableVarName="tablePRECIOSDET" msprop:Generator_TablePropName="PRECIOSDET" msprop:Generator_RowDeletingName="PRECIOSDETRowDeleting" msprop:Generator_RowChangingName="PRECIOSDETRowChanging" msprop:Generator_RowEvHandlerName="PRECIOSDETRowChangeEventHandler" msprop:Generator_RowDeletedName="PRECIOSDETRowDeleted" msprop:Generator_UserTableName="PRECIOSDET" msprop:Generator_RowChangedName="PRECIOSDETRowChanged" msprop:Generator_RowEvArgName="PRECIOSDETRowChangeEvent" msprop:Generator_RowClassName="PRECIOSDETRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DESTIPOCLIENTE" msprop:Generator_ColumnVarNameInTable="columnDESTIPOCLIENTE" msprop:Generator_ColumnPropNameInRow="DESTIPOCLIENTE" msprop:Generator_ColumnPropNameInTable="DESTIPOCLIENTEColumn" msprop:Generator_UserColumnName="DESTIPOCLIENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODTIPOCLIENTE" msprop:Generator_ColumnVarNameInTable="columnCODTIPOCLIENTE" msprop:Generator_ColumnPropNameInRow="CODTIPOCLIENTE" msprop:Generator_ColumnPropNameInTable="CODTIPOCLIENTEColumn" msprop:Generator_UserColumnName="CODTIPOCLIENTE" type="xs:decimal" />
+              <xs:element name="PRECIOVENTA" msprop:Generator_ColumnVarNameInTable="columnPRECIOVENTA" msprop:Generator_ColumnPropNameInRow="PRECIOVENTA" msprop:Generator_ColumnPropNameInTable="PRECIOVENTAColumn" msprop:Generator_UserColumnName="PRECIOVENTA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnCODPRODUCTO" msprop:Generator_ColumnPropNameInRow="CODPRODUCTO" msprop:Generator_ColumnPropNameInTable="CODPRODUCTOColumn" msprop:Generator_UserColumnName="CODPRODUCTO" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DEPOSITO" msprop:Generator_TableClassName="DEPOSITODataTable" msprop:Generator_TableVarName="tableDEPOSITO" msprop:Generator_TablePropName="DEPOSITO" msprop:Generator_RowDeletingName="DEPOSITORowDeleting" msprop:Generator_RowChangingName="DEPOSITORowChanging" msprop:Generator_RowEvHandlerName="DEPOSITORowChangeEventHandler" msprop:Generator_RowDeletedName="DEPOSITORowDeleted" msprop:Generator_UserTableName="DEPOSITO" msprop:Generator_RowChangedName="DEPOSITORowChanged" msprop:Generator_RowEvArgName="DEPOSITORowChangeEvent" msprop:Generator_RowClassName="DEPOSITORow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnCODSUCURSAL" msprop:Generator_ColumnPropNameInRow="CODSUCURSAL" msprop:Generator_ColumnPropNameInTable="CODSUCURSALColumn" msprop:Generator_UserColumnName="CODSUCURSAL" type="xs:int" />
+              <xs:element name="DESSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnDESSUCURSAL" msprop:Generator_ColumnPropNameInRow="DESSUCURSAL" msprop:Generator_ColumnPropNameInTable="DESSUCURSALColumn" msprop:Generator_UserColumnName="DESSUCURSAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TIPOSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnTIPOSUCURSAL" msprop:Generator_ColumnPropNameInRow="TIPOSUCURSAL" msprop:Generator_ColumnPropNameInTable="TIPOSUCURSALColumn" msprop:Generator_UserColumnName="TIPOSUCURSAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LISTACOMBOS" />
+      <xs:field xpath="mstns:CODPRODUCTO" />
+      <xs:field xpath="mstns:CODCODIGO" />
+    </xs:unique>
+    <xs:unique name="LISTAPRODUCTOS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LISTAPRODUCTOS" />
+      <xs:field xpath="mstns:CODCODIGO" />
+      <xs:field xpath="mstns:CODPRODUCTO" />
+    </xs:unique>
+    <xs:unique name="IVA_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:IVA" />
+      <xs:field xpath="mstns:CODIVA" />
+    </xs:unique>
+    <xs:unique name="UNIDADMEDIDA_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UNIDADMEDIDA" />
+      <xs:field xpath="mstns:CODMEDIDA" />
+    </xs:unique>
+    <xs:unique name="LISTADEPRECIO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LISTADEPRECIO" />
+      <xs:field xpath="mstns:CODTIPOCLIENTE" />
+    </xs:unique>
+    <xs:unique name="PRECIOSDET_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PRECIOSDET" />
+      <xs:field xpath="mstns:CODTIPOCLIENTE" />
+    </xs:unique>
+    <xs:unique name="DEPOSITO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DEPOSITO" />
+      <xs:field xpath="mstns:CODSUCURSAL" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_PRODUCTO_RELATIONS_IVA" msdata:parent="IVA" msdata:child="LISTACOMBOS" msdata:parentkey="CODIVA" msdata:childkey="CODIVA" msprop:Generator_UserChildTable="LISTACOMBOS" msprop:Generator_ChildPropName="GetLISTACOMBOSRows" msprop:Generator_UserRelationName="FK_PRODUCTO_RELATIONS_IVA" msprop:Generator_RelationVarName="relationFK_PRODUCTO_RELATIONS_IVA" msprop:Generator_UserParentTable="IVA" msprop:Generator_ParentPropName="IVARow" />
+      <msdata:Relationship name="FK_PRODUCTO_RELATIONS_UNIDADME" msdata:parent="UNIDADMEDIDA" msdata:child="LISTACOMBOS" msdata:parentkey="CODMEDIDA" msdata:childkey="CODMEDIDA" msprop:Generator_UserChildTable="LISTACOMBOS" msprop:Generator_ChildPropName="GetLISTACOMBOSRows" msprop:Generator_UserRelationName="FK_PRODUCTO_RELATIONS_UNIDADME" msprop:Generator_RelationVarName="relationFK_PRODUCTO_RELATIONS_UNIDADME" msprop:Generator_UserParentTable="UNIDADMEDIDA" msprop:Generator_ParentPropName="UNIDADMEDIDARow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

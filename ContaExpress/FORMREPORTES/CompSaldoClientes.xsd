@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CompSaldoClientes" targetNamespace="http://tempuri.org/CompSaldoClientes.xsd" xmlns:mstns="http://tempuri.org/CompSaldoClientes.xsd" xmlns="http://tempuri.org/CompSaldoClientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CLIENTES.CODCLIENTE, CLIENTES.NUMCLIENTE, CLIENTES.NOMBRE, CLIENTES.RUC, VENTAS.NUMVENTA, VENTAS.FECHAVENTA, VENTAS.TIPOVENTA, FACTURACOBRAR.SALDOCUOTA, 
+                         FACTURACOBRAR.FECHAVCTO, FACTURACOBRAR.CODNUMEROCUOTA, FACTURACOBRAR.TIPOFACTURA, CLIENTES.NOMBREFANTASIA
+FROM            CLIENTES RIGHT OUTER JOIN
+                         VENTAS ON CLIENTES.CODCLIENTE = VENTAS.CODCLIENTE RIGHT OUTER JOIN
+                         FACTURACOBRAR ON VENTAS.CODVENTA = FACTURACOBRAR.CODVENTA
+WHERE        (FACTURACOBRAR.SALDOCUOTA &lt;&gt; 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NUMCLIENTE" DataSetColumn="NUMCLIENTE" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="RUC" DataSetColumn="RUC" />
+              <Mapping SourceColumn="NUMVENTA" DataSetColumn="NUMVENTA" />
+              <Mapping SourceColumn="FECHAVENTA" DataSetColumn="FECHAVENTA" />
+              <Mapping SourceColumn="TIPOVENTA" DataSetColumn="TIPOVENTA" />
+              <Mapping SourceColumn="SALDOCUOTA" DataSetColumn="SALDOCUOTA" />
+              <Mapping SourceColumn="FECHAVCTO" DataSetColumn="FECHAVCTO" />
+              <Mapping SourceColumn="CODNUMEROCUOTA" DataSetColumn="CODNUMEROCUOTA" />
+              <Mapping SourceColumn="TIPOFACTURA" DataSetColumn="TIPOFACTURA" />
+              <Mapping SourceColumn="CODCLIENTE" DataSetColumn="CODCLIENTE1" />
+              <Mapping SourceColumn="NOMBREFANTASIA" DataSetColumn="NOMBREFANTASIA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CompSaldoClientes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CompSaldoClientes" msprop:Generator_UserDSName="CompSaldoClientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODCLIENTE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCLIENTE" msprop:Generator_ColumnPropNameInRow="CODCLIENTE" msprop:Generator_ColumnPropNameInTable="CODCLIENTEColumn" msprop:Generator_UserColumnName="CODCLIENTE" type="xs:int" />
+              <xs:element name="NUMCLIENTE" msprop:Generator_ColumnVarNameInTable="columnNUMCLIENTE" msprop:Generator_ColumnPropNameInRow="NUMCLIENTE" msprop:Generator_ColumnPropNameInTable="NUMCLIENTEColumn" msprop:Generator_UserColumnName="NUMCLIENTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUC" msprop:Generator_ColumnVarNameInTable="columnRUC" msprop:Generator_ColumnPropNameInRow="RUC" msprop:Generator_ColumnPropNameInTable="RUCColumn" msprop:Generator_UserColumnName="RUC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMVENTA" msprop:Generator_ColumnVarNameInTable="columnNUMVENTA" msprop:Generator_ColumnPropNameInRow="NUMVENTA" msprop:Generator_ColumnPropNameInTable="NUMVENTAColumn" msprop:Generator_UserColumnName="NUMVENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FECHAVENTA" msprop:Generator_ColumnVarNameInTable="columnFECHAVENTA" msprop:Generator_ColumnPropNameInRow="FECHAVENTA" msprop:Generator_ColumnPropNameInTable="FECHAVENTAColumn" msprop:Generator_UserColumnName="FECHAVENTA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TIPOVENTA" msprop:Generator_ColumnVarNameInTable="columnTIPOVENTA" msprop:Generator_ColumnPropNameInRow="TIPOVENTA" msprop:Generator_ColumnPropNameInTable="TIPOVENTAColumn" msprop:Generator_UserColumnName="TIPOVENTA" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="SALDOCUOTA" msprop:Generator_ColumnVarNameInTable="columnSALDOCUOTA" msprop:Generator_ColumnPropNameInRow="SALDOCUOTA" msprop:Generator_ColumnPropNameInTable="SALDOCUOTAColumn" msprop:Generator_UserColumnName="SALDOCUOTA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FECHAVCTO" msprop:Generator_ColumnVarNameInTable="columnFECHAVCTO" msprop:Generator_ColumnPropNameInRow="FECHAVCTO" msprop:Generator_ColumnPropNameInTable="FECHAVCTOColumn" msprop:Generator_UserColumnName="FECHAVCTO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CODNUMEROCUOTA" msprop:Generator_ColumnVarNameInTable="columnCODNUMEROCUOTA" msprop:Generator_ColumnPropNameInRow="CODNUMEROCUOTA" msprop:Generator_ColumnPropNameInTable="CODNUMEROCUOTAColumn" msprop:Generator_UserColumnName="CODNUMEROCUOTA" type="xs:int" minOccurs="0" />
+              <xs:element name="TIPOFACTURA" msprop:Generator_ColumnVarNameInTable="columnTIPOFACTURA" msprop:Generator_ColumnPropNameInRow="TIPOFACTURA" msprop:Generator_ColumnPropNameInTable="TIPOFACTURAColumn" msprop:Generator_UserColumnName="TIPOFACTURA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODCLIENTE1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msdata:Caption="CODCLIENTE" msprop:Generator_ColumnVarNameInTable="columnCODCLIENTE1" msprop:Generator_ColumnPropNameInRow="CODCLIENTE1" msprop:Generator_ColumnPropNameInTable="CODCLIENTE1Column" msprop:Generator_UserColumnName="CODCLIENTE1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOMBREFANTASIA" msprop:Generator_ColumnVarNameInTable="columnNOMBREFANTASIA" msprop:Generator_ColumnPropNameInRow="NOMBREFANTASIA" msprop:Generator_ColumnPropNameInTable="NOMBREFANTASIAColumn" msprop:Generator_UserColumnName="NOMBREFANTASIA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:CODCLIENTE" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:CODCLIENTE1" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

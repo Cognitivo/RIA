@@ -1,0 +1,42 @@
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\bin\Debug\Funciones.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\bin\Debug\Funciones.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\bin\Debug\Funciones.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\bin\Debug\BDConexión.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\bin\Debug\BDConexión.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\bin\Debug\BDConexión.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\obj\Debug\Funciones.vbprojResolveAssemblyReference.cache
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\obj\Debug\Funciones.Resources.resources
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\obj\Debug\Funciones.vbproj.GenerateResource.Cache
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\obj\Debug\Funciones.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\obj\Debug\Funciones.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\Funciones\obj\Debug\Funciones.pdb
+C:\Users\Javier\Desktop\RIA\Funciones\bin\Debug\Funciones.dll
+C:\Users\Javier\Desktop\RIA\Funciones\bin\Debug\Funciones.pdb
+C:\Users\Javier\Desktop\RIA\Funciones\bin\Debug\Funciones.xml
+C:\Users\Javier\Desktop\RIA\Funciones\bin\Debug\BDConexión.dll
+C:\Users\Javier\Desktop\RIA\Funciones\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Javier\Desktop\RIA\Funciones\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Javier\Desktop\RIA\Funciones\bin\Debug\BDConexión.pdb
+C:\Users\Javier\Desktop\RIA\Funciones\bin\Debug\BDConexión.xml
+C:\Users\Javier\Desktop\RIA\Funciones\obj\Debug\Funciones.vbprojResolveAssemblyReference.cache
+C:\Users\Javier\Desktop\RIA\Funciones\obj\Debug\Funciones.Resources.resources
+C:\Users\Javier\Desktop\RIA\Funciones\obj\Debug\Funciones.vbproj.GenerateResource.Cache
+C:\Users\Javier\Desktop\RIA\Funciones\obj\Debug\Funciones.dll
+C:\Users\Javier\Desktop\RIA\Funciones\obj\Debug\Funciones.xml
+C:\Users\Javier\Desktop\RIA\Funciones\obj\Debug\Funciones.pdb
+C:\Users\Yolanda\Desktop\RIA\Funciones\bin\Debug\Funciones.dll
+C:\Users\Yolanda\Desktop\RIA\Funciones\bin\Debug\Funciones.pdb
+C:\Users\Yolanda\Desktop\RIA\Funciones\bin\Debug\Funciones.xml
+C:\Users\Yolanda\Desktop\RIA\Funciones\bin\Debug\BDConexión.dll
+C:\Users\Yolanda\Desktop\RIA\Funciones\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Yolanda\Desktop\RIA\Funciones\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Yolanda\Desktop\RIA\Funciones\bin\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\RIA\Funciones\bin\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.vbprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.Resources.resources
+C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.dll
+C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.xml
+C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.pdb

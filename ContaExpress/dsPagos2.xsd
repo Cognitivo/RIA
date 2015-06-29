@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPagos2" targetNamespace="http://tempuri.org/dsPagos2.xsd" xmlns:mstns="http://tempuri.org/dsPagos2.xsd" xmlns="http://tempuri.org/dsPagos2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PagosHechosTableAdapter" GeneratorDataComponentClassName="PagosHechosTableAdapter" Name="PagosHechos" UserDataComponentName="PagosHechosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT 
+                         COMPRASFORMAPAGO.NRORECIBO, COMPRASFORMAPAGO.CODPAGO, COMPRASFORMAPAGO.CODCOMPRA, COMPRASFORMAPAGO.CODMONEDA, 
+                         COMPRASFORMAPAGO.COTIZACION1, COMPRASFORMAPAGO.COTIZACION2, COMPRASFORMAPAGO.IMPORTE, COMPRASFORMAPAGO.DESTIPOPAGO, 
+                         COMPRASFORMAPAGO.FECHAPAGO, COMPRASFORMAPAGO.CH_FECHADESDE, COMPRASFORMAPAGO.CH_FECHAHASTA, 
+                         COMPRASFORMAPAGO.CH_NROCHEQUE, COMPRASFORMAPAGO.CH_TIPOCHEQUE, COMPRASFORMAPAGO.CH_TA_TR_CODBANCO, 
+                         COMPRASFORMAPAGO.TA_CODTIPOTARJETA, COMPRASFORMAPAGO.TR_NROGIRO, COMPRASFORMAPAGO.ESTADO, COMPRASFORMAPAGO.CODUSUARIO, 
+                         COMPRASFORMAPAGO.CODEMPRESA, COMPRASFORMAPAGO.FEHAGRAFICO, COMPRASFORMAPAGO.CODMONEDALOCAL, 
+                         COMPRASFORMAPAGO.IMPORTEMONEDALOCAL, COMPRASFORMAPAGO.SALDO, COMPRASFORMAPAGO.NROCUOTA, COMPRASFORMAPAGO.id_apertura, 
+                         COMPRASFORMAPAGO.vuelto, COMPRASFORMAPAGO.NUMRETENCION, COMPRASFORMAPAGO.NUMDEVOLUCION, COMPRASFORMAPAGO.tr_numero, 
+                         COMPRASFORMAPAGO.tr_deb_cre, COMPRASFORMAPAGO.ch_librador, ISNULL(RTRIM(PROVEEDOR.NOMBRE), '') + ' ' + ISNULL(LTRIM(PROVEEDOR.APELLIDO), '') 
+                         AS PROVEEDOR, COMPRAS.NUMCOMPRA, COMPRASFORMAPAGO.CODTIPOPAGO
+FROM            COMPRASFORMAPAGO INNER JOIN
+                         COMPRAS ON COMPRASFORMAPAGO.CODCOMPRA = COMPRAS.CODCOMPRA INNER JOIN
+                         PROVEEDOR ON COMPRAS.CODPROVEEDOR = PROVEEDOR.CODPROVEEDOR
+						 where COMPRASFORMAPAGO.ESTADO &lt;&gt; 2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NRORECIBO" DataSetColumn="NRORECIBO" />
+              <Mapping SourceColumn="CODPAGO" DataSetColumn="CODPAGO" />
+              <Mapping SourceColumn="CODCOMPRA" DataSetColumn="CODCOMPRA" />
+              <Mapping SourceColumn="CODMONEDA" DataSetColumn="CODMONEDA" />
+              <Mapping SourceColumn="COTIZACION1" DataSetColumn="COTIZACION1" />
+              <Mapping SourceColumn="COTIZACION2" DataSetColumn="COTIZACION2" />
+              <Mapping SourceColumn="IMPORTE" DataSetColumn="IMPORTE" />
+              <Mapping SourceColumn="DESTIPOPAGO" DataSetColumn="DESTIPOPAGO" />
+              <Mapping SourceColumn="FECHAPAGO" DataSetColumn="FECHAPAGO" />
+              <Mapping SourceColumn="CH_FECHADESDE" DataSetColumn="CH_FECHADESDE" />
+              <Mapping SourceColumn="CH_FECHAHASTA" DataSetColumn="CH_FECHAHASTA" />
+              <Mapping SourceColumn="CH_NROCHEQUE" DataSetColumn="CH_NROCHEQUE" />
+              <Mapping SourceColumn="CH_TIPOCHEQUE" DataSetColumn="CH_TIPOCHEQUE" />
+              <Mapping SourceColumn="CH_TA_TR_CODBANCO" DataSetColumn="CH_TA_TR_CODBANCO" />
+              <Mapping SourceColumn="TA_CODTIPOTARJETA" DataSetColumn="TA_CODTIPOTARJETA" />
+              <Mapping SourceColumn="TR_NROGIRO" DataSetColumn="TR_NROGIRO" />
+              <Mapping SourceColumn="ESTADO" DataSetColumn="ESTADO" />
+              <Mapping SourceColumn="CODUSUARIO" DataSetColumn="CODUSUARIO" />
+              <Mapping SourceColumn="CODEMPRESA" DataSetColumn="CODEMPRESA" />
+              <Mapping SourceColumn="FEHAGRAFICO" DataSetColumn="FEHAGRAFICO" />
+              <Mapping SourceColumn="CODMONEDALOCAL" DataSetColumn="CODMONEDALOCAL" />
+              <Mapping SourceColumn="IMPORTEMONEDALOCAL" DataSetColumn="IMPORTEMONEDALOCAL" />
+              <Mapping SourceColumn="SALDO" DataSetColumn="SALDO" />
+              <Mapping SourceColumn="NROCUOTA" DataSetColumn="NROCUOTA" />
+              <Mapping SourceColumn="id_apertura" DataSetColumn="id_apertura" />
+              <Mapping SourceColumn="vuelto" DataSetColumn="vuelto" />
+              <Mapping SourceColumn="NUMRETENCION" DataSetColumn="NUMRETENCION" />
+              <Mapping SourceColumn="NUMDEVOLUCION" DataSetColumn="NUMDEVOLUCION" />
+              <Mapping SourceColumn="tr_numero" DataSetColumn="tr_numero" />
+              <Mapping SourceColumn="tr_deb_cre" DataSetColumn="tr_deb_cre" />
+              <Mapping SourceColumn="ch_librador" DataSetColumn="ch_librador" />
+              <Mapping SourceColumn="PROVEEDOR" DataSetColumn="PROVEEDOR" />
+              <Mapping SourceColumn="NUMCOMPRA" DataSetColumn="NUMCOMPRA" />
+              <Mapping SourceColumn="CODTIPOPAGO" DataSetColumn="CODTIPOPAGO" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT 
+                         COMPRASFORMAPAGO.NRORECIBO, COMPRASFORMAPAGO.CODPAGO, COMPRASFORMAPAGO.CODCOMPRA, COMPRASFORMAPAGO.CODMONEDA, 
+                         COMPRASFORMAPAGO.COTIZACION1, COMPRASFORMAPAGO.COTIZACION2, COMPRASFORMAPAGO.IMPORTE, COMPRASFORMAPAGO.DESTIPOPAGO, 
+                         COMPRASFORMAPAGO.FECHAPAGO, COMPRASFORMAPAGO.CH_FECHADESDE, COMPRASFORMAPAGO.CH_FECHAHASTA, 
+                         COMPRASFORMAPAGO.CH_NROCHEQUE, COMPRASFORMAPAGO.CH_TIPOCHEQUE, COMPRASFORMAPAGO.CH_TA_TR_CODBANCO, 
+                         COMPRASFORMAPAGO.TA_CODTIPOTARJETA, COMPRASFORMAPAGO.TR_NROGIRO, COMPRASFORMAPAGO.ESTADO, COMPRASFORMAPAGO.CODUSUARIO, 
+                         COMPRASFORMAPAGO.CODEMPRESA, COMPRASFORMAPAGO.FEHAGRAFICO, COMPRASFORMAPAGO.CODMONEDALOCAL, 
+                         COMPRASFORMAPAGO.IMPORTEMONEDALOCAL, COMPRASFORMAPAGO.SALDO, COMPRASFORMAPAGO.NROCUOTA, COMPRASFORMAPAGO.id_apertura, 
+                         COMPRASFORMAPAGO.vuelto, COMPRASFORMAPAGO.NUMRETENCION, COMPRASFORMAPAGO.NUMDEVOLUCION, COMPRASFORMAPAGO.tr_numero, 
+                         COMPRASFORMAPAGO.tr_deb_cre, COMPRASFORMAPAGO.ch_librador, ISNULL(RTRIM(PROVEEDOR.NOMBRE), '') + ' ' + ISNULL(LTRIM(PROVEEDOR.APELLIDO), '') 
+                         AS PROVEEDOR, COMPRAS.NUMCOMPRA, COMPRASFORMAPAGO.CODTIPOPAGO
+FROM            COMPRASFORMAPAGO INNER JOIN
+                         COMPRAS ON COMPRASFORMAPAGO.CODCOMPRA = COMPRAS.CODCOMPRA INNER JOIN
+                         PROVEEDOR ON COMPRAS.CODPROVEEDOR = PROVEEDOR.CODPROVEEDOR
+						 where COMPRASFORMAPAGO.ESTADO = 2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPagos2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPagos2" msprop:Generator_UserDSName="dsPagos2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PagosHechos" msprop:Generator_TableClassName="PagosHechosDataTable" msprop:Generator_TableVarName="tablePagosHechos" msprop:Generator_TablePropName="PagosHechos" msprop:Generator_RowDeletingName="PagosHechosRowDeleting" msprop:Generator_RowChangingName="PagosHechosRowChanging" msprop:Generator_RowEvHandlerName="PagosHechosRowChangeEventHandler" msprop:Generator_RowDeletedName="PagosHechosRowDeleted" msprop:Generator_UserTableName="PagosHechos" msprop:Generator_RowChangedName="PagosHechosRowChanged" msprop:Generator_RowEvArgName="PagosHechosRowChangeEvent" msprop:Generator_RowClassName="PagosHechosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NRORECIBO" msprop:Generator_ColumnVarNameInTable="columnNRORECIBO" msprop:Generator_ColumnPropNameInRow="NRORECIBO" msprop:Generator_ColumnPropNameInTable="NRORECIBOColumn" msprop:Generator_UserColumnName="NRORECIBO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODPAGO" msprop:Generator_ColumnVarNameInTable="columnCODPAGO" msprop:Generator_ColumnPropNameInRow="CODPAGO" msprop:Generator_ColumnPropNameInTable="CODPAGOColumn" msprop:Generator_UserColumnName="CODPAGO" type="xs:decimal" />
+              <xs:element name="CODCOMPRA" msprop:Generator_ColumnVarNameInTable="columnCODCOMPRA" msprop:Generator_ColumnPropNameInRow="CODCOMPRA" msprop:Generator_ColumnPropNameInTable="CODCOMPRAColumn" msprop:Generator_UserColumnName="CODCOMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODMONEDA" msprop:Generator_ColumnVarNameInTable="columnCODMONEDA" msprop:Generator_ColumnPropNameInRow="CODMONEDA" msprop:Generator_ColumnPropNameInTable="CODMONEDAColumn" msprop:Generator_UserColumnName="CODMONEDA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COTIZACION1" msprop:Generator_ColumnVarNameInTable="columnCOTIZACION1" msprop:Generator_ColumnPropNameInRow="COTIZACION1" msprop:Generator_ColumnPropNameInTable="COTIZACION1Column" msprop:Generator_UserColumnName="COTIZACION1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COTIZACION2" msprop:Generator_ColumnVarNameInTable="columnCOTIZACION2" msprop:Generator_ColumnPropNameInRow="COTIZACION2" msprop:Generator_ColumnPropNameInTable="COTIZACION2Column" msprop:Generator_UserColumnName="COTIZACION2" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTE" msprop:Generator_ColumnVarNameInTable="columnIMPORTE" msprop:Generator_ColumnPropNameInRow="IMPORTE" msprop:Generator_ColumnPropNameInTable="IMPORTEColumn" msprop:Generator_UserColumnName="IMPORTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DESTIPOPAGO" msprop:Generator_ColumnVarNameInTable="columnDESTIPOPAGO" msprop:Generator_ColumnPropNameInRow="DESTIPOPAGO" msprop:Generator_ColumnPropNameInTable="DESTIPOPAGOColumn" msprop:Generator_UserColumnName="DESTIPOPAGO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FECHAPAGO" msprop:Generator_ColumnVarNameInTable="columnFECHAPAGO" msprop:Generator_ColumnPropNameInRow="FECHAPAGO" msprop:Generator_ColumnPropNameInTable="FECHAPAGOColumn" msprop:Generator_UserColumnName="FECHAPAGO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CH_FECHADESDE" msprop:Generator_ColumnVarNameInTable="columnCH_FECHADESDE" msprop:Generator_ColumnPropNameInRow="CH_FECHADESDE" msprop:Generator_ColumnPropNameInTable="CH_FECHADESDEColumn" msprop:Generator_UserColumnName="CH_FECHADESDE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CH_FECHAHASTA" msprop:Generator_ColumnVarNameInTable="columnCH_FECHAHASTA" msprop:Generator_ColumnPropNameInRow="CH_FECHAHASTA" msprop:Generator_ColumnPropNameInTable="CH_FECHAHASTAColumn" msprop:Generator_UserColumnName="CH_FECHAHASTA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CH_NROCHEQUE" msprop:Generator_ColumnVarNameInTable="columnCH_NROCHEQUE" msprop:Generator_ColumnPropNameInRow="CH_NROCHEQUE" msprop:Generator_ColumnPropNameInTable="CH_NROCHEQUEColumn" msprop:Generator_UserColumnName="CH_NROCHEQUE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CH_TIPOCHEQUE" msprop:Generator_ColumnVarNameInTable="columnCH_TIPOCHEQUE" msprop:Generator_ColumnPropNameInRow="CH_TIPOCHEQUE" msprop:Generator_ColumnPropNameInTable="CH_TIPOCHEQUEColumn" msprop:Generator_UserColumnName="CH_TIPOCHEQUE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CH_TA_TR_CODBANCO" msprop:Generator_ColumnVarNameInTable="columnCH_TA_TR_CODBANCO" msprop:Generator_ColumnPropNameInRow="CH_TA_TR_CODBANCO" msprop:Generator_ColumnPropNameInTable="CH_TA_TR_CODBANCOColumn" msprop:Generator_UserColumnName="CH_TA_TR_CODBANCO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TA_CODTIPOTARJETA" msprop:Generator_ColumnVarNameInTable="columnTA_CODTIPOTARJETA" msprop:Generator_ColumnPropNameInRow="TA_CODTIPOTARJETA" msprop:Generator_ColumnPropNameInTable="TA_CODTIPOTARJETAColumn" msprop:Generator_UserColumnName="TA_CODTIPOTARJETA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TR_NROGIRO" msprop:Generator_ColumnVarNameInTable="columnTR_NROGIRO" msprop:Generator_ColumnPropNameInRow="TR_NROGIRO" msprop:Generator_ColumnPropNameInTable="TR_NROGIROColumn" msprop:Generator_UserColumnName="TR_NROGIRO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_UserColumnName="ESTADO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODUSUARIO" msprop:Generator_ColumnVarNameInTable="columnCODUSUARIO" msprop:Generator_ColumnPropNameInRow="CODUSUARIO" msprop:Generator_ColumnPropNameInTable="CODUSUARIOColumn" msprop:Generator_UserColumnName="CODUSUARIO" type="xs:int" minOccurs="0" />
+              <xs:element name="CODEMPRESA" msprop:Generator_ColumnVarNameInTable="columnCODEMPRESA" msprop:Generator_ColumnPropNameInRow="CODEMPRESA" msprop:Generator_ColumnPropNameInTable="CODEMPRESAColumn" msprop:Generator_UserColumnName="CODEMPRESA" type="xs:int" minOccurs="0" />
+              <xs:element name="FEHAGRAFICO" msprop:Generator_ColumnVarNameInTable="columnFEHAGRAFICO" msprop:Generator_ColumnPropNameInRow="FEHAGRAFICO" msprop:Generator_ColumnPropNameInTable="FEHAGRAFICOColumn" msprop:Generator_UserColumnName="FEHAGRAFICO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODMONEDALOCAL" msprop:Generator_ColumnVarNameInTable="columnCODMONEDALOCAL" msprop:Generator_ColumnPropNameInRow="CODMONEDALOCAL" msprop:Generator_ColumnPropNameInTable="CODMONEDALOCALColumn" msprop:Generator_UserColumnName="CODMONEDALOCAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTEMONEDALOCAL" msprop:Generator_ColumnVarNameInTable="columnIMPORTEMONEDALOCAL" msprop:Generator_ColumnPropNameInRow="IMPORTEMONEDALOCAL" msprop:Generator_ColumnPropNameInTable="IMPORTEMONEDALOCALColumn" msprop:Generator_UserColumnName="IMPORTEMONEDALOCAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SALDO" msprop:Generator_ColumnVarNameInTable="columnSALDO" msprop:Generator_ColumnPropNameInRow="SALDO" msprop:Generator_ColumnPropNameInTable="SALDOColumn" msprop:Generator_UserColumnName="SALDO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NROCUOTA" msprop:Generator_ColumnVarNameInTable="columnNROCUOTA" msprop:Generator_ColumnPropNameInRow="NROCUOTA" msprop:Generator_ColumnPropNameInTable="NROCUOTAColumn" msprop:Generator_UserColumnName="NROCUOTA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id_apertura" msprop:Generator_ColumnVarNameInTable="columnid_apertura" msprop:Generator_ColumnPropNameInRow="id_apertura" msprop:Generator_ColumnPropNameInTable="id_aperturaColumn" msprop:Generator_UserColumnName="id_apertura" type="xs:int" minOccurs="0" />
+              <xs:element name="vuelto" msprop:Generator_ColumnVarNameInTable="columnvuelto" msprop:Generator_ColumnPropNameInRow="vuelto" msprop:Generator_ColumnPropNameInTable="vueltoColumn" msprop:Generator_UserColumnName="vuelto" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="NUMRETENCION" msprop:Generator_ColumnVarNameInTable="columnNUMRETENCION" msprop:Generator_ColumnPropNameInRow="NUMRETENCION" msprop:Generator_ColumnPropNameInTable="NUMRETENCIONColumn" msprop:Generator_UserColumnName="NUMRETENCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMDEVOLUCION" msprop:Generator_ColumnVarNameInTable="columnNUMDEVOLUCION" msprop:Generator_ColumnPropNameInRow="NUMDEVOLUCION" msprop:Generator_ColumnPropNameInTable="NUMDEVOLUCIONColumn" msprop:Generator_UserColumnName="NUMDEVOLUCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tr_numero" msprop:Generator_ColumnVarNameInTable="columntr_numero" msprop:Generator_ColumnPropNameInRow="tr_numero" msprop:Generator_ColumnPropNameInTable="tr_numeroColumn" msprop:Generator_UserColumnName="tr_numero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tr_deb_cre" msprop:Generator_ColumnVarNameInTable="columntr_deb_cre" msprop:Generator_ColumnPropNameInRow="tr_deb_cre" msprop:Generator_ColumnPropNameInTable="tr_deb_creColumn" msprop:Generator_UserColumnName="tr_deb_cre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ch_librador" msprop:Generator_ColumnVarNameInTable="columnch_librador" msprop:Generator_ColumnPropNameInRow="ch_librador" msprop:Generator_ColumnPropNameInTable="ch_libradorColumn" msprop:Generator_UserColumnName="ch_librador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROVEEDOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPROVEEDOR" msprop:Generator_ColumnPropNameInRow="PROVEEDOR" msprop:Generator_ColumnPropNameInTable="PROVEEDORColumn" msprop:Generator_UserColumnName="PROVEEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="151" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMCOMPRA" msprop:Generator_ColumnVarNameInTable="columnNUMCOMPRA" msprop:Generator_ColumnPropNameInRow="NUMCOMPRA" msprop:Generator_ColumnPropNameInTable="NUMCOMPRAColumn" msprop:Generator_UserColumnName="NUMCOMPRA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODTIPOPAGO" msprop:Generator_ColumnVarNameInTable="columnCODTIPOPAGO" msprop:Generator_ColumnPropNameInRow="CODTIPOPAGO" msprop:Generator_ColumnPropNameInTable="CODTIPOPAGOColumn" msprop:Generator_UserColumnName="CODTIPOPAGO" type="xs:unsignedByte" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PagosHechos" />
+      <xs:field xpath="mstns:CODPAGO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

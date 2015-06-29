@@ -1,0 +1,51 @@
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\EnviaInformes.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\EnviaInformes.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\EnviaInformes.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\BDConexión.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\Funciones.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\BDConexión.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\BDConexión.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\Funciones.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\bin\Debug\Funciones.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\obj\Debug\EnviaInformes.vbprojResolveAssemblyReference.cache
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\obj\Debug\EnviaInformes.Resources.resources
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\obj\Debug\EnviaInformes.vbproj.GenerateResource.Cache
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\obj\Debug\EnviaInformes.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\obj\Debug\EnviaInformes.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\EnviaInformes\obj\Debug\EnviaInformes.pdb
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\EnviaInformes.dll
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\EnviaInformes.pdb
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\EnviaInformes.xml
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\BDConexión.dll
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\Funciones.dll
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\BDConexión.pdb
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\BDConexión.xml
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\Funciones.pdb
+C:\Users\Javier\Desktop\RIA\EnviaInformes\bin\Debug\Funciones.xml
+C:\Users\Javier\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.vbprojResolveAssemblyReference.cache
+C:\Users\Javier\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.Resources.resources
+C:\Users\Javier\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.vbproj.GenerateResource.Cache
+C:\Users\Javier\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.dll
+C:\Users\Javier\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.xml
+C:\Users\Javier\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.pdb
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\EnviaInformes.dll
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\EnviaInformes.pdb
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\EnviaInformes.xml
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\BDConexión.dll
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\Funciones.dll
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\Funciones.pdb
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\bin\Debug\Funciones.xml
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.vbprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.Resources.resources
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.dll
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.xml
+C:\Users\Yolanda\Desktop\RIA\EnviaInformes\obj\Debug\EnviaInformes.pdb

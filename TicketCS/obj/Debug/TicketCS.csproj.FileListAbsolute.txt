@@ -1,0 +1,15 @@
+C:\Users\Javier\Desktop\Nuevo Proyecto\TicketCS\bin\Debug\TicketCS.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\TicketCS\bin\Debug\TicketCS.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\TicketCS\obj\Debug\TicketCS.csprojResolveAssemblyReference.cache
+C:\Users\Javier\Desktop\Nuevo Proyecto\TicketCS\obj\Debug\TicketCS.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\TicketCS\obj\Debug\TicketCS.pdb
+C:\Users\Javier\Desktop\RIA\TicketCS\bin\Debug\TicketCS.dll
+C:\Users\Javier\Desktop\RIA\TicketCS\bin\Debug\TicketCS.pdb
+C:\Users\Javier\Desktop\RIA\TicketCS\obj\Debug\TicketCS.dll
+C:\Users\Javier\Desktop\RIA\TicketCS\obj\Debug\TicketCS.pdb
+C:\Users\Javier\Desktop\RIA\TicketCS\obj\Debug\TicketCS.csprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\RIA\TicketCS\bin\Debug\TicketCS.dll
+C:\Users\Yolanda\Desktop\RIA\TicketCS\bin\Debug\TicketCS.pdb
+C:\Users\Yolanda\Desktop\RIA\TicketCS\obj\Debug\TicketCS.csprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\RIA\TicketCS\obj\Debug\TicketCS.dll
+C:\Users\Yolanda\Desktop\RIA\TicketCS\obj\Debug\TicketCS.pdb

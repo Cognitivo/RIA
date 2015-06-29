@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsRVClientes" targetNamespace="http://tempuri.org/DsRVClientes.xsd" xmlns:mstns="http://tempuri.org/DsRVClientes.xsd" xmlns="http://tempuri.org/DsRVClientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RVListaClientesTableAdapter" GeneratorDataComponentClassName="RVListaClientesTableAdapter" Name="RVListaClientes" UserDataComponentName="RVListaClientesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CLIENTES.NUMCLIENTE, CLIENTES.NOMBRE + ' / ' + CLIENTES.NOMBREFANTASIA AS NOMBRECLIENTE, CLIENTES.DIRECCION, CLIENTES.TELEFONO, PAIS.DESPAIS, CIUDAD.DESCIUDAD, ZONA.DESZONA, 
+                         CLIENTES.CODCLIENTE, VENDEDOR.NUMVENDEDOR, VENDEDOR.DESVENDEDOR, CLIENTES.RUC, CATEGORIACLIENTE.DESCATEGORIACLIENTE, CATEGORIACLIENTE.CODCATEGORIACLIENTE, 
+                         VENDEDOR.CODVENDEDOR
+FROM            CLIENTES LEFT OUTER JOIN
+                         CATEGORIACLIENTE ON CLIENTES.CODCATEGORIACLIENTE = CATEGORIACLIENTE.CODCATEGORIACLIENTE LEFT OUTER JOIN
+                         VENDEDOR ON CLIENTES.CODVENDEDOR = VENDEDOR.CODVENDEDOR LEFT OUTER JOIN
+                         PAIS ON CLIENTES.CODDEPARTAMENTO = PAIS.CODPAIS LEFT OUTER JOIN
+                         ZONA ON CLIENTES.CODZONA = ZONA.CODZONA LEFT OUTER JOIN
+                         CIUDAD ON ZONA.CODCIUDAD = CIUDAD.CODCIUDAD AND CLIENTES.CODCIUDAD = CIUDAD.CODCIUDAD AND PAIS.CODPAIS = CIUDAD.CODPAIS
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NUMCLIENTE" DataSetColumn="NUMCLIENTE" />
+              <Mapping SourceColumn="DIRECCION" DataSetColumn="DIRECCION" />
+              <Mapping SourceColumn="TELEFONO" DataSetColumn="TELEFONO" />
+              <Mapping SourceColumn="DESPAIS" DataSetColumn="DESPAIS" />
+              <Mapping SourceColumn="DESCIUDAD" DataSetColumn="DESCIUDAD" />
+              <Mapping SourceColumn="DESZONA" DataSetColumn="DESZONA" />
+              <Mapping SourceColumn="CODCLIENTE" DataSetColumn="CODCLIENTE" />
+              <Mapping SourceColumn="NUMVENDEDOR" DataSetColumn="NUMVENDEDOR" />
+              <Mapping SourceColumn="DESVENDEDOR" DataSetColumn="DESVENDEDOR" />
+              <Mapping SourceColumn="RUC" DataSetColumn="RUC" />
+              <Mapping SourceColumn="DESCATEGORIACLIENTE" DataSetColumn="DESCATEGORIACLIENTE" />
+              <Mapping SourceColumn="CODCATEGORIACLIENTE" DataSetColumn="CODCATEGORIACLIENTE" />
+              <Mapping SourceColumn="NOMBRECLIENTE" DataSetColumn="NOMBRECLIENTE" />
+              <Mapping SourceColumn="CODVENDEDOR" DataSetColumn="CODVENDEDOR" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RVHistoricoClienteTableAdapter" GeneratorDataComponentClassName="RVHistoricoClienteTableAdapter" Name="RVHistoricoCliente" UserDataComponentName="RVHistoricoClienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.CLIENTESCUENTACORRIENTE.CONCEPTO, dbo.CLIENTESCUENTACORRIENTE.DEBE, dbo.CLIENTESCUENTACORRIENTE.HABER, 
+                         dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV, dbo.CLIENTES.NUMCLIENTE, dbo.CLIENTES.NOMBRE, dbo.CLIENTES.NOMBREFANTASIA, 
+                         dbo.VENTAS.MOTIVOANULADO, dbo.CLIENTESCUENTACORRIENTE.CODVENTA, dbo.CLIENTESCUENTACORRIENTE.CODCOBRO, 
+                         dbo.CLIENTESCUENTACORRIENTE.CODDEVOLUCION, dbo.VENTAS.NUMVENTA, dbo.VENTASFORMACOBRO.NRORECIBO
+FROM            dbo.CLIENTESCUENTACORRIENTE INNER JOIN
+                         dbo.CLIENTES ON dbo.CLIENTESCUENTACORRIENTE.CODCLIENTE = dbo.CLIENTES.CODCLIENTE LEFT OUTER JOIN
+                         dbo.VENTASFORMACOBRO ON dbo.CLIENTESCUENTACORRIENTE.CODCOBRO = dbo.VENTASFORMACOBRO.CODCOBRO LEFT OUTER JOIN
+                         dbo.VENTAS ON dbo.CLIENTESCUENTACORRIENTE.CODVENTA = dbo.VENTAS.CODVENTA
+WHERE        (dbo.CLIENTES.CODCLIENTE = @CODCLIENTE) and  (dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV &gt;= @FECHAINI) AND (dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV &lt;= @FECHAFIN)
+GROUP BY dbo.CLIENTESCUENTACORRIENTE.CODVENTA, dbo.CLIENTESCUENTACORRIENTE.CONCEPTO, dbo.CLIENTESCUENTACORRIENTE.DEBE, 
+                         dbo.CLIENTESCUENTACORRIENTE.HABER, dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV, dbo.CLIENTES.NUMCLIENTE, dbo.CLIENTES.NOMBRE, 
+                         dbo.CLIENTES.NOMBREFANTASIA, dbo.VENTAS.MOTIVOANULADO, dbo.CLIENTESCUENTACORRIENTE.CODCOBRO, 
+                         dbo.CLIENTESCUENTACORRIENTE.CODDEVOLUCION, dbo.VENTAS.NUMVENTA, dbo.VENTASFORMACOBRO.NRORECIBO
+ORDER BY dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CODCLIENTE" ColumnName="CODCLIENTE" DataSourceName="GuazuNuevoFebrero.dbo.CLIENTES" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@CODCLIENTE" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="CODCLIENTE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHAINI" ColumnName="FECHACLIENTEMOV" DataSourceName="GuazuNuevoFebrero.dbo.CLIENTESCUENTACORRIENTE" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FECHAINI" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACLIENTEMOV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHAFIN" ColumnName="FECHACLIENTEMOV" DataSourceName="GuazuNuevoFebrero.dbo.CLIENTESCUENTACORRIENTE" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FECHAFIN" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACLIENTEMOV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CONCEPTO" DataSetColumn="CONCEPTO" />
+              <Mapping SourceColumn="DEBE" DataSetColumn="DEBE" />
+              <Mapping SourceColumn="HABER" DataSetColumn="HABER" />
+              <Mapping SourceColumn="FECHACLIENTEMOV" DataSetColumn="FECHACLIENTEMOV" />
+              <Mapping SourceColumn="NUMCLIENTE" DataSetColumn="NUMCLIENTE" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="NOMBREFANTASIA" DataSetColumn="NOMBREFANTASIA" />
+              <Mapping SourceColumn="MOTIVOANULADO" DataSetColumn="MOTIVOANULADO" />
+              <Mapping SourceColumn="CODVENTA" DataSetColumn="CODVENTA" />
+              <Mapping SourceColumn="CODCOBRO" DataSetColumn="CODCOBRO" />
+              <Mapping SourceColumn="CODDEVOLUCION" DataSetColumn="CODDEVOLUCION" />
+              <Mapping SourceColumn="NUMVENTA" DataSetColumn="NUMVENTA" />
+              <Mapping SourceColumn="NRORECIBO" DataSetColumn="NRORECIBO" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.CLIENTESCUENTACORRIENTE.CONCEPTO, dbo.CLIENTESCUENTACORRIENTE.DEBE, dbo.CLIENTESCUENTACORRIENTE.HABER, 
+                         dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV, dbo.CLIENTES.NUMCLIENTE, dbo.CLIENTES.NOMBRE, dbo.CLIENTES.NOMBREFANTASIA, 
+                         dbo.VENTAS.MOTIVOANULADO, dbo.CLIENTESCUENTACORRIENTE.CODVENTA, dbo.CLIENTESCUENTACORRIENTE.CODCOBRO, 
+                         dbo.CLIENTESCUENTACORRIENTE.CODDEVOLUCION, dbo.VENTAS.NUMVENTA, dbo.VENTASFORMACOBRO.NRORECIBO
+FROM            dbo.CLIENTESCUENTACORRIENTE INNER JOIN
+                         dbo.CLIENTES ON dbo.CLIENTESCUENTACORRIENTE.CODCLIENTE = dbo.CLIENTES.CODCLIENTE LEFT OUTER JOIN
+                         dbo.VENTASFORMACOBRO ON dbo.CLIENTESCUENTACORRIENTE.CODCOBRO = dbo.VENTASFORMACOBRO.CODCOBRO LEFT OUTER JOIN
+                         dbo.VENTAS ON dbo.CLIENTESCUENTACORRIENTE.CODVENTA = dbo.VENTAS.CODVENTA
+WHERE          (dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV &gt;= @FECHAINI) AND (dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV &lt;= @FECHAFIN)
+GROUP BY dbo.CLIENTESCUENTACORRIENTE.CODVENTA, dbo.CLIENTESCUENTACORRIENTE.CONCEPTO, dbo.CLIENTESCUENTACORRIENTE.DEBE, 
+                         dbo.CLIENTESCUENTACORRIENTE.HABER, dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV, dbo.CLIENTES.NUMCLIENTE, dbo.CLIENTES.NOMBRE, 
+                         dbo.CLIENTES.NOMBREFANTASIA, dbo.VENTAS.MOTIVOANULADO, dbo.CLIENTESCUENTACORRIENTE.CODCOBRO, 
+                         dbo.CLIENTESCUENTACORRIENTE.CODDEVOLUCION, dbo.VENTAS.NUMVENTA, dbo.VENTASFORMACOBRO.NRORECIBO
+ORDER BY dbo.CLIENTESCUENTACORRIENTE.FECHACLIENTEMOV</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHAINI" ColumnName="FECHACLIENTEMOV" DataSourceName="GuazuNuevoFebrero.dbo.CLIENTESCUENTACORRIENTE" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FECHAINI" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACLIENTEMOV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHAFIN" ColumnName="FECHACLIENTEMOV" DataSourceName="GuazuNuevoFebrero.dbo.CLIENTESCUENTACORRIENTE" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FECHAFIN" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACLIENTEMOV" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RVProyeccionCobranzaTableAdapter" GeneratorDataComponentClassName="RVProyeccionCobranzaTableAdapter" Name="RVProyeccionCobranza" UserDataComponentName="RVProyeccionCobranzaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   MONTH(dbo.FACTURACOBRAR.FECHAVCTO) AS MES, SUM(dbo.FACTURACOBRAR.SALDOCUOTA) AS SALDOCUOTA, 
+                         dbo.FACTURACOBRAR.IDCLIENTE, dbo.CLIENTES.NOMBRE
+FROM            dbo.FACTURACOBRAR INNER JOIN
+                         dbo.CLIENTES ON dbo.FACTURACOBRAR.IDCLIENTE = dbo.CLIENTES.CODCLIENTE
+GROUP BY MONTH(dbo.FACTURACOBRAR.FECHAVCTO), dbo.FACTURACOBRAR.IDCLIENTE, dbo.CLIENTES.NOMBRE
+ORDER BY MES</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MES" DataSetColumn="MES" />
+              <Mapping SourceColumn="SALDOCUOTA" DataSetColumn="SALDOCUOTA" />
+              <Mapping SourceColumn="IDCLIENTE" DataSetColumn="IDCLIENTE" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CompSaldoClienteTableAdapter" GeneratorDataComponentClassName="CompSaldoClienteTableAdapter" Name="CompSaldoCliente" UserDataComponentName="CompSaldoClienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CLIENTES.CODCLIENTE, CLIENTES.NUMCLIENTE, CLIENTES.NOMBRE, CLIENTES.RUC, VENTAS.NUMVENTA, VENTAS.FECHAVENTA, VENTAS.TIPOVENTA, FACTURACOBRAR.SALDOCUOTA, 
+                         FACTURACOBRAR.FECHAVCTO, FACTURACOBRAR.CODNUMEROCUOTA, FACTURACOBRAR.TIPOFACTURA, CLIENTES.NOMBREFANTASIA
+FROM            CLIENTES RIGHT OUTER JOIN
+                         VENTAS ON CLIENTES.CODCLIENTE = VENTAS.CODCLIENTE RIGHT OUTER JOIN
+                         FACTURACOBRAR ON VENTAS.CODVENTA = FACTURACOBRAR.CODVENTA
+WHERE        (FACTURACOBRAR.SALDOCUOTA &lt;&gt; 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODCLIENTE" DataSetColumn="CODCLIENTE" />
+              <Mapping SourceColumn="NUMCLIENTE" DataSetColumn="NUMCLIENTE" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="RUC" DataSetColumn="RUC" />
+              <Mapping SourceColumn="NUMVENTA" DataSetColumn="NUMVENTA" />
+              <Mapping SourceColumn="FECHAVENTA" DataSetColumn="FECHAVENTA" />
+              <Mapping SourceColumn="TIPOVENTA" DataSetColumn="TIPOVENTA" />
+              <Mapping SourceColumn="SALDOCUOTA" DataSetColumn="SALDOCUOTA" />
+              <Mapping SourceColumn="FECHAVCTO" DataSetColumn="FECHAVCTO" />
+              <Mapping SourceColumn="CODNUMEROCUOTA" DataSetColumn="CODNUMEROCUOTA" />
+              <Mapping SourceColumn="TIPOFACTURA" DataSetColumn="TIPOFACTURA" />
+              <Mapping SourceColumn="NOMBREFANTASIA" DataSetColumn="NOMBREFANTASIA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsRVClientes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DsRVClientes" msprop:Generator_UserDSName="DsRVClientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RVListaClientes" msprop:Generator_TableClassName="RVListaClientesDataTable" msprop:Generator_TableVarName="tableRVListaClientes" msprop:Generator_RowChangedName="RVListaClientesRowChanged" msprop:Generator_TablePropName="RVListaClientes" msprop:Generator_RowDeletingName="RVListaClientesRowDeleting" msprop:Generator_RowChangingName="RVListaClientesRowChanging" msprop:Generator_RowEvHandlerName="RVListaClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="RVListaClientesRowDeleted" msprop:Generator_RowClassName="RVListaClientesRow" msprop:Generator_UserTableName="RVListaClientes" msprop:Generator_RowEvArgName="RVListaClientesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NUMCLIENTE" msprop:Generator_ColumnVarNameInTable="columnNUMCLIENTE" msprop:Generator_ColumnPropNameInRow="NUMCLIENTE" msprop:Generator_ColumnPropNameInTable="NUMCLIENTEColumn" msprop:Generator_UserColumnName="NUMCLIENTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DIRECCION" msprop:Generator_ColumnVarNameInTable="columnDIRECCION" msprop:Generator_ColumnPropNameInRow="DIRECCION" msprop:Generator_ColumnPropNameInTable="DIRECCIONColumn" msprop:Generator_UserColumnName="DIRECCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TELEFONO" msprop:Generator_ColumnVarNameInTable="columnTELEFONO" msprop:Generator_ColumnPropNameInRow="TELEFONO" msprop:Generator_ColumnPropNameInTable="TELEFONOColumn" msprop:Generator_UserColumnName="TELEFONO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESPAIS" msprop:Generator_ColumnVarNameInTable="columnDESPAIS" msprop:Generator_ColumnPropNameInRow="DESPAIS" msprop:Generator_ColumnPropNameInTable="DESPAISColumn" msprop:Generator_UserColumnName="DESPAIS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCIUDAD" msprop:Generator_ColumnVarNameInTable="columnDESCIUDAD" msprop:Generator_ColumnPropNameInRow="DESCIUDAD" msprop:Generator_ColumnPropNameInTable="DESCIUDADColumn" msprop:Generator_UserColumnName="DESCIUDAD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESZONA" msprop:Generator_ColumnVarNameInTable="columnDESZONA" msprop:Generator_ColumnPropNameInRow="DESZONA" msprop:Generator_ColumnPropNameInTable="DESZONAColumn" msprop:Generator_UserColumnName="DESZONA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODCLIENTE" msprop:Generator_ColumnVarNameInTable="columnCODCLIENTE" msprop:Generator_ColumnPropNameInRow="CODCLIENTE" msprop:Generator_ColumnPropNameInTable="CODCLIENTEColumn" msprop:Generator_UserColumnName="CODCLIENTE" type="xs:decimal" />
+              <xs:element name="NUMVENDEDOR" msprop:Generator_ColumnVarNameInTable="columnNUMVENDEDOR" msprop:Generator_ColumnPropNameInRow="NUMVENDEDOR" msprop:Generator_ColumnPropNameInTable="NUMVENDEDORColumn" msprop:Generator_UserColumnName="NUMVENDEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESVENDEDOR" msprop:Generator_ColumnVarNameInTable="columnDESVENDEDOR" msprop:Generator_ColumnPropNameInRow="DESVENDEDOR" msprop:Generator_ColumnPropNameInTable="DESVENDEDORColumn" msprop:Generator_UserColumnName="DESVENDEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUC" msprop:Generator_ColumnVarNameInTable="columnRUC" msprop:Generator_ColumnPropNameInRow="RUC" msprop:Generator_ColumnPropNameInTable="RUCColumn" msprop:Generator_UserColumnName="RUC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCATEGORIACLIENTE" msprop:Generator_ColumnVarNameInTable="columnDESCATEGORIACLIENTE" msprop:Generator_ColumnPropNameInRow="DESCATEGORIACLIENTE" msprop:Generator_ColumnPropNameInTable="DESCATEGORIACLIENTEColumn" msprop:Generator_UserColumnName="DESCATEGORIACLIENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODCATEGORIACLIENTE" msprop:Generator_ColumnVarNameInTable="columnCODCATEGORIACLIENTE" msprop:Generator_ColumnPropNameInRow="CODCATEGORIACLIENTE" msprop:Generator_ColumnPropNameInTable="CODCATEGORIACLIENTEColumn" msprop:Generator_UserColumnName="CODCATEGORIACLIENTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODVENDEDOR" msprop:Generator_ColumnVarNameInTable="columnCODVENDEDOR" msprop:Generator_ColumnPropNameInRow="CODVENDEDOR" msprop:Generator_ColumnPropNameInTable="CODVENDEDORColumn" msprop:Generator_UserColumnName="CODVENDEDOR" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOMBRECLIENTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOMBRECLIENTE" msprop:Generator_ColumnPropNameInRow="NOMBRECLIENTE" msprop:Generator_ColumnPropNameInTable="NOMBRECLIENTEColumn" msprop:Generator_UserColumnName="NOMBRECLIENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="133" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RVHistoricoCliente" msprop:Generator_TableClassName="RVHistoricoClienteDataTable" msprop:Generator_TableVarName="tableRVHistoricoCliente" msprop:Generator_RowChangedName="RVHistoricoClienteRowChanged" msprop:Generator_TablePropName="RVHistoricoCliente" msprop:Generator_RowDeletingName="RVHistoricoClienteRowDeleting" msprop:Generator_RowChangingName="RVHistoricoClienteRowChanging" msprop:Generator_RowEvHandlerName="RVHistoricoClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="RVHistoricoClienteRowDeleted" msprop:Generator_RowClassName="RVHistoricoClienteRow" msprop:Generator_UserTableName="RVHistoricoCliente" msprop:Generator_RowEvArgName="RVHistoricoClienteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CONCEPTO" msprop:Generator_ColumnVarNameInTable="columnCONCEPTO" msprop:Generator_ColumnPropNameInRow="CONCEPTO" msprop:Generator_ColumnPropNameInTable="CONCEPTOColumn" msprop:Generator_UserColumnName="CONCEPTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DEBE" msprop:Generator_ColumnVarNameInTable="columnDEBE" msprop:Generator_ColumnPropNameInRow="DEBE" msprop:Generator_ColumnPropNameInTable="DEBEColumn" msprop:Generator_UserColumnName="DEBE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="HABER" msprop:Generator_ColumnVarNameInTable="columnHABER" msprop:Generator_ColumnPropNameInRow="HABER" msprop:Generator_ColumnPropNameInTable="HABERColumn" msprop:Generator_UserColumnName="HABER" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FECHACLIENTEMOV" msprop:Generator_ColumnVarNameInTable="columnFECHACLIENTEMOV" msprop:Generator_ColumnPropNameInRow="FECHACLIENTEMOV" msprop:Generator_ColumnPropNameInTable="FECHACLIENTEMOVColumn" msprop:Generator_UserColumnName="FECHACLIENTEMOV" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NUMCLIENTE" msprop:Generator_ColumnVarNameInTable="columnNUMCLIENTE" msprop:Generator_ColumnPropNameInRow="NUMCLIENTE" msprop:Generator_ColumnPropNameInTable="NUMCLIENTEColumn" msprop:Generator_UserColumnName="NUMCLIENTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBREFANTASIA" msprop:Generator_ColumnVarNameInTable="columnNOMBREFANTASIA" msprop:Generator_ColumnPropNameInRow="NOMBREFANTASIA" msprop:Generator_ColumnPropNameInTable="NOMBREFANTASIAColumn" msprop:Generator_UserColumnName="NOMBREFANTASIA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MOTIVOANULADO" msprop:Generator_ColumnVarNameInTable="columnMOTIVOANULADO" msprop:Generator_ColumnPropNameInRow="MOTIVOANULADO" msprop:Generator_ColumnPropNameInTable="MOTIVOANULADOColumn" msprop:Generator_UserColumnName="MOTIVOANULADO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODVENTA" msprop:Generator_ColumnVarNameInTable="columnCODVENTA" msprop:Generator_ColumnPropNameInRow="CODVENTA" msprop:Generator_ColumnPropNameInTable="CODVENTAColumn" msprop:Generator_UserColumnName="CODVENTA" type="xs:int" minOccurs="0" />
+              <xs:element name="CODCOBRO" msprop:Generator_ColumnVarNameInTable="columnCODCOBRO" msprop:Generator_ColumnPropNameInRow="CODCOBRO" msprop:Generator_ColumnPropNameInTable="CODCOBROColumn" msprop:Generator_UserColumnName="CODCOBRO" type="xs:int" minOccurs="0" />
+              <xs:element name="CODDEVOLUCION" msprop:Generator_ColumnVarNameInTable="columnCODDEVOLUCION" msprop:Generator_ColumnPropNameInRow="CODDEVOLUCION" msprop:Generator_ColumnPropNameInTable="CODDEVOLUCIONColumn" msprop:Generator_UserColumnName="CODDEVOLUCION" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NUMVENTA" msprop:Generator_ColumnVarNameInTable="columnNUMVENTA" msprop:Generator_ColumnPropNameInRow="NUMVENTA" msprop:Generator_ColumnPropNameInTable="NUMVENTAColumn" msprop:Generator_UserColumnName="NUMVENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NRORECIBO" msprop:Generator_ColumnVarNameInTable="columnNRORECIBO" msprop:Generator_ColumnPropNameInRow="NRORECIBO" msprop:Generator_ColumnPropNameInTable="NRORECIBOColumn" msprop:Generator_UserColumnName="NRORECIBO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RVProyeccionCobranza" msprop:Generator_TableClassName="RVProyeccionCobranzaDataTable" msprop:Generator_TableVarName="tableRVProyeccionCobranza" msprop:Generator_RowChangedName="RVProyeccionCobranzaRowChanged" msprop:Generator_TablePropName="RVProyeccionCobranza" msprop:Generator_RowDeletingName="RVProyeccionCobranzaRowDeleting" msprop:Generator_RowChangingName="RVProyeccionCobranzaRowChanging" msprop:Generator_RowEvHandlerName="RVProyeccionCobranzaRowChangeEventHandler" msprop:Generator_RowDeletedName="RVProyeccionCobranzaRowDeleted" msprop:Generator_RowClassName="RVProyeccionCobranzaRow" msprop:Generator_UserTableName="RVProyeccionCobranza" msprop:Generator_RowEvArgName="RVProyeccionCobranzaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MES" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMES" msprop:Generator_ColumnPropNameInRow="MES" msprop:Generator_ColumnPropNameInTable="MESColumn" msprop:Generator_UserColumnName="MES" type="xs:int" minOccurs="0" />
+              <xs:element name="SALDOCUOTA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSALDOCUOTA" msprop:Generator_ColumnPropNameInRow="SALDOCUOTA" msprop:Generator_ColumnPropNameInTable="SALDOCUOTAColumn" msprop:Generator_UserColumnName="SALDOCUOTA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IDCLIENTE" msprop:Generator_ColumnVarNameInTable="columnIDCLIENTE" msprop:Generator_ColumnPropNameInRow="IDCLIENTE" msprop:Generator_ColumnPropNameInTable="IDCLIENTEColumn" msprop:Generator_UserColumnName="IDCLIENTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CompSaldoCliente" msprop:Generator_TableClassName="CompSaldoClienteDataTable" msprop:Generator_TableVarName="tableCompSaldoCliente" msprop:Generator_RowChangedName="CompSaldoClienteRowChanged" msprop:Generator_TablePropName="CompSaldoCliente" msprop:Generator_RowDeletingName="CompSaldoClienteRowDeleting" msprop:Generator_RowChangingName="CompSaldoClienteRowChanging" msprop:Generator_RowEvHandlerName="CompSaldoClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="CompSaldoClienteRowDeleted" msprop:Generator_RowClassName="CompSaldoClienteRow" msprop:Generator_UserTableName="CompSaldoCliente" msprop:Generator_RowEvArgName="CompSaldoClienteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODCLIENTE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCLIENTE" msprop:Generator_ColumnPropNameInRow="CODCLIENTE" msprop:Generator_ColumnPropNameInTable="CODCLIENTEColumn" msprop:Generator_UserColumnName="CODCLIENTE" type="xs:int" minOccurs="0" />
+              <xs:element name="NUMCLIENTE" msprop:Generator_ColumnVarNameInTable="columnNUMCLIENTE" msprop:Generator_ColumnPropNameInRow="NUMCLIENTE" msprop:Generator_ColumnPropNameInTable="NUMCLIENTEColumn" msprop:Generator_UserColumnName="NUMCLIENTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUC" msprop:Generator_ColumnVarNameInTable="columnRUC" msprop:Generator_ColumnPropNameInRow="RUC" msprop:Generator_ColumnPropNameInTable="RUCColumn" msprop:Generator_UserColumnName="RUC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMVENTA" msprop:Generator_ColumnVarNameInTable="columnNUMVENTA" msprop:Generator_ColumnPropNameInRow="NUMVENTA" msprop:Generator_ColumnPropNameInTable="NUMVENTAColumn" msprop:Generator_UserColumnName="NUMVENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FECHAVENTA" msprop:Generator_ColumnVarNameInTable="columnFECHAVENTA" msprop:Generator_ColumnPropNameInRow="FECHAVENTA" msprop:Generator_ColumnPropNameInTable="FECHAVENTAColumn" msprop:Generator_UserColumnName="FECHAVENTA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TIPOVENTA" msprop:Generator_ColumnVarNameInTable="columnTIPOVENTA" msprop:Generator_ColumnPropNameInRow="TIPOVENTA" msprop:Generator_ColumnPropNameInTable="TIPOVENTAColumn" msprop:Generator_UserColumnName="TIPOVENTA" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="SALDOCUOTA" msprop:Generator_ColumnVarNameInTable="columnSALDOCUOTA" msprop:Generator_ColumnPropNameInRow="SALDOCUOTA" msprop:Generator_ColumnPropNameInTable="SALDOCUOTAColumn" msprop:Generator_UserColumnName="SALDOCUOTA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FECHAVCTO" msprop:Generator_ColumnVarNameInTable="columnFECHAVCTO" msprop:Generator_ColumnPropNameInRow="FECHAVCTO" msprop:Generator_ColumnPropNameInTable="FECHAVCTOColumn" msprop:Generator_UserColumnName="FECHAVCTO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CODNUMEROCUOTA" msprop:Generator_ColumnVarNameInTable="columnCODNUMEROCUOTA" msprop:Generator_ColumnPropNameInRow="CODNUMEROCUOTA" msprop:Generator_ColumnPropNameInTable="CODNUMEROCUOTAColumn" msprop:Generator_UserColumnName="CODNUMEROCUOTA" type="xs:int" minOccurs="0" />
+              <xs:element name="TIPOFACTURA" msprop:Generator_ColumnVarNameInTable="columnTIPOFACTURA" msprop:Generator_ColumnPropNameInRow="TIPOFACTURA" msprop:Generator_ColumnPropNameInTable="TIPOFACTURAColumn" msprop:Generator_UserColumnName="TIPOFACTURA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBREFANTASIA" msprop:Generator_ColumnVarNameInTable="columnNOMBREFANTASIA" msprop:Generator_ColumnPropNameInRow="NOMBREFANTASIA" msprop:Generator_ColumnPropNameInTable="NOMBREFANTASIAColumn" msprop:Generator_UserColumnName="NOMBREFANTASIA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:CompSaldoCliente" />
+      <xs:field xpath="mstns:CODCLIENTE" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

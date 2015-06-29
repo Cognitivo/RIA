@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsRVCaja" targetNamespace="http://tempuri.org/DsRVCaja.xsd" xmlns:mstns="http://tempuri.org/DsRVCaja.xsd" xmlns="http://tempuri.org/DsRVCaja.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RVCajaIvaTableAdapter" GeneratorDataComponentClassName="RVCajaIvaTableAdapter" Name="RVCajaIva" UserDataComponentName="RVCajaIvaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="SELECT DISTINCT dbo.aperturas.id_caja, dbo.USUARIO.DESUSUARIO, dbo.cierres.fecha_apertura, dbo.cierres.fecha_cierre, dbo.VENTAS.TOTALEXENTA, dbo.VENTAS.TOTALGRAVADO5, dbo.VENTAS.TOTALGRAVADO10, dbo.VENTAS.TOTALVENTA, dbo.VENTAS.TOTALIVA, dbo.VENTAS.NUMVENTA, dbo.cierres.id_apertura, dbo.movimientos.id_moneda, dbo.MONEDA.DESMONEDA, dbo.SUCURSAL.DESSUCURSAL, CONVERT(char(10), dbo.movimientos.fecha_mto, 103) AS fecha_mto, dbo.TIPOCOMPROBANTE.VALORFISCAL, dbo.TIPOCOMPROBANTE.DESCOMPROBANTE, dbo.CAJA.NUMEROCAJA FROM dbo.VENTAS INNER JOIN dbo.movimientos ON dbo.VENTAS.CODVENTA = dbo.movimientos.id_venta INNER JOIN dbo.cierres ON dbo.movimientos.id_apertura = dbo.cierres.id_apertura INNER JOIN dbo.aperturas ON dbo.movimientos.id_apertura = dbo.aperturas.id_apertura AND dbo.cierres.id_apertura = dbo.aperturas.id_apertura INNER JOIN dbo.USUARIO ON dbo.aperturas.id_usuario = dbo.USUARIO.CODUSUARIO INNER JOIN dbo.MONEDA ON dbo.movimientos.id_moneda = dbo.MONEDA.CODMONEDA INNER JOIN dbo.SUCURSAL ON dbo.movimientos.codsucursal = dbo.SUCURSAL.CODSUCURSAL INNER JOIN dbo.TIPOCOMPROBANTE ON dbo.VENTAS.CODCOMPROBANTE = dbo.TIPOCOMPROBANTE.CODCOMPROBANTE INNER JOIN dbo.CAJA ON dbo.aperturas.id_caja = dbo.CAJA.NUMCAJA WHERE (dbo.VENTAS.ESTADO = 1) AND (dbo.SUCURSAL.CODSUCURSAL IN (SELECT item FROM dbo.fnPartir(@SUC, ',') AS fnPartir_1))" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     id_caja, id_apertura, DESUSUARIO, fecha_apertura, fecha_cierre, SUM(TOTALEXENTA) AS TotalExenta, SUM(TOTALGRAVADO5) AS TotalGrav5, 
+                      SUM(TOTALGRAVADO10) AS TotalGrav10, SUM(TOTALVENTA) AS TotalVenta, SUM(TOTALIVA) AS TotalIVA, id_moneda, DESMONEDA, DESSUCURSAL, fecha_mto, 
+                      VALORFISCAL, DESCOMPROBANTE, NUMEROCAJA
+FROM         (SELECT DISTINCT 
+                                              dbo.aperturas.id_caja, dbo.USUARIO.DESUSUARIO, dbo.cierres.fecha_apertura, dbo.cierres.fecha_cierre, dbo.VENTAS.TOTALEXENTA, 
+                                              dbo.VENTAS.TOTALGRAVADO5, dbo.VENTAS.TOTALGRAVADO10, dbo.VENTAS.TOTALVENTA, dbo.VENTAS.TOTALIVA, dbo.VENTAS.NUMVENTA, 
+                                              dbo.cierres.id_apertura, dbo.movimientos.id_moneda, dbo.MONEDA.DESMONEDA, dbo.SUCURSAL.DESSUCURSAL, CONVERT(char(10), 
+                                              dbo.movimientos.fecha_mto, 103) AS fecha_mto, dbo.TIPOCOMPROBANTE.VALORFISCAL, dbo.TIPOCOMPROBANTE.DESCOMPROBANTE, 
+                                              dbo.CAJA.NUMEROCAJA
+                       FROM          dbo.VENTAS INNER JOIN
+                                              dbo.movimientos ON dbo.VENTAS.CODVENTA = dbo.movimientos.id_venta INNER JOIN
+                                              dbo.cierres ON dbo.movimientos.id_apertura = dbo.cierres.id_apertura INNER JOIN
+                                              dbo.aperturas ON dbo.movimientos.id_apertura = dbo.aperturas.id_apertura AND dbo.cierres.id_apertura = dbo.aperturas.id_apertura INNER JOIN
+dbo.USUARIO ON dbo.aperturas.id_usuario = dbo.USUARIO.CODUSUARIO INNER JOIN
+                                              dbo.MONEDA ON dbo.movimientos.id_moneda = dbo.MONEDA.CODMONEDA INNER JOIN
+                                              dbo.SUCURSAL ON dbo.movimientos.codsucursal = dbo.SUCURSAL.CODSUCURSAL INNER JOIN
+                                              dbo.TIPOCOMPROBANTE ON dbo.VENTAS.CODCOMPROBANTE = dbo.TIPOCOMPROBANTE.CODCOMPROBANTE INNER JOIN
+                                              dbo.CAJA ON dbo.aperturas.id_caja = dbo.CAJA.NUMCAJA
+                       WHERE      (dbo.VENTAS.ESTADO = 1) AND (dbo.SUCURSAL.CODSUCURSAL IN
+                                                  (SELECT     item
+                                                    FROM          dbo.fnPartir(@SUC, ',') AS fnPartir_1))) AS Subconsulta
+WHERE     (DESMONEDA LIKE @moneda) AND (fecha_mto &gt;= @FechaDesde) AND (fecha_mto &lt;= @FechaHasta) AND (NUMEROCAJA LIKE @Caja)
+GROUP BY id_caja, DESUSUARIO, fecha_apertura, fecha_cierre, id_apertura, DESMONEDA, id_moneda, DESSUCURSAL, fecha_mto, VALORFISCAL, DESCOMPROBANTE, 
+                      NUMEROCAJA</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="moneda" ColumnName="DESMONEDA" DataSourceName="SELECT DISTINCT dbo.aperturas.id_caja, dbo.USUARIO.DESUSUARIO, dbo.cierres.fecha_apertura, dbo.cierres.fecha_cierre, dbo.VENTAS.TOTALEXENTA, dbo.VENTAS.TOTALGRAVADO5, dbo.VENTAS.TOTALGRAVADO10, dbo.VENTAS.TOTALVENTA, dbo.VENTAS.TOTALIVA, dbo.VENTAS.NUMVENTA, dbo.cierres.id_apertura, dbo.movimientos.id_moneda, dbo.MONEDA.DESMONEDA, dbo.SUCURSAL.DESSUCURSAL, CONVERT(char(10), dbo.movimientos.fecha_mto, 103) AS fecha_mto, dbo.TIPOCOMPROBANTE.VALORFISCAL, dbo.TIPOCOMPROBANTE.DESCOMPROBANTE, dbo.CAJA.NUMEROCAJA FROM dbo.VENTAS INNER JOIN dbo.movimientos ON dbo.VENTAS.CODVENTA = dbo.movimientos.id_venta INNER JOIN dbo.cierres ON dbo.movimientos.id_apertura = dbo.cierres.id_apertura INNER JOIN dbo.aperturas ON dbo.movimientos.id_apertura = dbo.aperturas.id_apertura AND dbo.cierres.id_apertura = dbo.aperturas.id_apertura INNER JOIN dbo.USUARIO ON dbo.aperturas.id_usuario = dbo.USUARIO.CODUSUARIO INNER JOIN dbo.MONEDA ON dbo.movimientos.id_moneda = dbo.MONEDA.CODMONEDA INNER JOIN dbo.SUCURSAL ON dbo.movimientos.codsucursal = dbo.SUCURSAL.CODSUCURSAL INNER JOIN dbo.TIPOCOMPROBANTE ON dbo.VENTAS.CODCOMPROBANTE = dbo.TIPOCOMPROBANTE.CODCOMPROBANTE INNER JOIN dbo.CAJA ON dbo.aperturas.id_caja = dbo.CAJA.NUMCAJA WHERE (dbo.VENTAS.ESTADO = 1) AND (dbo.SUCURSAL.CODSUCURSAL IN (SELECT item FROM dbo.fnPartir(@SUC, ',') AS fnPartir_1))" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@moneda" Precision="0" Scale="0" Size="50" SourceColumn="DESMONEDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaDesde" ColumnName="fecha_mto" DataSourceName="SELECT DISTINCT dbo.aperturas.id_caja, dbo.USUARIO.DESUSUARIO, dbo.cierres.fecha_apertura, dbo.cierres.fecha_cierre, dbo.VENTAS.TOTALEXENTA, dbo.VENTAS.TOTALGRAVADO5, dbo.VENTAS.TOTALGRAVADO10, dbo.VENTAS.TOTALVENTA, dbo.VENTAS.TOTALIVA, dbo.VENTAS.NUMVENTA, dbo.cierres.id_apertura, dbo.movimientos.id_moneda, dbo.MONEDA.DESMONEDA, dbo.SUCURSAL.DESSUCURSAL, CONVERT(char(10), dbo.movimientos.fecha_mto, 103) AS fecha_mto, dbo.TIPOCOMPROBANTE.VALORFISCAL, dbo.TIPOCOMPROBANTE.DESCOMPROBANTE, dbo.CAJA.NUMEROCAJA FROM dbo.VENTAS INNER JOIN dbo.movimientos ON dbo.VENTAS.CODVENTA = dbo.movimientos.id_venta INNER JOIN dbo.cierres ON dbo.movimientos.id_apertura = dbo.cierres.id_apertura INNER JOIN dbo.aperturas ON dbo.movimientos.id_apertura = dbo.aperturas.id_apertura AND dbo.cierres.id_apertura = dbo.aperturas.id_apertura INNER JOIN dbo.USUARIO ON dbo.aperturas.id_usuario = dbo.USUARIO.CODUSUARIO INNER JOIN dbo.MONEDA ON dbo.movimientos.id_moneda = dbo.MONEDA.CODMONEDA INNER JOIN dbo.SUCURSAL ON dbo.movimientos.codsucursal = dbo.SUCURSAL.CODSUCURSAL INNER JOIN dbo.TIPOCOMPROBANTE ON dbo.VENTAS.CODCOMPROBANTE = dbo.TIPOCOMPROBANTE.CODCOMPROBANTE INNER JOIN dbo.CAJA ON dbo.aperturas.id_caja = dbo.CAJA.NUMCAJA WHERE (dbo.VENTAS.ESTADO = 1) AND (dbo.SUCURSAL.CODSUCURSAL IN (SELECT item FROM dbo.fnPartir(@SUC, ',') AS fnPartir_1))" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@FechaDesde" Precision="0" Scale="0" Size="1024" SourceColumn="fecha_mto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaHasta" ColumnName="fecha_mto" DataSourceName="SELECT DISTINCT dbo.aperturas.id_caja, dbo.USUARIO.DESUSUARIO, dbo.cierres.fecha_apertura, dbo.cierres.fecha_cierre, dbo.VENTAS.TOTALEXENTA, dbo.VENTAS.TOTALGRAVADO5, dbo.VENTAS.TOTALGRAVADO10, dbo.VENTAS.TOTALVENTA, dbo.VENTAS.TOTALIVA, dbo.VENTAS.NUMVENTA, dbo.cierres.id_apertura, dbo.movimientos.id_moneda, dbo.MONEDA.DESMONEDA, dbo.SUCURSAL.DESSUCURSAL, CONVERT(char(10), dbo.movimientos.fecha_mto, 103) AS fecha_mto, dbo.TIPOCOMPROBANTE.VALORFISCAL, dbo.TIPOCOMPROBANTE.DESCOMPROBANTE, dbo.CAJA.NUMEROCAJA FROM dbo.VENTAS INNER JOIN dbo.movimientos ON dbo.VENTAS.CODVENTA = dbo.movimientos.id_venta INNER JOIN dbo.cierres ON dbo.movimientos.id_apertura = dbo.cierres.id_apertura INNER JOIN dbo.aperturas ON dbo.movimientos.id_apertura = dbo.aperturas.id_apertura AND dbo.cierres.id_apertura = dbo.aperturas.id_apertura INNER JOIN dbo.USUARIO ON dbo.aperturas.id_usuario = dbo.USUARIO.CODUSUARIO INNER JOIN dbo.MONEDA ON dbo.movimientos.id_moneda = dbo.MONEDA.CODMONEDA INNER JOIN dbo.SUCURSAL ON dbo.movimientos.codsucursal = dbo.SUCURSAL.CODSUCURSAL INNER JOIN dbo.TIPOCOMPROBANTE ON dbo.VENTAS.CODCOMPROBANTE = dbo.TIPOCOMPROBANTE.CODCOMPROBANTE INNER JOIN dbo.CAJA ON dbo.aperturas.id_caja = dbo.CAJA.NUMCAJA WHERE (dbo.VENTAS.ESTADO = 1) AND (dbo.SUCURSAL.CODSUCURSAL IN (SELECT item FROM dbo.fnPartir(@SUC, ',') AS fnPartir_1))" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@FechaHasta" Precision="0" Scale="0" Size="1024" SourceColumn="fecha_mto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Caja" ColumnName="NUMEROCAJA" DataSourceName="SELECT DISTINCT dbo.aperturas.id_caja, dbo.USUARIO.DESUSUARIO, dbo.cierres.fecha_apertura, dbo.cierres.fecha_cierre, dbo.VENTAS.TOTALEXENTA, dbo.VENTAS.TOTALGRAVADO5, dbo.VENTAS.TOTALGRAVADO10, dbo.VENTAS.TOTALVENTA, dbo.VENTAS.TOTALIVA, dbo.VENTAS.NUMVENTA, dbo.cierres.id_apertura, dbo.movimientos.id_moneda, dbo.MONEDA.DESMONEDA, dbo.SUCURSAL.DESSUCURSAL, CONVERT(char(10), dbo.movimientos.fecha_mto, 103) AS fecha_mto, dbo.TIPOCOMPROBANTE.VALORFISCAL, dbo.TIPOCOMPROBANTE.DESCOMPROBANTE, dbo.CAJA.NUMEROCAJA FROM dbo.VENTAS INNER JOIN dbo.movimientos ON dbo.VENTAS.CODVENTA = dbo.movimientos.id_venta INNER JOIN dbo.cierres ON dbo.movimientos.id_apertura = dbo.cierres.id_apertura INNER JOIN dbo.aperturas ON dbo.movimientos.id_apertura = dbo.aperturas.id_apertura AND dbo.cierres.id_apertura = dbo.aperturas.id_apertura INNER JOIN dbo.USUARIO ON dbo.aperturas.id_usuario = dbo.USUARIO.CODUSUARIO INNER JOIN dbo.MONEDA ON dbo.movimientos.id_moneda = dbo.MONEDA.CODMONEDA INNER JOIN dbo.SUCURSAL ON dbo.movimientos.codsucursal = dbo.SUCURSAL.CODSUCURSAL INNER JOIN dbo.TIPOCOMPROBANTE ON dbo.VENTAS.CODCOMPROBANTE = dbo.TIPOCOMPROBANTE.CODCOMPROBANTE INNER JOIN dbo.CAJA ON dbo.aperturas.id_caja = dbo.CAJA.NUMCAJA WHERE (dbo.VENTAS.ESTADO = 1) AND (dbo.SUCURSAL.CODSUCURSAL IN (SELECT item FROM dbo.fnPartir(@SUC, ',') AS fnPartir_1))" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Caja" Precision="0" Scale="0" Size="50" SourceColumn="NUMEROCAJA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SUC" ColumnName="" DataSourceName="" DataTypeServer="varchar(8000)" DbType="AnsiString" Direction="Input" ParameterName="@SUC" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_caja" DataSetColumn="id_caja" />
+              <Mapping SourceColumn="id_apertura" DataSetColumn="id_apertura" />
+              <Mapping SourceColumn="DESUSUARIO" DataSetColumn="DESUSUARIO" />
+              <Mapping SourceColumn="fecha_apertura" DataSetColumn="fecha_apertura" />
+              <Mapping SourceColumn="fecha_cierre" DataSetColumn="fecha_cierre" />
+              <Mapping SourceColumn="id_moneda" DataSetColumn="id_moneda" />
+              <Mapping SourceColumn="DESMONEDA" DataSetColumn="DESMONEDA" />
+              <Mapping SourceColumn="DESSUCURSAL" DataSetColumn="DESSUCURSAL" />
+              <Mapping SourceColumn="TotalExenta" DataSetColumn="TotalExenta" />
+              <Mapping SourceColumn="TotalGrav5" DataSetColumn="TotalGrav5" />
+              <Mapping SourceColumn="TotalGrav10" DataSetColumn="TotalGrav10" />
+              <Mapping SourceColumn="TotalVenta" DataSetColumn="TotalVenta" />
+              <Mapping SourceColumn="TotalIVA" DataSetColumn="TotalIVA" />
+              <Mapping SourceColumn="fecha_mto" DataSetColumn="fecha_mto" />
+              <Mapping SourceColumn="VALORFISCAL" DataSetColumn="VALORFISCAL" />
+              <Mapping SourceColumn="DESCOMPROBANTE" DataSetColumn="DESCOMPROBANTE" />
+              <Mapping SourceColumn="NUMEROCAJA" DataSetColumn="NUMEROCAJA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RVDiarioCajaTableAdapter" GeneratorDataComponentClassName="RVDiarioCajaTableAdapter" Name="RVDiarioCaja" UserDataComponentName="RVDiarioCajaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT movimientos.id_movimiento, movimientos.id_apertura, movimientos.fecha_mto, movimientos.cotizacion1, movimientos.concepto,
+                             (SELECT        movimientos.monto / movimientos.cotizacion1 AS Total
+                               WHERE        (movimientos.entradasalida = 'entrada')) AS Entrada,
+                             (SELECT        CASE WHEN id_compra IS NOT NULL 
+                                                         THEN - movimientos.monto / movimientos.cotizacion1 ELSE movimientos.monto / movimientos.cotizacion1 END AS Total
+                               WHERE        (movimientos.entradasalida = 'salida')) AS Salida, MONEDA.DESMONEDA, aperturas.fechapaertura, aperturas.apertura_num, USUARIO.DESUSUARIO, 
+                         CAJA.NUMEROCAJA AS NUMCAJA, cierres.fecha_cierre, SUCURSAL.CODSUCURSAL, SUCURSAL.DESSUCURSAL, COMPRAS.NUMCOMPRA, VENTAS.NUMVENTA, 
+                         movimientos.id_tipo_dinero, USUARIO.CODUSUARIO, VENTAS.FECHAVENTA
+FROM            VENTASFORMACOBRO INNER JOIN
+                         VENTAS ON VENTASFORMACOBRO.CODVENTA = VENTAS.CODVENTA FULL OUTER JOIN
+                         aperturas LEFT OUTER JOIN
+                         USUARIO ON aperturas.id_usuario = USUARIO.CODUSUARIO LEFT OUTER JOIN
+                         CAJA ON aperturas.id_caja = CAJA.NUMCAJA FULL OUTER JOIN
+                         movimientos LEFT OUTER JOIN
+                         MONEDA ON movimientos.id_moneda = MONEDA.CODMONEDA ON aperturas.id_apertura = movimientos.id_apertura ON 
+                         VENTASFORMACOBRO.CODVENTA = movimientos.id_venta AND VENTASFORMACOBRO.CODCOBRO = movimientos.id_cobro FULL OUTER JOIN
+                         SUCURSAL ON movimientos.codsucursal = SUCURSAL.CODSUCURSAL FULL OUTER JOIN
+                         COMPRASFORMAPAGO LEFT OUTER JOIN
+                         COMPRAS ON COMPRASFORMAPAGO.CODCOMPRA = COMPRAS.CODCOMPRA ON movimientos.id_compra = COMPRASFORMAPAGO.CODCOMPRA AND 
+                         movimientos.id_pago = COMPRASFORMAPAGO.CODPAGO FULL OUTER JOIN
+                         cierres ON aperturas.id_apertura = cierres.id_apertura
+WHERE        (movimientos.fecha_mto &gt;= @FechaDesde) AND (movimientos.fecha_mto &lt;= @FechaHasta) AND (CAJA.NUMEROCAJA LIKE @Caja) AND 
+                         (SUCURSAL.CODSUCURSAL IN
+                             (SELECT        item
+                               FROM            dbo.fnPartir(@SUC, ',') AS fnPartir_1)) AND (MONEDA.DESMONEDA LIKE @moneda) AND (VENTAS.ESTADO = 1) AND 
+                         (movimientos.id_tipo_dinero &lt;&gt; 5) OR
+                         (movimientos.fecha_mto &gt;= @FechaDesde) AND (movimientos.fecha_mto &lt;= @FechaHasta) AND (CAJA.NUMEROCAJA LIKE @Caja) AND 
+                         (SUCURSAL.CODSUCURSAL IN
+                             (SELECT        item
+                               FROM            dbo.fnPartir(@SUC, ',') AS fnPartir_1)) AND (MONEDA.DESMONEDA LIKE @moneda) AND (movimientos.id_tipo_dinero &lt;&gt; 5) AND 
+                         (COMPRAS.ESTADO = 1) OR
+                         (movimientos.fecha_mto &gt;= @FechaDesde) AND (movimientos.fecha_mto &lt;= @FechaHasta) AND (CAJA.NUMEROCAJA LIKE @Caja) AND 
+                         (SUCURSAL.CODSUCURSAL IN
+                             (SELECT        item
+                               FROM            dbo.fnPartir(@SUC, ',') AS fnPartir_1)) AND (MONEDA.DESMONEDA LIKE @moneda) AND (VENTAS.ESTADO IS NULL) AND 
+                         (movimientos.id_tipo_dinero &lt;&gt; 5) AND (COMPRAS.ESTADO IS NULL)
+ORDER BY movimientos.fecha_mto</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FechaDesde" ColumnName="fecha_mto" DataSourceName="FIPAR.dbo.movimientos" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FechaDesde" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="fecha_mto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FechaHasta" ColumnName="fecha_mto" DataSourceName="FIPAR.dbo.movimientos" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FechaHasta" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="fecha_mto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Caja" ColumnName="NUMEROCAJA" DataSourceName="FIPAR.dbo.CAJA" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Caja" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="NUMCAJA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="moneda" ColumnName="DESMONEDA" DataSourceName="FIPAR.dbo.MONEDA" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@moneda" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="DESMONEDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SUC" ColumnName="" DataSourceName="" DataTypeServer="varchar(8000)" DbType="AnsiString" Direction="Input" ParameterName="@SUC" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_movimiento" DataSetColumn="id_movimiento" />
+              <Mapping SourceColumn="id_apertura" DataSetColumn="id_apertura" />
+              <Mapping SourceColumn="fecha_mto" DataSetColumn="fecha_mto" />
+              <Mapping SourceColumn="cotizacion1" DataSetColumn="cotizacion1" />
+              <Mapping SourceColumn="concepto" DataSetColumn="concepto" />
+              <Mapping SourceColumn="Entrada" DataSetColumn="Entrada" />
+              <Mapping SourceColumn="Salida" DataSetColumn="Salida" />
+              <Mapping SourceColumn="DESMONEDA" DataSetColumn="DESMONEDA" />
+              <Mapping SourceColumn="fechapaertura" DataSetColumn="fechapaertura" />
+              <Mapping SourceColumn="apertura_num" DataSetColumn="apertura_num" />
+              <Mapping SourceColumn="DESUSUARIO" DataSetColumn="DESUSUARIO" />
+              <Mapping SourceColumn="fecha_cierre" DataSetColumn="fecha_cierre" />
+              <Mapping SourceColumn="DESSUCURSAL" DataSetColumn="DESSUCURSAL" />
+              <Mapping SourceColumn="NUMCOMPRA" DataSetColumn="NUMCOMPRA" />
+              <Mapping SourceColumn="NUMVENTA" DataSetColumn="NUMVENTA" />
+              <Mapping SourceColumn="id_tipo_dinero" DataSetColumn="id_tipo_dinero" />
+              <Mapping SourceColumn="CODUSUARIO" DataSetColumn="CODUSUARIO" />
+              <Mapping SourceColumn="FECHAVENTA" DataSetColumn="FECHAVENTA" />
+              <Mapping SourceColumn="NUMCAJA" DataSetColumn="NUMCAJA" />
+              <Mapping SourceColumn="CODSUCURSAL" DataSetColumn="CODSUCURSAL1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RVAperturaCierreTableAdapter" GeneratorDataComponentClassName="RVAperturaCierreTableAdapter" Name="RVAperturaCierre" UserDataComponentName="RVAperturaCierreTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="GUAZU.dbo.aperturas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_apertura,
+                             (SELECT        SUM(monto) AS apert
+                               FROM            aperturas_det
+                               WHERE        (id_apertura = CAB.id_apertura)) AS Expr1,
+                             (SELECT        SUM(monto) AS Cierre
+                               FROM            cierres_det
+                               WHERE        (id_apertura = CAB.id_apertura)) AS Cierre
+FROM            aperturas AS CAB</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_apertura" DataSetColumn="id_apertura" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Cierre" DataSetColumn="Cierre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RVTotalTableAdapter" GeneratorDataComponentClassName="RVTotalTableAdapter" Name="RVTotal" UserDataComponentName="RVTotalTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        movimientos.id_apertura, SUM(movimientos.monto) AS monto, aperturas.id_caja
+FROM            movimientos INNER JOIN
+                         MONEDA ON movimientos.id_moneda = MONEDA.CODMONEDA INNER JOIN
+                         VENTAS ON movimientos.id_venta = VENTAS.CODVENTA INNER JOIN
+                         aperturas ON movimientos.id_apertura = aperturas.id_apertura INNER JOIN
+                         CAJA ON aperturas.id_caja = CAJA.NUMCAJA
+WHERE        (movimientos.fecha_mto &gt;= @desde) AND (movimientos.fecha_mto &lt;= @hasta) AND (NOT (movimientos.concepto LIKE '%Apertura%')) AND 
+                         (NOT (movimientos.concepto LIKE '%Cierre%')) AND (movimientos.concepto = 'Efectivo' OR
+                         movimientos.concepto LIKE '%tarjeta%' OR
+                         movimientos.concepto LIKE '%Cheque%' OR
+                         movimientos.concepto LIKE '%Vuelto%') AND (VENTAS.ESTADO = 1) AND    (dbo.CAJA.NUMEROCAJA LIKE @Caja) AND (MONEDA.DESMONEDA LIKE @DESMONEDA)
+GROUP BY movimientos.id_apertura, aperturas.id_caja</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="desde" ColumnName="fecha_mto" DataSourceName="Guazu.dbo.movimientos" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@desde" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="fecha_mto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="hasta" ColumnName="fecha_mto" DataSourceName="Guazu.dbo.movimientos" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@hasta" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="fecha_mto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Caja" ColumnName="NUMEROCAJA" DataSourceName="Guazu.dbo.CAJA" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Caja" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="NUMEROCAJA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DESMONEDA" ColumnName="DESMONEDA" DataSourceName="Guazu.dbo.MONEDA" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@DESMONEDA" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="DESMONEDA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_apertura" DataSetColumn="id_apertura" />
+              <Mapping SourceColumn="monto" DataSetColumn="monto" />
+              <Mapping SourceColumn="id_caja" DataSetColumn="id_caja" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RVRetencionesTableAdapter" GeneratorDataComponentClassName="RVRetencionesTableAdapter" Name="RVRetenciones" UserDataComponentName="RVRetencionesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.VENTASFORMACOBRO.CODCOBRO, dbo.VENTASFORMACOBRO.CODVENTA, dbo.VENTASFORMACOBRO.IMPORTE, dbo.VENTASFORMACOBRO.DESTIPOCOBRO, dbo.VENTASFORMACOBRO.FECHACOBRO, 
+                         dbo.VENTASFORMACOBRO.NRORECIBO, dbo.VENTASFORMACOBRO.NUMRETENCION, dbo.VENTAS.NUMVENTA, dbo.VENTAS.TOTALIVA, dbo.VENTAS.TOTALVENTA, dbo.CLIENTES.NOMBREFANTASIA, 
+                         dbo.CLIENTES.NOMBRE, dbo.CLIENTES.NUMCLIENTE
+FROM            dbo.VENTASFORMACOBRO INNER JOIN
+                         dbo.VENTAS ON dbo.VENTASFORMACOBRO.CODVENTA = dbo.VENTAS.CODVENTA INNER JOIN
+                         dbo.CLIENTES ON dbo.VENTAS.CODCLIENTE = dbo.CLIENTES.CODCLIENTE
+WHERE        (dbo.VENTASFORMACOBRO.CODTIPOCOBRO = 6) AND (dbo.VENTASFORMACOBRO.FECHACOBRO &gt;= CONVERT(DATETIME, @FECHAINICIO, 103)) AND 
+                         (dbo.VENTASFORMACOBRO.FECHACOBRO &lt;= CONVERT(DATETIME, @FECHAFIN, 103))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHAINICIO" ColumnName="FECHACOBRO" DataSourceName="CRESUR.dbo.VENTASFORMACOBRO" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FECHAINICIO" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACOBRO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FECHAFIN" ColumnName="FECHACOBRO" DataSourceName="CRESUR.dbo.VENTASFORMACOBRO" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FECHAFIN" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACOBRO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODCOBRO" DataSetColumn="CODCOBRO" />
+              <Mapping SourceColumn="CODVENTA" DataSetColumn="CODVENTA" />
+              <Mapping SourceColumn="IMPORTE" DataSetColumn="IMPORTE" />
+              <Mapping SourceColumn="DESTIPOCOBRO" DataSetColumn="DESTIPOCOBRO" />
+              <Mapping SourceColumn="FECHACOBRO" DataSetColumn="FECHACOBRO" />
+              <Mapping SourceColumn="NRORECIBO" DataSetColumn="NRORECIBO" />
+              <Mapping SourceColumn="NUMRETENCION" DataSetColumn="NUMRETENCION" />
+              <Mapping SourceColumn="NUMVENTA" DataSetColumn="NUMVENTA" />
+              <Mapping SourceColumn="TOTALIVA" DataSetColumn="TOTALIVA" />
+              <Mapping SourceColumn="TOTALVENTA" DataSetColumn="TOTALVENTA" />
+              <Mapping SourceColumn="NOMBREFANTASIA" DataSetColumn="NOMBREFANTASIA" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="NUMCLIENTE" DataSetColumn="NUMCLIENTE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsRVCaja" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DsRVCaja" msprop:Generator_UserDSName="DsRVCaja">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RVCajaIva" msprop:Generator_TableClassName="RVCajaIvaDataTable" msprop:Generator_TableVarName="tableRVCajaIva" msprop:Generator_RowChangedName="RVCajaIvaRowChanged" msprop:Generator_TablePropName="RVCajaIva" msprop:Generator_RowDeletingName="RVCajaIvaRowDeleting" msprop:Generator_RowChangingName="RVCajaIvaRowChanging" msprop:Generator_RowEvHandlerName="RVCajaIvaRowChangeEventHandler" msprop:Generator_RowDeletedName="RVCajaIvaRowDeleted" msprop:Generator_RowClassName="RVCajaIvaRow" msprop:Generator_UserTableName="RVCajaIva" msprop:Generator_RowEvArgName="RVCajaIvaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_caja" msprop:Generator_ColumnVarNameInTable="columnid_caja" msprop:Generator_ColumnPropNameInRow="id_caja" msprop:Generator_ColumnPropNameInTable="id_cajaColumn" msprop:Generator_UserColumnName="id_caja" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id_apertura" msprop:Generator_ColumnVarNameInTable="columnid_apertura" msprop:Generator_ColumnPropNameInRow="id_apertura" msprop:Generator_ColumnPropNameInTable="id_aperturaColumn" msprop:Generator_UserColumnName="id_apertura" type="xs:int" />
+              <xs:element name="DESUSUARIO" msprop:Generator_ColumnVarNameInTable="columnDESUSUARIO" msprop:Generator_ColumnPropNameInRow="DESUSUARIO" msprop:Generator_ColumnPropNameInTable="DESUSUARIOColumn" msprop:Generator_UserColumnName="DESUSUARIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_apertura" msprop:Generator_ColumnVarNameInTable="columnfecha_apertura" msprop:Generator_ColumnPropNameInRow="fecha_apertura" msprop:Generator_ColumnPropNameInTable="fecha_aperturaColumn" msprop:Generator_UserColumnName="fecha_apertura" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_cierre" msprop:Generator_ColumnVarNameInTable="columnfecha_cierre" msprop:Generator_ColumnPropNameInRow="fecha_cierre" msprop:Generator_ColumnPropNameInTable="fecha_cierreColumn" msprop:Generator_UserColumnName="fecha_cierre" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id_moneda" msprop:Generator_ColumnVarNameInTable="columnid_moneda" msprop:Generator_ColumnPropNameInRow="id_moneda" msprop:Generator_ColumnPropNameInTable="id_monedaColumn" msprop:Generator_UserColumnName="id_moneda" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DESMONEDA" msprop:Generator_ColumnVarNameInTable="columnDESMONEDA" msprop:Generator_ColumnPropNameInRow="DESMONEDA" msprop:Generator_ColumnPropNameInTable="DESMONEDAColumn" msprop:Generator_UserColumnName="DESMONEDA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnDESSUCURSAL" msprop:Generator_ColumnPropNameInRow="DESSUCURSAL" msprop:Generator_ColumnPropNameInTable="DESSUCURSALColumn" msprop:Generator_UserColumnName="DESSUCURSAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalExenta" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalExenta" msprop:Generator_ColumnPropNameInRow="TotalExenta" msprop:Generator_ColumnPropNameInTable="TotalExentaColumn" msprop:Generator_UserColumnName="TotalExenta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalGrav5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalGrav5" msprop:Generator_ColumnPropNameInRow="TotalGrav5" msprop:Generator_ColumnPropNameInTable="TotalGrav5Column" msprop:Generator_UserColumnName="TotalGrav5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalGrav10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalGrav10" msprop:Generator_ColumnPropNameInRow="TotalGrav10" msprop:Generator_ColumnPropNameInTable="TotalGrav10Column" msprop:Generator_UserColumnName="TotalGrav10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalVenta" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalVenta" msprop:Generator_ColumnPropNameInRow="TotalVenta" msprop:Generator_ColumnPropNameInTable="TotalVentaColumn" msprop:Generator_UserColumnName="TotalVenta" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalIVA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalIVA" msprop:Generator_ColumnPropNameInRow="TotalIVA" msprop:Generator_ColumnPropNameInTable="TotalIVAColumn" msprop:Generator_UserColumnName="TotalIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="fecha_mto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnfecha_mto" msprop:Generator_ColumnPropNameInRow="fecha_mto" msprop:Generator_ColumnPropNameInTable="fecha_mtoColumn" msprop:Generator_UserColumnName="fecha_mto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VALORFISCAL" msprop:Generator_ColumnVarNameInTable="columnVALORFISCAL" msprop:Generator_ColumnPropNameInRow="VALORFISCAL" msprop:Generator_ColumnPropNameInTable="VALORFISCALColumn" msprop:Generator_UserColumnName="VALORFISCAL" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DESCOMPROBANTE" msprop:Generator_ColumnVarNameInTable="columnDESCOMPROBANTE" msprop:Generator_ColumnPropNameInRow="DESCOMPROBANTE" msprop:Generator_ColumnPropNameInTable="DESCOMPROBANTEColumn" msprop:Generator_UserColumnName="DESCOMPROBANTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMEROCAJA" msprop:Generator_ColumnVarNameInTable="columnNUMEROCAJA" msprop:Generator_ColumnPropNameInRow="NUMEROCAJA" msprop:Generator_ColumnPropNameInTable="NUMEROCAJAColumn" msprop:Generator_UserColumnName="NUMEROCAJA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RVDiarioCaja" msprop:Generator_TableClassName="RVDiarioCajaDataTable" msprop:Generator_TableVarName="tableRVDiarioCaja" msprop:Generator_RowChangedName="RVDiarioCajaRowChanged" msprop:Generator_TablePropName="RVDiarioCaja" msprop:Generator_RowDeletingName="RVDiarioCajaRowDeleting" msprop:Generator_RowChangingName="RVDiarioCajaRowChanging" msprop:Generator_RowEvHandlerName="RVDiarioCajaRowChangeEventHandler" msprop:Generator_RowDeletedName="RVDiarioCajaRowDeleted" msprop:Generator_RowClassName="RVDiarioCajaRow" msprop:Generator_UserTableName="RVDiarioCaja" msprop:Generator_RowEvArgName="RVDiarioCajaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_movimiento" msprop:Generator_ColumnVarNameInTable="columnid_movimiento" msprop:Generator_ColumnPropNameInRow="id_movimiento" msprop:Generator_ColumnPropNameInTable="id_movimientoColumn" msprop:Generator_UserColumnName="id_movimiento" type="xs:int" minOccurs="0" />
+              <xs:element name="id_apertura" msprop:Generator_ColumnVarNameInTable="columnid_apertura" msprop:Generator_ColumnPropNameInRow="id_apertura" msprop:Generator_ColumnPropNameInTable="id_aperturaColumn" msprop:Generator_UserColumnName="id_apertura" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha_mto" msprop:Generator_ColumnVarNameInTable="columnfecha_mto" msprop:Generator_ColumnPropNameInRow="fecha_mto" msprop:Generator_ColumnPropNameInTable="fecha_mtoColumn" msprop:Generator_UserColumnName="fecha_mto" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cotizacion1" msprop:Generator_ColumnVarNameInTable="columncotizacion1" msprop:Generator_ColumnPropNameInRow="cotizacion1" msprop:Generator_ColumnPropNameInTable="cotizacion1Column" msprop:Generator_UserColumnName="cotizacion1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="concepto" msprop:Generator_ColumnVarNameInTable="columnconcepto" msprop:Generator_ColumnPropNameInRow="concepto" msprop:Generator_ColumnPropNameInTable="conceptoColumn" msprop:Generator_UserColumnName="concepto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Entrada" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEntrada" msprop:Generator_ColumnPropNameInRow="Entrada" msprop:Generator_ColumnPropNameInTable="EntradaColumn" msprop:Generator_UserColumnName="Entrada" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Salida" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSalida" msprop:Generator_ColumnPropNameInRow="Salida" msprop:Generator_ColumnPropNameInTable="SalidaColumn" msprop:Generator_UserColumnName="Salida" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DESMONEDA" msprop:Generator_ColumnVarNameInTable="columnDESMONEDA" msprop:Generator_ColumnPropNameInRow="DESMONEDA" msprop:Generator_ColumnPropNameInTable="DESMONEDAColumn" msprop:Generator_UserColumnName="DESMONEDA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechapaertura" msprop:Generator_ColumnVarNameInTable="columnfechapaertura" msprop:Generator_ColumnPropNameInRow="fechapaertura" msprop:Generator_ColumnPropNameInTable="fechapaerturaColumn" msprop:Generator_UserColumnName="fechapaertura" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="apertura_num" msprop:Generator_ColumnVarNameInTable="columnapertura_num" msprop:Generator_ColumnPropNameInRow="apertura_num" msprop:Generator_ColumnPropNameInTable="apertura_numColumn" msprop:Generator_UserColumnName="apertura_num" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESUSUARIO" msprop:Generator_ColumnVarNameInTable="columnDESUSUARIO" msprop:Generator_ColumnPropNameInRow="DESUSUARIO" msprop:Generator_ColumnPropNameInTable="DESUSUARIOColumn" msprop:Generator_UserColumnName="DESUSUARIO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_cierre" msprop:Generator_ColumnVarNameInTable="columnfecha_cierre" msprop:Generator_ColumnPropNameInRow="fecha_cierre" msprop:Generator_ColumnPropNameInTable="fecha_cierreColumn" msprop:Generator_UserColumnName="fecha_cierre" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CODSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnCODSUCURSAL" msprop:Generator_ColumnPropNameInRow="CODSUCURSAL" msprop:Generator_ColumnPropNameInTable="CODSUCURSALColumn" msprop:Generator_UserColumnName="CODSUCURSAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DESSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnDESSUCURSAL" msprop:Generator_ColumnPropNameInRow="DESSUCURSAL" msprop:Generator_ColumnPropNameInTable="DESSUCURSALColumn" msprop:Generator_UserColumnName="DESSUCURSAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMCOMPRA" msprop:Generator_ColumnVarNameInTable="columnNUMCOMPRA" msprop:Generator_ColumnPropNameInRow="NUMCOMPRA" msprop:Generator_ColumnPropNameInTable="NUMCOMPRAColumn" msprop:Generator_UserColumnName="NUMCOMPRA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMVENTA" msprop:Generator_ColumnVarNameInTable="columnNUMVENTA" msprop:Generator_ColumnPropNameInRow="NUMVENTA" msprop:Generator_ColumnPropNameInTable="NUMVENTAColumn" msprop:Generator_UserColumnName="NUMVENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_tipo_dinero" msprop:Generator_ColumnVarNameInTable="columnid_tipo_dinero" msprop:Generator_ColumnPropNameInRow="id_tipo_dinero" msprop:Generator_ColumnPropNameInTable="id_tipo_dineroColumn" msprop:Generator_UserColumnName="id_tipo_dinero" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="CODUSUARIO" msprop:Generator_ColumnVarNameInTable="columnCODUSUARIO" msprop:Generator_ColumnPropNameInRow="CODUSUARIO" msprop:Generator_ColumnPropNameInTable="CODUSUARIOColumn" msprop:Generator_UserColumnName="CODUSUARIO" type="xs:int" minOccurs="0" />
+              <xs:element name="FECHAVENTA" msprop:Generator_ColumnVarNameInTable="columnFECHAVENTA" msprop:Generator_ColumnPropNameInRow="FECHAVENTA" msprop:Generator_ColumnPropNameInTable="FECHAVENTAColumn" msprop:Generator_UserColumnName="FECHAVENTA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NUMCAJA" msprop:Generator_ColumnVarNameInTable="columnNUMCAJA" msprop:Generator_ColumnPropNameInRow="NUMCAJA" msprop:Generator_ColumnPropNameInTable="NUMCAJAColumn" msprop:Generator_UserColumnName="NUMCAJA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODSUCURSAL1" msdata:Caption="CODSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnCODSUCURSAL1" msprop:Generator_ColumnPropNameInRow="CODSUCURSAL1" msprop:Generator_ColumnPropNameInTable="CODSUCURSAL1Column" msprop:Generator_UserColumnName="CODSUCURSAL1" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RVAperturaCierre" msprop:Generator_TableClassName="RVAperturaCierreDataTable" msprop:Generator_TableVarName="tableRVAperturaCierre" msprop:Generator_RowChangedName="RVAperturaCierreRowChanged" msprop:Generator_TablePropName="RVAperturaCierre" msprop:Generator_RowDeletingName="RVAperturaCierreRowDeleting" msprop:Generator_RowChangingName="RVAperturaCierreRowChanging" msprop:Generator_RowEvHandlerName="RVAperturaCierreRowChangeEventHandler" msprop:Generator_RowDeletedName="RVAperturaCierreRowDeleted" msprop:Generator_RowClassName="RVAperturaCierreRow" msprop:Generator_UserTableName="RVAperturaCierre" msprop:Generator_RowEvArgName="RVAperturaCierreRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_apertura" msprop:Generator_ColumnVarNameInTable="columnid_apertura" msprop:Generator_ColumnPropNameInRow="id_apertura" msprop:Generator_ColumnPropNameInTable="id_aperturaColumn" msprop:Generator_UserColumnName="id_apertura" type="xs:int" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cierre" msprop:Generator_ColumnVarNameInTable="columnCierre" msprop:Generator_ColumnPropNameInRow="Cierre" msprop:Generator_ColumnPropNameInTable="CierreColumn" msprop:Generator_UserColumnName="Cierre" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RVTotal" msprop:Generator_TableClassName="RVTotalDataTable" msprop:Generator_TableVarName="tableRVTotal" msprop:Generator_RowChangedName="RVTotalRowChanged" msprop:Generator_TablePropName="RVTotal" msprop:Generator_RowDeletingName="RVTotalRowDeleting" msprop:Generator_RowChangingName="RVTotalRowChanging" msprop:Generator_RowEvHandlerName="RVTotalRowChangeEventHandler" msprop:Generator_RowDeletedName="RVTotalRowDeleted" msprop:Generator_RowClassName="RVTotalRow" msprop:Generator_UserTableName="RVTotal" msprop:Generator_RowEvArgName="RVTotalRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_apertura" msprop:Generator_ColumnVarNameInTable="columnid_apertura" msprop:Generator_ColumnPropNameInRow="id_apertura" msprop:Generator_ColumnPropNameInTable="id_aperturaColumn" msprop:Generator_UserColumnName="id_apertura" type="xs:int" minOccurs="0" />
+              <xs:element name="monto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id_caja" msprop:Generator_ColumnVarNameInTable="columnid_caja" msprop:Generator_ColumnPropNameInRow="id_caja" msprop:Generator_ColumnPropNameInTable="id_cajaColumn" msprop:Generator_UserColumnName="id_caja" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RVRetenciones" msprop:Generator_TableClassName="RVRetencionesDataTable" msprop:Generator_TableVarName="tableRVRetenciones" msprop:Generator_RowChangedName="RVRetencionesRowChanged" msprop:Generator_TablePropName="RVRetenciones" msprop:Generator_RowDeletingName="RVRetencionesRowDeleting" msprop:Generator_RowChangingName="RVRetencionesRowChanging" msprop:Generator_RowEvHandlerName="RVRetencionesRowChangeEventHandler" msprop:Generator_RowDeletedName="RVRetencionesRowDeleted" msprop:Generator_RowClassName="RVRetencionesRow" msprop:Generator_UserTableName="RVRetenciones" msprop:Generator_RowEvArgName="RVRetencionesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODCOBRO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCOBRO" msprop:Generator_ColumnPropNameInRow="CODCOBRO" msprop:Generator_ColumnPropNameInTable="CODCOBROColumn" msprop:Generator_UserColumnName="CODCOBRO" type="xs:int" />
+              <xs:element name="CODVENTA" msprop:Generator_ColumnVarNameInTable="columnCODVENTA" msprop:Generator_ColumnPropNameInRow="CODVENTA" msprop:Generator_ColumnPropNameInTable="CODVENTAColumn" msprop:Generator_UserColumnName="CODVENTA" type="xs:int" minOccurs="0" />
+              <xs:element name="IMPORTE" msprop:Generator_ColumnVarNameInTable="columnIMPORTE" msprop:Generator_ColumnPropNameInRow="IMPORTE" msprop:Generator_ColumnPropNameInTable="IMPORTEColumn" msprop:Generator_UserColumnName="IMPORTE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DESTIPOCOBRO" msprop:Generator_ColumnVarNameInTable="columnDESTIPOCOBRO" msprop:Generator_ColumnPropNameInRow="DESTIPOCOBRO" msprop:Generator_ColumnPropNameInTable="DESTIPOCOBROColumn" msprop:Generator_UserColumnName="DESTIPOCOBRO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FECHACOBRO" msprop:Generator_ColumnVarNameInTable="columnFECHACOBRO" msprop:Generator_ColumnPropNameInRow="FECHACOBRO" msprop:Generator_ColumnPropNameInTable="FECHACOBROColumn" msprop:Generator_UserColumnName="FECHACOBRO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NRORECIBO" msprop:Generator_ColumnVarNameInTable="columnNRORECIBO" msprop:Generator_ColumnPropNameInRow="NRORECIBO" msprop:Generator_ColumnPropNameInTable="NRORECIBOColumn" msprop:Generator_UserColumnName="NRORECIBO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMRETENCION" msprop:Generator_ColumnVarNameInTable="columnNUMRETENCION" msprop:Generator_ColumnPropNameInRow="NUMRETENCION" msprop:Generator_ColumnPropNameInTable="NUMRETENCIONColumn" msprop:Generator_UserColumnName="NUMRETENCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMVENTA" msprop:Generator_ColumnVarNameInTable="columnNUMVENTA" msprop:Generator_ColumnPropNameInRow="NUMVENTA" msprop:Generator_ColumnPropNameInTable="NUMVENTAColumn" msprop:Generator_UserColumnName="NUMVENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOTALIVA" msprop:Generator_ColumnVarNameInTable="columnTOTALIVA" msprop:Generator_ColumnPropNameInRow="TOTALIVA" msprop:Generator_ColumnPropNameInTable="TOTALIVAColumn" msprop:Generator_UserColumnName="TOTALIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALVENTA" msprop:Generator_ColumnVarNameInTable="columnTOTALVENTA" msprop:Generator_ColumnPropNameInRow="TOTALVENTA" msprop:Generator_ColumnPropNameInTable="TOTALVENTAColumn" msprop:Generator_UserColumnName="TOTALVENTA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NOMBREFANTASIA" msprop:Generator_ColumnVarNameInTable="columnNOMBREFANTASIA" msprop:Generator_ColumnPropNameInRow="NOMBREFANTASIA" msprop:Generator_ColumnPropNameInTable="NOMBREFANTASIAColumn" msprop:Generator_UserColumnName="NOMBREFANTASIA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMCLIENTE" msprop:Generator_ColumnVarNameInTable="columnNUMCLIENTE" msprop:Generator_ColumnPropNameInRow="NUMCLIENTE" msprop:Generator_ColumnPropNameInTable="NUMCLIENTEColumn" msprop:Generator_UserColumnName="NUMCLIENTE" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RVCajaIva" />
+      <xs:field xpath="mstns:id_apertura" />
+    </xs:unique>
+    <xs:unique name="RVAperturaCierre_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RVAperturaCierre" />
+      <xs:field xpath="mstns:id_apertura" />
+    </xs:unique>
+    <xs:unique name="RVRetenciones_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RVRetenciones" />
+      <xs:field xpath="mstns:CODCOBRO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

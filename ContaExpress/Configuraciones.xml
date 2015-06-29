@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <Usuario>
+  </Usuario>
+  <Sistemas>
+    <add key="COMPRAS" Num="1" value="1" />
+    <add key="VENTAS" Num="2" value="2" />
+    <add key="INVENTARIO" Num="3" value="3" />
+    <add key="CONTABILIDAD" Num="4" value="4" />
+    <add key="USUARIOS" Num="5" value="5" />
+    <add key="TESORERIA" Num="6" value="6" />
+    <add key="PRODUCCION" Num="7" value="7" />
+    <add key="MARKETING" Num="8" value="7" />
+  </Sistemas>
+  <Modulos>
+    <!-- #################################################################Esta sección pertenece a compras#########################################################  -->
+    <add key="Compras" value="1" codmodulo="1" />
+    <add key="Productos" value="1" codmodulo="2" />
+    <add key="Proveedor" value="1" codmodulo="3" />
+    <add key="Inventario" value="1" codmodulo="14" />
+    <add key="Recepciones" value="1" codmodulo="20" />
+    <add key="Stock Inicial" value="1" codmodulo="15" />
+    <add key="Compras Simple" value="1" codmodulo="15" />
+    <add key="Combo" value="1" codmodulo="15" />
+    <add key="Stock Inicial Materia Prima" value="1" codmodulo="15" />
+    <add key="Pagos" value="1" codmodulo="15" />
+    <!-- #################################################################Esta sección pertenece a ventas#########################################################  -->
+    <add key="Productos" value="2" codmodulo="2" />
+    <add key="Facturacion" value="2" codmodulo="9" />
+    <add key="Facturacion Simple" value="2" codmodulo="10" />
+    <add key="Devoluciones" value="2" codmodulo="11" />
+    <add key="Inventario" value="2" codmodulo="14" />
+    <add key="Envios" value="2" codmodulo="20" />
+    <add key="Ingreso y Egreso" value="2" codmodulo="12" />
+    <add key="Clientes" value="2" codmodulo="17" />
+    <add key="Stock Inicial" value="2" codmodulo="15" />
+    <add key="Stock Inicial Materia Prima" value="2" codmodulo="15" />
+    <add key="Combo" value="2" codmodulo="15" />
+    <add key="Cierre Diario" value="2" codmodulo="18" />
+    <add key="Presupuesto" value="2" codmodulo="18" />
+    <add key="Cobros" value="2" codmodulo="20" />
+    <!-- #################################################################Esta sección pertenece a inventario#########################################################  -->
+    <add key="Inventario" value="3" codmodulo="14" />
+    <add key="Productos" value="3" codmodulo="2" />
+    <add key="Stock Inicial" value="3" codmodulo="15" />
+    <add key="Stock Inicial Materia Prima" value="3" codmodulo="15" />
+    <add key="Movimiento de Productos" value="3" codmodulo="16" />
+    <add key="Recepciones" value="3" codmodulo="20" />
+    <add key="Envios" value="3" codmodulo="20" />
+    <add key="Combo" value="3" codmodulo="15" />
+    <add key="Ajuste de Inventario" value="3" codmodulo="15" />
+    <!-- #################################################################Esta sección pertenece a contabilidad#########################################################  -->
+    <add key="Periodo Fiscal" value="4" codmodulo="15" />
+    <add key="Plan de Cuentas" value="4" codmodulo="15" />
+    <add key="Plantilla Proveedor" value="4" codmodulo="15" />
+    <add key="Plantilla Cliente" value="4" codmodulo="15" />
+    <add key="Libro Compra" value="4" codmodulo="15" />
+    <add key="Libro Venta" value="4" codmodulo="15" />
+    <add key="Registrar Asientos" value="4" codmodulo="15" />
+    <!-- #################################################################Esta sección pertenece a usuarios#########################################################  -->
+    <add key="Usuarios" value="5" codmodulo="8" />
+    <add key="Empresa" value="5" codmodulo="20" />
+    <add key="Grupos" value="5" codmodulo="20" />
+    <add key="Pais" value="5" codmodulo="20" />
+    <add key="Compras" value="5" codmodulo="1" />
+    <add key="Productos" value="5" codmodulo="2" />
+    <add key="Proveedor" value="5" codmodulo="3" />
+    <add key="Inventario" value="5" codmodulo="14" />
+    <add key="Centro de Costo" value="5" codmodulo="4" />
+    <add key="Rango de Comprobantes" value="5" codmodulo="18" />
+    <add key="Sucursales" value="5" codmodulo="19" />
+    <add key="Bancos" value="5" codmodulo="20" />
+    <add key="Monedas" value="5" codmodulo="20" />
+    <add key="Unidad de Medida" value="5" codmodulo="20" />
+    <add key="Encargado" value="5" codmodulo="6" />
+    <add key="Recepciones" value="5" codmodulo="20" />
+    <add key="Stock Inicial" value="5" codmodulo="15" />
+    <add key="Tipo Iva" value="5" codmodulo="15" />
+    <add key="Compras Simple" value="5" codmodulo="15" />
+    <add key="Chofer" value="5" codmodulo="5" />
+    <add key="Vendedor" value="5" codmodulo="7" />
+    <add key="Facturacion" value="5" codmodulo="9" />
+    <add key="Facturacion Simple" value="5" codmodulo="10" />
+    <add key="Devoluciones" value="5" codmodulo="11" />
+    <add key="Envios" value="5" codmodulo="20" />
+    <add key="Ingreso y Egreso" value="5" codmodulo="12" />
+    <add key="Clientes" value="5" codmodulo="17" />
+    <add key="Empresa Transporte" value="5" codmodulo="20" />
+    <add key="Caja" value="5" codmodulo="20" />
+    <add key="Concepto" value="5" codmodulo="20" />
+    <add key="Promociones" value="5" codmodulo="20" />
+    <add key="Tipo de Cliente" value="5" codmodulo="20" />
+    <add key="Movimiento de Productos" value="5" codmodulo="16" />
+    <add key="Ingreso y Egreso" value="5" codmodulo="12" />
+    <add key="Pagos" value="5" codmodulo="13" />
+    <add key="Salud de la Empresa" value="5" codmodulo="13" />
+    <add key="Tarjeta de Crédito" value="5" codmodulo="6" />
+    <add key="Colores" value="5" codmodulo="5" />
+    <add key="Combo" value="5" codmodulo="15" />
+    <add key="Auditoria de Ventanas" value="5" codmodulo="15" />
+    <add key="Operarios" value="5" codmodulo="15" />
+    <add key="Clasificacion de Productos" value="5" codmodulo="15" />
+    <add key="Metas" value="5" codmodulo="15" />
+    <add key="Eventos" value="5" codmodulo="15" />
+    <!-- #################################################################Esta sección pertenece a recursos humanos#########################################################  -->
+    <add key="Ficha de Empleado" value="6" codmodulo="18" />
+    <!-- #################################################################Esta sección pertenece a produccion#########################################################  -->
+    <add key="Materia Prima" value="7" codmodulo="18" />
+    <add key="Orden de Producción" value="7" codmodulo="18" />
+    <add key="Calculo de Materia Prima" value="7" codmodulo="18" />
+    <add key="Planilla de Produccion" value="7" codmodulo="18" />
+    <add key="Productos" value="7" codmodulo="2" />
+    <add key="Combo" value="7" codmodulo="15" />
+    <add key="Operaciones" value="7" codmodulo="15" />
+    <add key="Maquinas" value="7" codmodulo="15" />
+    <add key="Operaciones" value="7" codmodulo="15" />
+    <add key="Ficha de Empleado" value="6" codmodulo="18" />
+    <!-- #################################################################Esta sección pertenece a Marketing#########################################################  -->
+    <add key="MassEmail" value="8" codmodulo="18" />
+    <add key="ABMSmtp" value="8" codmodulo="18" />
+  </Modulos>
+  <Sucursal>
+    <add key="Codigo" value="1" descripcion="Central" />
+  </Sucursal>
+  <Maquina>
+    <add key="Codigo" value="3" descripcion="Caja 01" />
+  </Maquina>
+</configuration>

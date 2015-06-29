@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSImportacion" targetNamespace="http://tempuri.org/DSImportacion.xsd" xmlns:mstns="http://tempuri.org/DSImportacion.xsd" xmlns="http://tempuri.org/DSImportacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ImportacionTableAdapter" GeneratorDataComponentClassName="ImportacionTableAdapter" Name="Importacion" UserDataComponentName="ImportacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.COMPRAS.NUMCOMPRA, dbo.COMPRAS.TOTALCOMPRA, dbo.COMPRAS.CODCOMPRA, dbo.IMPORTACION.CODIMPORTACION, dbo.COMPRAS.IMPORTACIONRELACION
+FROM            dbo.COMPRAS LEFT OUTER JOIN
+                         dbo.IMPORTACION ON dbo.COMPRAS.CODCOMPRA = dbo.IMPORTACION.CODCOMPRA
+WHERE        (dbo.COMPRAS.ESTADO = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NUMCOMPRA" DataSetColumn="NUMCOMPRA" />
+              <Mapping SourceColumn="TOTALCOMPRA" DataSetColumn="TOTALCOMPRA" />
+              <Mapping SourceColumn="CODCOMPRA" DataSetColumn="CODCOMPRA" />
+              <Mapping SourceColumn="CODIMPORTACION" DataSetColumn="CODIMPORTACION" />
+              <Mapping SourceColumn="IMPORTACIONRELACION" DataSetColumn="IMPORTACIONRELACION" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="COMPRAMADRETableAdapter" GeneratorDataComponentClassName="COMPRAMADRETableAdapter" Name="COMPRAMADRE" UserDataComponentName="COMPRAMADRETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COMPRAS.NUMCOMPRA, COMPRAS.TOTALCOMPRA, COMPRAS.CODCOMPRA, COMPRAS.FECHACOMPRA, PROVEEDOR.NOMBRE
+FROM            COMPRAS INNER JOIN
+                         PROVEEDOR ON COMPRAS.CODPROVEEDOR = PROVEEDOR.CODPROVEEDOR
+WHERE        (COMPRAS.IVAINCLUIDO = 2) AND (COMPRAS.ESTADO = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NUMCOMPRA" DataSetColumn="NUMCOMPRA" />
+              <Mapping SourceColumn="TOTALCOMPRA" DataSetColumn="TOTALCOMPRA" />
+              <Mapping SourceColumn="CODCOMPRA" DataSetColumn="CODCOMPRA" />
+              <Mapping SourceColumn="FECHACOMPRA" DataSetColumn="FECHACOMPRA" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProductoTableAdapter" GeneratorDataComponentClassName="ProductoTableAdapter" Name="Producto" UserDataComponentName="ProductoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.COMPRASDETALLE.CODCOMPRA, dbo.COMPRASDETALLE.CANTIDADCOMPRA, dbo.COMPRASDETALLE.COSTOUNITARIO, dbo.COMPRASDETALLE.DESPRODUCTO, dbo.COMPRASDETALLE.CODCODIGO, 
+                         dbo.PRODUCTOS.PRODUCTO, dbo.PRODUCTOS.SERVICIO
+FROM            dbo.COMPRASDETALLE INNER JOIN
+                         dbo.CODIGOS ON dbo.COMPRASDETALLE.CODCODIGO = dbo.CODIGOS.CODCODIGO INNER JOIN
+                         dbo.PRODUCTOS ON dbo.CODIGOS.CODPRODUCTO = dbo.PRODUCTOS.CODPRODUCTO
+WHERE        (dbo.PRODUCTOS.PRODUCTO = 0) AND (dbo.PRODUCTOS.SERVICIO = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODCOMPRA" DataSetColumn="CODCOMPRA" />
+              <Mapping SourceColumn="CANTIDADCOMPRA" DataSetColumn="CANTIDADCOMPRA" />
+              <Mapping SourceColumn="COSTOUNITARIO" DataSetColumn="COSTOUNITARIO" />
+              <Mapping SourceColumn="DESPRODUCTO" DataSetColumn="DESPRODUCTO" />
+              <Mapping SourceColumn="CODCODIGO" DataSetColumn="CODCODIGO" />
+              <Mapping SourceColumn="PRODUCTO" DataSetColumn="PRODUCTO" />
+              <Mapping SourceColumn="SERVICIO" DataSetColumn="SERVICIO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTProrrateoTableAdapter" GeneratorDataComponentClassName="DTProrrateoTableAdapter" Name="DTProrrateo" UserDataComponentName="DTProrrateoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT dbo.MOVPRODUCTODETALLE.COSTO, dbo.MOVPRODUCTODETALLE.COSTOIMPORT, dbo.PRODUCTOS.DESPRODUCTO, dbo.MOVPRODUCTODETALLE.CODMOVIMIENTO, 
+                         dbo.COMPRASDETALLE.CODCOMPRA
+FROM            dbo.MOVPRODUCTO INNER JOIN
+                         dbo.MOVPRODUCTODETALLE ON dbo.MOVPRODUCTO.CODMOVIMIENTO = dbo.MOVPRODUCTODETALLE.CODMOVIMIENTO LEFT OUTER JOIN
+                         dbo.COMPRASDETALLE LEFT OUTER JOIN
+                         dbo.PRODUCTOS ON dbo.COMPRASDETALLE.CODPRODUCTO = dbo.PRODUCTOS.CODPRODUCTO ON dbo.MOVPRODUCTODETALLE.CODPRODUCTO = dbo.PRODUCTOS.CODPRODUCTO
+ORDER BY dbo.COMPRASDETALLE.CODCOMPRA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="COSTO" DataSetColumn="COSTO" />
+              <Mapping SourceColumn="COSTOIMPORT" DataSetColumn="COSTOIMPORT" />
+              <Mapping SourceColumn="DESPRODUCTO" DataSetColumn="DESPRODUCTO" />
+              <Mapping SourceColumn="CODMOVIMIENTO" DataSetColumn="CODMOVIMIENTO" />
+              <Mapping SourceColumn="CODCOMPRA" DataSetColumn="CODCOMPRA" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBycompra" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBycompra" GeneratorSourceName="FillBycompra" GetMethodModifier="Public" GetMethodName="GetDataBycompra" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBycompra" UserSourceName="FillBycompra">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT dbo.MOVPRODUCTODETALLE.COSTO, dbo.MOVPRODUCTODETALLE.COSTOIMPORT, dbo.PRODUCTOS.DESPRODUCTO, dbo.MOVPRODUCTODETALLE.CODMOVIMIENTO, 
+                         dbo.COMPRASDETALLE.CODCOMPRA
+FROM            dbo.MOVPRODUCTO INNER JOIN
+                         dbo.MOVPRODUCTODETALLE ON dbo.MOVPRODUCTO.CODMOVIMIENTO = dbo.MOVPRODUCTODETALLE.CODMOVIMIENTO LEFT OUTER JOIN
+                         dbo.COMPRASDETALLE LEFT OUTER JOIN
+                         dbo.PRODUCTOS ON dbo.COMPRASDETALLE.CODPRODUCTO = dbo.PRODUCTOS.CODPRODUCTO ON dbo.MOVPRODUCTODETALLE.CODPRODUCTO = dbo.PRODUCTOS.CODPRODUCTO
+WHERE dbo.COMPRASDETALLE.CODCOMPRA = @compra
+ORDER BY dbo.COMPRASDETALLE.CODCOMPRA</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="compra" ColumnName="CODCOMPRA" DataSourceName="Guazu1.dbo.COMPRASDETALLE" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@compra" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="CODCOMPRA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSImportacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSImportacion" msprop:Generator_UserDSName="DSImportacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Importacion" msprop:Generator_TableClassName="ImportacionDataTable" msprop:Generator_TableVarName="tableImportacion" msprop:Generator_TablePropName="Importacion" msprop:Generator_RowDeletingName="ImportacionRowDeleting" msprop:Generator_RowChangingName="ImportacionRowChanging" msprop:Generator_RowEvHandlerName="ImportacionRowChangeEventHandler" msprop:Generator_RowDeletedName="ImportacionRowDeleted" msprop:Generator_UserTableName="Importacion" msprop:Generator_RowChangedName="ImportacionRowChanged" msprop:Generator_RowEvArgName="ImportacionRowChangeEvent" msprop:Generator_RowClassName="ImportacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NUMCOMPRA" msprop:Generator_ColumnVarNameInTable="columnNUMCOMPRA" msprop:Generator_ColumnPropNameInRow="NUMCOMPRA" msprop:Generator_ColumnPropNameInTable="NUMCOMPRAColumn" msprop:Generator_UserColumnName="NUMCOMPRA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOTALCOMPRA" msprop:Generator_ColumnVarNameInTable="columnTOTALCOMPRA" msprop:Generator_ColumnPropNameInRow="TOTALCOMPRA" msprop:Generator_ColumnPropNameInTable="TOTALCOMPRAColumn" msprop:Generator_UserColumnName="TOTALCOMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODCOMPRA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCOMPRA" msprop:Generator_ColumnPropNameInRow="CODCOMPRA" msprop:Generator_ColumnPropNameInTable="CODCOMPRAColumn" msprop:Generator_UserColumnName="CODCOMPRA" type="xs:decimal" />
+              <xs:element name="CODIMPORTACION" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODIMPORTACION" msprop:Generator_ColumnPropNameInRow="CODIMPORTACION" msprop:Generator_ColumnPropNameInTable="CODIMPORTACIONColumn" msprop:Generator_UserColumnName="CODIMPORTACION" type="xs:int" minOccurs="0" />
+              <xs:element name="IMPORTACIONRELACION" msprop:Generator_ColumnVarNameInTable="columnIMPORTACIONRELACION" msprop:Generator_ColumnPropNameInRow="IMPORTACIONRELACION" msprop:Generator_ColumnPropNameInTable="IMPORTACIONRELACIONColumn" msprop:Generator_UserColumnName="IMPORTACIONRELACION" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="COMPRAMADRE" msprop:Generator_TableClassName="COMPRAMADREDataTable" msprop:Generator_TableVarName="tableCOMPRAMADRE" msprop:Generator_TablePropName="COMPRAMADRE" msprop:Generator_RowDeletingName="COMPRAMADRERowDeleting" msprop:Generator_RowChangingName="COMPRAMADRERowChanging" msprop:Generator_RowEvHandlerName="COMPRAMADRERowChangeEventHandler" msprop:Generator_RowDeletedName="COMPRAMADRERowDeleted" msprop:Generator_UserTableName="COMPRAMADRE" msprop:Generator_RowChangedName="COMPRAMADRERowChanged" msprop:Generator_RowEvArgName="COMPRAMADRERowChangeEvent" msprop:Generator_RowClassName="COMPRAMADRERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NUMCOMPRA" msprop:Generator_ColumnVarNameInTable="columnNUMCOMPRA" msprop:Generator_ColumnPropNameInRow="NUMCOMPRA" msprop:Generator_ColumnPropNameInTable="NUMCOMPRAColumn" msprop:Generator_UserColumnName="NUMCOMPRA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOTALCOMPRA" msprop:Generator_ColumnVarNameInTable="columnTOTALCOMPRA" msprop:Generator_ColumnPropNameInRow="TOTALCOMPRA" msprop:Generator_ColumnPropNameInTable="TOTALCOMPRAColumn" msprop:Generator_UserColumnName="TOTALCOMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODCOMPRA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCOMPRA" msprop:Generator_ColumnPropNameInRow="CODCOMPRA" msprop:Generator_ColumnPropNameInTable="CODCOMPRAColumn" msprop:Generator_UserColumnName="CODCOMPRA" type="xs:decimal" />
+              <xs:element name="FECHACOMPRA" msprop:Generator_ColumnVarNameInTable="columnFECHACOMPRA" msprop:Generator_ColumnPropNameInRow="FECHACOMPRA" msprop:Generator_ColumnPropNameInTable="FECHACOMPRAColumn" msprop:Generator_UserColumnName="FECHACOMPRA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Producto" msprop:Generator_TableClassName="ProductoDataTable" msprop:Generator_TableVarName="tableProducto" msprop:Generator_RowChangedName="ProductoRowChanged" msprop:Generator_TablePropName="Producto" msprop:Generator_RowDeletingName="ProductoRowDeleting" msprop:Generator_RowChangingName="ProductoRowChanging" msprop:Generator_RowEvHandlerName="ProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductoRowDeleted" msprop:Generator_RowClassName="ProductoRow" msprop:Generator_UserTableName="Producto" msprop:Generator_RowEvArgName="ProductoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODCOMPRA" msprop:Generator_ColumnVarNameInTable="columnCODCOMPRA" msprop:Generator_ColumnPropNameInRow="CODCOMPRA" msprop:Generator_ColumnPropNameInTable="CODCOMPRAColumn" msprop:Generator_UserColumnName="CODCOMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CANTIDADCOMPRA" msprop:Generator_ColumnVarNameInTable="columnCANTIDADCOMPRA" msprop:Generator_ColumnPropNameInRow="CANTIDADCOMPRA" msprop:Generator_ColumnPropNameInTable="CANTIDADCOMPRAColumn" msprop:Generator_UserColumnName="CANTIDADCOMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COSTOUNITARIO" msprop:Generator_ColumnVarNameInTable="columnCOSTOUNITARIO" msprop:Generator_ColumnPropNameInRow="COSTOUNITARIO" msprop:Generator_ColumnPropNameInTable="COSTOUNITARIOColumn" msprop:Generator_UserColumnName="COSTOUNITARIO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DESPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnDESPRODUCTO" msprop:Generator_ColumnPropNameInRow="DESPRODUCTO" msprop:Generator_ColumnPropNameInTable="DESPRODUCTOColumn" msprop:Generator_UserColumnName="DESPRODUCTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODCODIGO" msprop:Generator_ColumnVarNameInTable="columnCODCODIGO" msprop:Generator_ColumnPropNameInRow="CODCODIGO" msprop:Generator_ColumnPropNameInTable="CODCODIGOColumn" msprop:Generator_UserColumnName="CODCODIGO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PRODUCTO" msprop:Generator_ColumnVarNameInTable="columnPRODUCTO" msprop:Generator_ColumnPropNameInRow="PRODUCTO" msprop:Generator_ColumnPropNameInTable="PRODUCTOColumn" msprop:Generator_UserColumnName="PRODUCTO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="SERVICIO" msprop:Generator_ColumnVarNameInTable="columnSERVICIO" msprop:Generator_ColumnPropNameInRow="SERVICIO" msprop:Generator_ColumnPropNameInTable="SERVICIOColumn" msprop:Generator_UserColumnName="SERVICIO" type="xs:unsignedByte" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTProrrateo" msprop:Generator_TableClassName="DTProrrateoDataTable" msprop:Generator_TableVarName="tableDTProrrateo" msprop:Generator_TablePropName="DTProrrateo" msprop:Generator_RowDeletingName="DTProrrateoRowDeleting" msprop:Generator_RowChangingName="DTProrrateoRowChanging" msprop:Generator_RowEvHandlerName="DTProrrateoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTProrrateoRowDeleted" msprop:Generator_UserTableName="DTProrrateo" msprop:Generator_RowChangedName="DTProrrateoRowChanged" msprop:Generator_RowEvArgName="DTProrrateoRowChangeEvent" msprop:Generator_RowClassName="DTProrrateoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COSTO" msprop:Generator_ColumnVarNameInTable="columnCOSTO" msprop:Generator_ColumnPropNameInRow="COSTO" msprop:Generator_ColumnPropNameInTable="COSTOColumn" msprop:Generator_UserColumnName="COSTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COSTOIMPORT" msprop:Generator_ColumnVarNameInTable="columnCOSTOIMPORT" msprop:Generator_ColumnPropNameInRow="COSTOIMPORT" msprop:Generator_ColumnPropNameInTable="COSTOIMPORTColumn" msprop:Generator_UserColumnName="COSTOIMPORT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DESPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnDESPRODUCTO" msprop:Generator_ColumnPropNameInRow="DESPRODUCTO" msprop:Generator_ColumnPropNameInTable="DESPRODUCTOColumn" msprop:Generator_UserColumnName="DESPRODUCTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODMOVIMIENTO" msprop:Generator_ColumnVarNameInTable="columnCODMOVIMIENTO" msprop:Generator_ColumnPropNameInRow="CODMOVIMIENTO" msprop:Generator_ColumnPropNameInTable="CODMOVIMIENTOColumn" msprop:Generator_UserColumnName="CODMOVIMIENTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CODCOMPRA" msprop:Generator_ColumnVarNameInTable="columnCODCOMPRA" msprop:Generator_ColumnPropNameInRow="CODCOMPRA" msprop:Generator_ColumnPropNameInTable="CODCOMPRAColumn" msprop:Generator_UserColumnName="CODCOMPRA" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:COMPRAMADRE" />
+      <xs:field xpath="mstns:CODCOMPRA" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

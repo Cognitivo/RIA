@@ -1,0 +1,5 @@
+<connectionStrings>
+  <add name="ContaExpress.My.MySettings.GESTIONConnectionString2"
+    connectionString="Data Source=COGNITIVO-HP;Initial Catalog=raices;User ID=sa;Password=Cognitivo360"
+    providerName="System.Data.SqlClient" />
+</connectionStrings>

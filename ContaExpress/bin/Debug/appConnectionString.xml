@@ -1,0 +1,3 @@
+<connectionStrings>
+  <add connectionString="Data Source=COGENT-YOLANDA;Initial Catalog=CULTURAL;Integrated Security=True;Connect Timeout=20;Application Name=&quot;COGENT SIG&quot;" providerName="System.Data.ProviderName" name="ContaExpress.My.MySettings.GESTIONConnectionString2" />
+</connectionStrings>

@@ -1,0 +1,40 @@
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\bin\Debug\BDConexión.dll.config
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\bin\Debug\BDConexión.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\bin\Debug\BDConexión.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\bin\Debug\BDConexión.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\bin\Debug\TicketCS.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\bin\Debug\TicketCS.pdb
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\obj\Debug\BDConexión.vbprojResolveAssemblyReference.cache
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\obj\Debug\BDConexión.Resources.resources
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\obj\Debug\BDConexión.vbproj.GenerateResource.Cache
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\obj\Debug\BDConexión.dll
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\obj\Debug\BDConexión.xml
+C:\Users\Javier\Desktop\Nuevo Proyecto\BDConexión\obj\Debug\BDConexión.pdb
+C:\Users\Javier\Desktop\RIA\BDConexión\bin\Debug\BDConexión.dll.config
+C:\Users\Javier\Desktop\RIA\BDConexión\bin\Debug\BDConexión.pdb
+C:\Users\Javier\Desktop\RIA\BDConexión\bin\Debug\BDConexión.xml
+C:\Users\Javier\Desktop\RIA\BDConexión\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Javier\Desktop\RIA\BDConexión\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Javier\Desktop\RIA\BDConexión\bin\Debug\TicketCS.dll
+C:\Users\Javier\Desktop\RIA\BDConexión\bin\Debug\TicketCS.pdb
+C:\Users\Javier\Desktop\RIA\BDConexión\obj\Debug\BDConexión.vbprojResolveAssemblyReference.cache
+C:\Users\Javier\Desktop\RIA\BDConexión\obj\Debug\BDConexión.Resources.resources
+C:\Users\Javier\Desktop\RIA\BDConexión\obj\Debug\BDConexión.vbproj.GenerateResource.Cache
+C:\Users\Javier\Desktop\RIA\BDConexión\obj\Debug\BDConexión.dll
+C:\Users\Javier\Desktop\RIA\BDConexión\obj\Debug\BDConexión.xml
+C:\Users\Javier\Desktop\RIA\BDConexión\obj\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\RIA\BDConexión\bin\Debug\BDConexión.dll.config
+C:\Users\Yolanda\Desktop\RIA\BDConexión\bin\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\RIA\BDConexión\bin\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\RIA\BDConexión\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Yolanda\Desktop\RIA\BDConexión\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Yolanda\Desktop\RIA\BDConexión\bin\Debug\TicketCS.dll
+C:\Users\Yolanda\Desktop\RIA\BDConexión\bin\Debug\TicketCS.pdb
+C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.vbprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.Resources.resources
+C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.dll
+C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.pdb

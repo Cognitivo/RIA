@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsRCCompras" targetNamespace="http://tempuri.org/DsRCCompras.xsd" xmlns:mstns="http://tempuri.org/DsRCCompras.xsd" xmlns="http://tempuri.org/DsRCCompras.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RCProductosPorProveedorTableAdapter" GeneratorDataComponentClassName="RCProductosPorProveedorTableAdapter" Name="RCProductosPorProveedor" UserDataComponentName="RCProductosPorProveedorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODIGOS.CODCODIGO, CODIGOS.CODIGO, PROVEEDOR.NOMBRE, COMPRAS.NUMCOMPRA, SUM(COMPRASDETALLE.CANTIDADCOMPRA) AS CANTIDAD, 
+                         AVG(COMPRASDETALLE.COSTOUNITARIO) AS COSTO, CASE IVA WHEN 10 THEN AVG(COMPRASDETALLE.COSTOUNITARIO) 
+                         - AVG(COMPRASDETALLE.COSTOUNITARIO) / 11 WHEN 5 THEN AVG(COMPRASDETALLE.COSTOUNITARIO) - AVG(COMPRASDETALLE.COSTOUNITARIO) 
+                         / 21 ELSE AVG(COMPRASDETALLE.COSTOUNITARIO) END AS COSTOSINIVA, CASE IVA WHEN 0 THEN 'Ex' ELSE '' END AS EXENTA, 
+                         COMPRAS.FECHACOMPRA, PRODUCTOS.DESPRODUCTO, PROVEEDOR.NUMPROVEEDOR
+FROM            COMPRASDETALLE INNER JOIN
+                         COMPRAS ON COMPRASDETALLE.CODCOMPRA = COMPRAS.CODCOMPRA INNER JOIN
+                         CODIGOS ON COMPRASDETALLE.CODCODIGO = CODIGOS.CODCODIGO INNER JOIN
+                         PRODUCTOS ON CODIGOS.CODPRODUCTO = PRODUCTOS.CODPRODUCTO INNER JOIN
+                         PROVEEDOR ON COMPRAS.CODPROVEEDOR = PROVEEDOR.CODPROVEEDOR
+WHERE COMPRAS.ESTADO=1
+GROUP BY CODIGOS.CODCODIGO, CODIGOS.CODIGO, PROVEEDOR.NOMBRE, COMPRAS.NUMCOMPRA, COMPRAS.FECHACOMPRA, PRODUCTOS.DESPRODUCTO, 
+                         PROVEEDOR.NUMPROVEEDOR, COMPRASDETALLE.IVA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODCODIGO" DataSetColumn="CODCODIGO" />
+              <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="NUMCOMPRA" DataSetColumn="NUMCOMPRA" />
+              <Mapping SourceColumn="CANTIDAD" DataSetColumn="CANTIDAD" />
+              <Mapping SourceColumn="COSTO" DataSetColumn="COSTO" />
+              <Mapping SourceColumn="FECHACOMPRA" DataSetColumn="FECHACOMPRA" />
+              <Mapping SourceColumn="DESPRODUCTO" DataSetColumn="DESPRODUCTO" />
+              <Mapping SourceColumn="NUMPROVEEDOR" DataSetColumn="NUMPROVEEDOR" />
+              <Mapping SourceColumn="COSTOSINIVA" DataSetColumn="COSTOSINIVA" />
+              <Mapping SourceColumn="EXENTA" DataSetColumn="EXENTA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LIBROIVACOMPRA_RCTableAdapter" GeneratorDataComponentClassName="LIBROIVACOMPRA_RCTableAdapter" Name="LIBROIVACOMPRA_RC" UserDataComponentName="LIBROIVACOMPRA_RCTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT COMPRAS.NUMCOMPRA, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.PROVEEDOR.NOMBRE ELSE 'FACTURA ANULADA' END AS NOMBRE, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.PROVEEDOR.RUC_CIN ELSE '0' END AS RUC_CIN, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN TOTALGRAVADO10 ELSE '0' END AS IMPORTEGRAVADO10, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.COMPRAS.TOTALGRAVADO5 ELSE '0' END AS IMPORTEGRAVADO5, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.COMPRAS.TOTALIVA5 ELSE '0' END AS TOTALIVA5, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.COMPRAS.TOTALIVA10 ELSE '0' END AS TOTALIVA10, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.COMPRAS.TOTALEXENTA ELSE '0' END AS TOTALEXENTA, COMPRAS.MODALIDADPAGO, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN SUM(dbo.COMPRAS.TOTALGRAVADA) ELSE '0' END AS TOTALGRAVADA, DAY(COMPRAS.FECHACOMPRA) AS FECHACOMPRA, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN SUM(dbo.COMPRAS.TOTALIVA) ELSE '0' END AS TOTALIVA, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN COMPRAS.TOTALCOMPRA ELSE '0' END AS TOTALCOMPRA, 
+                         COMPRAS.ESTADO, SUCURSAL.DESSUCURSAL
+FROM            COMPRAS INNER JOIN
+                         PROVEEDOR ON COMPRAS.CODPROVEEDOR = PROVEEDOR.CODPROVEEDOR INNER JOIN
+                         SUCURSAL ON COMPRAS.CODSUCURSAL = SUCURSAL.CODSUCURSAL
+GROUP BY COMPRAS.NUMCOMPRA, PROVEEDOR.NOMBRE, PROVEEDOR.RUC_CIN, COMPRAS.MODALIDADPAGO, COMPRAS.FECHACOMPRA, COMPRAS.TOTALCOMPRA, COMPRAS.ESTADO, COMPRAS.CODSUCURSAL, 
+                         SUCURSAL.DESSUCURSAL, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN (dbo.COMPRAS.TOTALEXENTA) ELSE '0' END, COMPRAS.TOTALEXENTA, COMPRAS.TOTALIVA, COMPRAS.TOTALIVA5, 
+                         COMPRAS.TOTALIVA10, COMPRAS.TOTALGRAVADO5, COMPRAS.TOTALGRAVADO10
+HAVING        (COMPRAS.FECHACOMPRA &gt;= CONVERT(DATETIME, @desde, 103)) AND (COMPRAS.FECHACOMPRA &lt;= CONVERT(DATETIME, @hasta, 103)) AND (COMPRAS.CODSUCURSAL = @CODSUCURSAL) AND 
+                         (COMPRAS.ESTADO &lt;&gt; 0)
+ORDER BY FECHACOMPRA, COMPRAS.NUMCOMPRA</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="desde" ColumnName="FECHACOMPRA" DataSourceName="Fipar.dbo.COMPRAS" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@desde" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACOMPRA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="hasta" ColumnName="FECHACOMPRA" DataSourceName="Fipar.dbo.COMPRAS" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@hasta" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACOMPRA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="CODSUCURSAL" ColumnName="CODSUCURSAL" DataSourceName="Fipar.dbo.COMPRAS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CODSUCURSAL" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CODSUCURSAL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NUMCOMPRA" DataSetColumn="NUMCOMPRA" />
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="RUC_CIN" DataSetColumn="RUC_CIN" />
+              <Mapping SourceColumn="IMPORTEGRAVADO10" DataSetColumn="IMPORTEGRAVADO10" />
+              <Mapping SourceColumn="IMPORTEGRAVADO5" DataSetColumn="IMPORTEGRAVADO5" />
+              <Mapping SourceColumn="TOTALIVA5" DataSetColumn="TOTALIVA5" />
+              <Mapping SourceColumn="TOTALIVA10" DataSetColumn="TOTALIVA10" />
+              <Mapping SourceColumn="TOTALEXENTA" DataSetColumn="TOTALEXENTA" />
+              <Mapping SourceColumn="MODALIDADPAGO" DataSetColumn="MODALIDADPAGO" />
+              <Mapping SourceColumn="TOTALGRAVADA" DataSetColumn="TOTALGRAVADA" />
+              <Mapping SourceColumn="FECHACOMPRA" DataSetColumn="FECHACOMPRA" />
+              <Mapping SourceColumn="TOTALIVA" DataSetColumn="TOTALIVA" />
+              <Mapping SourceColumn="TOTALCOMPRA" DataSetColumn="TOTALCOMPRA" />
+              <Mapping SourceColumn="ESTADO" DataSetColumn="ESTADO" />
+              <Mapping SourceColumn="DESSUCURSAL" DataSetColumn="DESSUCURSAL" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT COMPRAS.NUMCOMPRA, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.PROVEEDOR.NOMBRE ELSE 'FACTURA ANULADA' END AS NOMBRE, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.PROVEEDOR.RUC_CIN ELSE '0' END AS RUC_CIN, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN TOTALGRAVADO10 ELSE '0' END AS IMPORTEGRAVADO10, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.COMPRAS.TOTALGRAVADO5 ELSE '0' END AS IMPORTEGRAVADO5, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.COMPRAS.TOTALIVA5 ELSE '0' END AS TOTALIVA5, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.COMPRAS.TOTALIVA10 ELSE '0' END AS TOTALIVA10, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN dbo.COMPRAS.TOTALEXENTA ELSE '0' END AS TOTALEXENTA, COMPRAS.MODALIDADPAGO, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN SUM(dbo.COMPRAS.TOTALGRAVADA) ELSE '0' END AS TOTALGRAVADA, DAY(COMPRAS.FECHACOMPRA) AS FECHACOMPRA, 
+                         CASE dbo.COMPRAS.ESTADO WHEN 1 THEN SUM(dbo.COMPRAS.TOTALIVA) ELSE '0' END AS TOTALIVA, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN COMPRAS.TOTALCOMPRA ELSE '0' END AS TOTALCOMPRA, 
+                         COMPRAS.ESTADO, SUCURSAL.DESSUCURSAL
+FROM            COMPRAS INNER JOIN
+                         PROVEEDOR ON COMPRAS.CODPROVEEDOR = PROVEEDOR.CODPROVEEDOR INNER JOIN
+                         SUCURSAL ON COMPRAS.CODSUCURSAL = SUCURSAL.CODSUCURSAL
+GROUP BY COMPRAS.NUMCOMPRA, PROVEEDOR.NOMBRE, PROVEEDOR.RUC_CIN, COMPRAS.MODALIDADPAGO, COMPRAS.FECHACOMPRA, COMPRAS.TOTALCOMPRA, COMPRAS.ESTADO, COMPRAS.CODSUCURSAL, 
+                         SUCURSAL.DESSUCURSAL, CASE dbo.COMPRAS.ESTADO WHEN 1 THEN (dbo.COMPRAS.TOTALEXENTA) ELSE '0' END, COMPRAS.TOTALEXENTA, COMPRAS.TOTALIVA, COMPRAS.TOTALIVA5, 
+                         COMPRAS.TOTALIVA10, COMPRAS.TOTALGRAVADO5, COMPRAS.TOTALGRAVADO10
+HAVING        (COMPRAS.FECHACOMPRA &gt;= CONVERT(DATETIME, @desde, 103)) AND (COMPRAS.FECHACOMPRA &lt;= CONVERT(DATETIME, @hasta, 103))
+ORDER BY FECHACOMPRA, COMPRAS.NUMCOMPRA</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="desde" ColumnName="FECHACOMPRA" DataSourceName="Fipar.dbo.COMPRAS" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@desde" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACOMPRA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="hasta" ColumnName="FECHACOMPRA" DataSourceName="Fipar.dbo.COMPRAS" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@hasta" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FECHACOMPRA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsRCCompras" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DsRCCompras" msprop:Generator_UserDSName="DsRCCompras">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RCProductosPorProveedor" msprop:Generator_TableClassName="RCProductosPorProveedorDataTable" msprop:Generator_TableVarName="tableRCProductosPorProveedor" msprop:Generator_TablePropName="RCProductosPorProveedor" msprop:Generator_RowDeletingName="RCProductosPorProveedorRowDeleting" msprop:Generator_RowChangingName="RCProductosPorProveedorRowChanging" msprop:Generator_RowEvHandlerName="RCProductosPorProveedorRowChangeEventHandler" msprop:Generator_RowDeletedName="RCProductosPorProveedorRowDeleted" msprop:Generator_UserTableName="RCProductosPorProveedor" msprop:Generator_RowChangedName="RCProductosPorProveedorRowChanged" msprop:Generator_RowEvArgName="RCProductosPorProveedorRowChangeEvent" msprop:Generator_RowClassName="RCProductosPorProveedorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODCODIGO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODCODIGO" msprop:Generator_ColumnPropNameInRow="CODCODIGO" msprop:Generator_ColumnPropNameInTable="CODCODIGOColumn" msprop:Generator_UserColumnName="CODCODIGO" type="xs:int" />
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMCOMPRA" msprop:Generator_ColumnVarNameInTable="columnNUMCOMPRA" msprop:Generator_ColumnPropNameInRow="NUMCOMPRA" msprop:Generator_ColumnPropNameInTable="NUMCOMPRAColumn" msprop:Generator_UserColumnName="NUMCOMPRA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CANTIDAD" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCANTIDAD" msprop:Generator_ColumnPropNameInRow="CANTIDAD" msprop:Generator_ColumnPropNameInTable="CANTIDADColumn" msprop:Generator_UserColumnName="CANTIDAD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COSTO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOSTO" msprop:Generator_ColumnPropNameInRow="COSTO" msprop:Generator_ColumnPropNameInTable="COSTOColumn" msprop:Generator_UserColumnName="COSTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FECHACOMPRA" msprop:Generator_ColumnVarNameInTable="columnFECHACOMPRA" msprop:Generator_ColumnPropNameInRow="FECHACOMPRA" msprop:Generator_ColumnPropNameInTable="FECHACOMPRAColumn" msprop:Generator_UserColumnName="FECHACOMPRA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DESPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnDESPRODUCTO" msprop:Generator_ColumnPropNameInRow="DESPRODUCTO" msprop:Generator_ColumnPropNameInTable="DESPRODUCTOColumn" msprop:Generator_UserColumnName="DESPRODUCTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMPROVEEDOR" msprop:Generator_ColumnVarNameInTable="columnNUMPROVEEDOR" msprop:Generator_ColumnPropNameInRow="NUMPROVEEDOR" msprop:Generator_ColumnPropNameInTable="NUMPROVEEDORColumn" msprop:Generator_UserColumnName="NUMPROVEEDOR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COSTOSINIVA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCOSTOSINIVA" msprop:Generator_ColumnPropNameInRow="COSTOSINIVA" msprop:Generator_ColumnPropNameInTable="COSTOSINIVAColumn" msprop:Generator_UserColumnName="COSTOSINIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="EXENTA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEXENTA" msprop:Generator_ColumnPropNameInRow="EXENTA" msprop:Generator_ColumnPropNameInTable="EXENTAColumn" msprop:Generator_UserColumnName="EXENTA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LIBROIVACOMPRA_RC" msprop:Generator_TableClassName="LIBROIVACOMPRA_RCDataTable" msprop:Generator_TableVarName="tableLIBROIVACOMPRA_RC" msprop:Generator_RowChangedName="LIBROIVACOMPRA_RCRowChanged" msprop:Generator_TablePropName="LIBROIVACOMPRA_RC" msprop:Generator_RowDeletingName="LIBROIVACOMPRA_RCRowDeleting" msprop:Generator_RowChangingName="LIBROIVACOMPRA_RCRowChanging" msprop:Generator_RowEvHandlerName="LIBROIVACOMPRA_RCRowChangeEventHandler" msprop:Generator_RowDeletedName="LIBROIVACOMPRA_RCRowDeleted" msprop:Generator_RowClassName="LIBROIVACOMPRA_RCRow" msprop:Generator_UserTableName="LIBROIVACOMPRA_RC" msprop:Generator_RowEvArgName="LIBROIVACOMPRA_RCRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NUMCOMPRA" msprop:Generator_ColumnVarNameInTable="columnNUMCOMPRA" msprop:Generator_ColumnPropNameInRow="NUMCOMPRA" msprop:Generator_ColumnPropNameInTable="NUMCOMPRAColumn" msprop:Generator_UserColumnName="NUMCOMPRA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUC_CIN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRUC_CIN" msprop:Generator_ColumnPropNameInRow="RUC_CIN" msprop:Generator_ColumnPropNameInTable="RUC_CINColumn" msprop:Generator_UserColumnName="RUC_CIN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IMPORTEGRAVADO10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIMPORTEGRAVADO10" msprop:Generator_ColumnPropNameInRow="IMPORTEGRAVADO10" msprop:Generator_ColumnPropNameInTable="IMPORTEGRAVADO10Column" msprop:Generator_UserColumnName="IMPORTEGRAVADO10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTEGRAVADO5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIMPORTEGRAVADO5" msprop:Generator_ColumnPropNameInRow="IMPORTEGRAVADO5" msprop:Generator_ColumnPropNameInTable="IMPORTEGRAVADO5Column" msprop:Generator_UserColumnName="IMPORTEGRAVADO5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALIVA5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALIVA5" msprop:Generator_ColumnPropNameInRow="TOTALIVA5" msprop:Generator_ColumnPropNameInTable="TOTALIVA5Column" msprop:Generator_UserColumnName="TOTALIVA5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALIVA10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALIVA10" msprop:Generator_ColumnPropNameInRow="TOTALIVA10" msprop:Generator_ColumnPropNameInTable="TOTALIVA10Column" msprop:Generator_UserColumnName="TOTALIVA10" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALEXENTA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALEXENTA" msprop:Generator_ColumnPropNameInRow="TOTALEXENTA" msprop:Generator_ColumnPropNameInTable="TOTALEXENTAColumn" msprop:Generator_UserColumnName="TOTALEXENTA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MODALIDADPAGO" msprop:Generator_ColumnVarNameInTable="columnMODALIDADPAGO" msprop:Generator_ColumnPropNameInRow="MODALIDADPAGO" msprop:Generator_ColumnPropNameInTable="MODALIDADPAGOColumn" msprop:Generator_UserColumnName="MODALIDADPAGO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="TOTALGRAVADA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALGRAVADA" msprop:Generator_ColumnPropNameInRow="TOTALGRAVADA" msprop:Generator_ColumnPropNameInTable="TOTALGRAVADAColumn" msprop:Generator_UserColumnName="TOTALGRAVADA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FECHACOMPRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFECHACOMPRA" msprop:Generator_ColumnPropNameInRow="FECHACOMPRA" msprop:Generator_ColumnPropNameInTable="FECHACOMPRAColumn" msprop:Generator_UserColumnName="FECHACOMPRA" type="xs:int" minOccurs="0" />
+              <xs:element name="TOTALIVA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALIVA" msprop:Generator_ColumnPropNameInRow="TOTALIVA" msprop:Generator_ColumnPropNameInTable="TOTALIVAColumn" msprop:Generator_UserColumnName="TOTALIVA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALCOMPRA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTOTALCOMPRA" msprop:Generator_ColumnPropNameInRow="TOTALCOMPRA" msprop:Generator_ColumnPropNameInTable="TOTALCOMPRAColumn" msprop:Generator_UserColumnName="TOTALCOMPRA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_UserColumnName="ESTADO" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DESSUCURSAL" msprop:Generator_ColumnVarNameInTable="columnDESSUCURSAL" msprop:Generator_ColumnPropNameInRow="DESSUCURSAL" msprop:Generator_ColumnPropNameInTable="DESSUCURSALColumn" msprop:Generator_UserColumnName="DESSUCURSAL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RCProductosPorProveedor" />
+      <xs:field xpath="mstns:CODCODIGO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

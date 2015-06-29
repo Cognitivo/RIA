@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsSerie" targetNamespace="http://tempuri.org/DsSerie.xsd" xmlns:mstns="http://tempuri.org/DsSerie.xsd" xmlns="http://tempuri.org/DsSerie.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PRODUCTOSTableAdapter" GeneratorDataComponentClassName="PRODUCTOSTableAdapter" Name="PRODUCTOS" UserDataComponentName="PRODUCTOSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PRODUCTOS.CODPRODUCTO, PRODUCTOS.DESPRODUCTO, CODIGOS.CODIGO
+FROM            PRODUCTOS INNER JOIN
+                         CODIGOS ON PRODUCTOS.CODPRODUCTO = CODIGOS.CODPRODUCTO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODPRODUCTO" DataSetColumn="CODPRODUCTO" />
+              <Mapping SourceColumn="DESPRODUCTO" DataSetColumn="DESPRODUCTO" />
+              <Mapping SourceColumn="CODIGO" DataSetColumn="CODIGO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PRODUCTO_SERIETableAdapter" GeneratorDataComponentClassName="PRODUCTO_SERIETableAdapter" Name="PRODUCTO_SERIE" UserDataComponentName="PRODUCTO_SERIETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PRODUCTO_SERIE.Id, PRODUCTO_SERIE.Id_producto, PRODUCTO_SERIE.Serie_desde, PRODUCTO_SERIE.Serie_hasta, PRODUCTO_SERIE.Serie_actual, 
+                         PRODUCTO_SERIE.Prefijo, PRODUCTO_SERIE.Estado, PRODUCTOS.DESPRODUCTO
+FROM            PRODUCTO_SERIE INNER JOIN
+                         PRODUCTOS ON PRODUCTO_SERIE.Id_producto = PRODUCTOS.CODPRODUCTO</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Id_producto" DataSetColumn="Id_producto" />
+              <Mapping SourceColumn="Serie_desde" DataSetColumn="Serie_desde" />
+              <Mapping SourceColumn="Serie_hasta" DataSetColumn="Serie_hasta" />
+              <Mapping SourceColumn="Serie_actual" DataSetColumn="Serie_actual" />
+              <Mapping SourceColumn="Prefijo" DataSetColumn="Prefijo" />
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="DESPRODUCTO" DataSetColumn="DESPRODUCTO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsSerie" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsSerie" msprop:Generator_UserDSName="DsSerie">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PRODUCTOS" msprop:Generator_TableClassName="PRODUCTOSDataTable" msprop:Generator_TableVarName="tablePRODUCTOS" msprop:Generator_TablePropName="PRODUCTOS" msprop:Generator_RowDeletingName="PRODUCTOSRowDeleting" msprop:Generator_RowChangingName="PRODUCTOSRowChanging" msprop:Generator_RowEvHandlerName="PRODUCTOSRowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUCTOSRowDeleted" msprop:Generator_UserTableName="PRODUCTOS" msprop:Generator_RowChangedName="PRODUCTOSRowChanged" msprop:Generator_RowEvArgName="PRODUCTOSRowChangeEvent" msprop:Generator_RowClassName="PRODUCTOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODPRODUCTO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODPRODUCTO" msprop:Generator_ColumnPropNameInRow="CODPRODUCTO" msprop:Generator_ColumnPropNameInTable="CODPRODUCTOColumn" msprop:Generator_UserColumnName="CODPRODUCTO" type="xs:decimal" />
+              <xs:element name="DESPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnDESPRODUCTO" msprop:Generator_ColumnPropNameInRow="DESPRODUCTO" msprop:Generator_ColumnPropNameInTable="DESPRODUCTOColumn" msprop:Generator_UserColumnName="DESPRODUCTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODIGO" msprop:Generator_ColumnVarNameInTable="columnCODIGO" msprop:Generator_ColumnPropNameInRow="CODIGO" msprop:Generator_ColumnPropNameInTable="CODIGOColumn" msprop:Generator_UserColumnName="CODIGO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PRODUCTO_SERIE" msprop:Generator_TableClassName="PRODUCTO_SERIEDataTable" msprop:Generator_TableVarName="tablePRODUCTO_SERIE" msprop:Generator_TablePropName="PRODUCTO_SERIE" msprop:Generator_RowDeletingName="PRODUCTO_SERIERowDeleting" msprop:Generator_RowChangingName="PRODUCTO_SERIERowChanging" msprop:Generator_RowEvHandlerName="PRODUCTO_SERIERowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUCTO_SERIERowDeleted" msprop:Generator_UserTableName="PRODUCTO_SERIE" msprop:Generator_RowChangedName="PRODUCTO_SERIERowChanged" msprop:Generator_RowEvArgName="PRODUCTO_SERIERowChangeEvent" msprop:Generator_RowClassName="PRODUCTO_SERIERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Id_producto" msprop:Generator_ColumnVarNameInTable="columnId_producto" msprop:Generator_ColumnPropNameInRow="Id_producto" msprop:Generator_ColumnPropNameInTable="Id_productoColumn" msprop:Generator_UserColumnName="Id_producto" type="xs:int" minOccurs="0" />
+              <xs:element name="Serie_desde" msprop:Generator_ColumnVarNameInTable="columnSerie_desde" msprop:Generator_ColumnPropNameInRow="Serie_desde" msprop:Generator_ColumnPropNameInTable="Serie_desdeColumn" msprop:Generator_UserColumnName="Serie_desde" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serie_hasta" msprop:Generator_ColumnVarNameInTable="columnSerie_hasta" msprop:Generator_ColumnPropNameInRow="Serie_hasta" msprop:Generator_ColumnPropNameInTable="Serie_hastaColumn" msprop:Generator_UserColumnName="Serie_hasta" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serie_actual" msprop:Generator_ColumnVarNameInTable="columnSerie_actual" msprop:Generator_ColumnPropNameInRow="Serie_actual" msprop:Generator_ColumnPropNameInTable="Serie_actualColumn" msprop:Generator_UserColumnName="Serie_actual" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Prefijo" msprop:Generator_ColumnVarNameInTable="columnPrefijo" msprop:Generator_ColumnPropNameInRow="Prefijo" msprop:Generator_ColumnPropNameInTable="PrefijoColumn" msprop:Generator_UserColumnName="Prefijo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DESPRODUCTO" msprop:Generator_ColumnVarNameInTable="columnDESPRODUCTO" msprop:Generator_ColumnPropNameInRow="DESPRODUCTO" msprop:Generator_ColumnPropNameInTable="DESPRODUCTOColumn" msprop:Generator_UserColumnName="DESPRODUCTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PRODUCTOS" />
+      <xs:field xpath="mstns:CODPRODUCTO" />
+    </xs:unique>
+    <xs:unique name="PRODUCTO_SERIE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PRODUCTO_SERIE" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

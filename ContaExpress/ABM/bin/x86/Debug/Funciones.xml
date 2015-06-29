@@ -1,0 +1,62 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Funciones
+</name>
+</assembly>
+<members>
+<member name="M:Funciones.Cadenas.ContarCad(System.String,System.String,System.Int32,Microsoft.VisualBasic.CompareMethod)">
+	<summary>
+ CUENTA EL NUMERO DE APARICIONES DE LA SUBCADENA
+ BASE 1:
+ </summary>
+	<param name="miCadena"></param>
+	<param name="search"></param>
+	<param name="start"></param>
+	<param name="Compare"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Funciones.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Funciones.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Funciones.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:Funciones.Sistema.AppPath(System.Boolean)">
+	<summary>
+ Devuelve el path de la aplicación.
+ Al usarse desde una librería (DLL), hay que usar GetCallingAssembly
+ para que devuelva el path del ejecutable (o librería) que llama a esta función.
+ Si no se usa GetCallingAssembly, devolvería el path de la librería.
+</summary>
+	<param name="backSlash">Opcional. True si debe devolver el path terminado en \</param>
+	<returns>
+ El path de la aplicación con o sin backslash, según el valor del parámetro.
+</returns>
+</member><member name="M:Funciones.Sistema.DLLName(System.Boolean)">
+	<summary>
+ Devuelve el nombre de esta librería.
+</summary>
+	<param name="fullPath">Opcional. True si debe devolver nombre completo.</param>
+	<returns>El nombre de esta librería, con o sin el path completo, según el valor del parámetro.
+</returns>
+</member><member name="M:Funciones.Sistema.DLLPath(System.Boolean)">
+	<summary>
+ Devuelve el path de esta librería.
+</summary>
+	<param name="backSlash">Opcional. True si debe devolver el path terminado en \
+</param>
+	<returns>
+ El path de esta librería, con o sin backslash, según el valor del parámetro.
+</returns>
+</member>
+</members>
+</doc>

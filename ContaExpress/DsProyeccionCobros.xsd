@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsProyeccionCobros" targetNamespace="http://tempuri.org/DsProyeccionCobros.xsd" xmlns:mstns="http://tempuri.org/DsProyeccionCobros.xsd" xmlns="http://tempuri.org/DsProyeccionCobros.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="GESTIONConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GESTIONConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ContaExpress.My.MySettings.GlobalReference.Default.GESTIONConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProyeccionCobrosTableAdapter" GeneratorDataComponentClassName="ProyeccionCobrosTableAdapter" Name="ProyeccionCobros" UserDataComponentName="ProyeccionCobrosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="SELECT CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.TELEFONO, (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) &lt; 9 THEN (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 1 THEN 'Enero' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 2 THEN 'Febrero' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 3 THEN 'Marzo' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 4 THEN 'Abril' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 5 THEN 'Mayo' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 6 THEN 'Junio' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 7 THEN 'Julio' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 8 THEN 'Agosto' END) END) END) END) END) END) END) END) ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 9 THEN 'Septiembre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 10 THEN 'Octubre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 11 THEN 'Noviembre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 12 THEN 'Diciembre' END) END) END) END) END) AS MES, YEAR(FACTURACOBRAR.FECHAVCTO) AS AÑO, SUM(FACTURACOBRAR.SALDOCUOTA) AS VALOR FROM FACTURACOBRAR INNER JOIN VENTAS ON FACTURACOBRAR.CODVENTA = VENTAS.CODVENTA INNER JOIN CLIENTES ON VENTAS.CODCLIENTE = CLIENTES.CODCLIENTE WHERE (VENTAS.ESTADO = 1) AND (FACTURACOBRAR.SALDOCUOTA &lt;&gt; 0) AND (CLIENTES.CODCLIENTE = @CLIENTE) GROUP BY CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.TELEFONO, MONTH(FACTURACOBRAR.FECHAVCTO), YEAR(FACTURACOBRAR.FECHAVCTO), MONTH(FACTURACOBRAR.FECHAVCTO)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        NOMBRE, RUC, TELEFONO, MES, AÑO, VALOR
+FROM            (SELECT        CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.TELEFONO, (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) &lt; 9 THEN (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                                    = 1 THEN 'Enero' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 2 THEN 'Febrero' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                                    = 3 THEN 'Marzo' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 4 THEN 'Abril' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                                    = 5 THEN 'Mayo' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 6 THEN 'Junio' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                                    = 7 THEN 'Julio' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 8 THEN 'Agosto' END) END) END) END) END) END) END) END) 
+                                                    ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 9 THEN 'Septiembre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                                    = 10 THEN 'Octubre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 11 THEN 'Noviembre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 12 THEN 'Diciembre' END) 
+                                                    END) END) END) END) AS MES, YEAR(FACTURACOBRAR.FECHAVCTO) AS AÑO, SUM(FACTURACOBRAR.SALDOCUOTA) AS VALOR
+                          FROM            FACTURACOBRAR INNER JOIN
+                                                    VENTAS ON FACTURACOBRAR.CODVENTA = VENTAS.CODVENTA INNER JOIN
+                                                    CLIENTES ON VENTAS.CODCLIENTE = CLIENTES.CODCLIENTE
+                          WHERE        (VENTAS.ESTADO = 1) AND (FACTURACOBRAR.SALDOCUOTA &lt;&gt; 0) AND (CLIENTES.CODCLIENTE = @CLIENTE)
+                          GROUP BY CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.TELEFONO, MONTH(FACTURACOBRAR.FECHAVCTO), YEAR(FACTURACOBRAR.FECHAVCTO), MONTH(FACTURACOBRAR.FECHAVCTO)) AS src</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="CLIENTE" ColumnName="" DataSourceName="" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@CLIENTE" Precision="18" Scale="0" Size="9" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NOMBRE" DataSetColumn="NOMBRE" />
+              <Mapping SourceColumn="RUC" DataSetColumn="RUC" />
+              <Mapping SourceColumn="TELEFONO" DataSetColumn="TELEFONO" />
+              <Mapping SourceColumn="MES" DataSetColumn="MES" />
+              <Mapping SourceColumn="AÑO" DataSetColumn="AÑO" />
+              <Mapping SourceColumn="VALOR" DataSetColumn="VALOR" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="SELECT CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.TELEFONO, (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) &lt; 9 THEN (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 1 THEN 'Enero' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 2 THEN 'Febrero'ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 3 THEN 'Marzo' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 4 THEN 'Abril' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 5 THEN 'Mayo' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 6 THEN 'Junio' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 7 THEN 'Julio' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 8 THEN 'Agosto' END) END) END) END) END) END) END) END) ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 9 THEN 'Septiembre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 10 THEN 'Octubre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 11 THEN 'Noviembre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) = 12 THEN 'Diciembre' END) END) END) END) END) AS MES, YEAR(FACTURACOBRAR.FECHAVCTO) AS AÑO, SUM(FACTURACOBRAR.SALDOCUOTA) AS VALOR FROM FACTURACOBRAR INNER JOIN VENTAS ON FACTURACOBRAR.CODVENTA = VENTAS.CODVENTA INNER JOIN CLIENTES ON VENTAS.CodCliente = CLIENTES.CODCLIENTE WHERE (VENTAS.ESTADO = 1) AND (FACTURACOBRAR.SALDOCUOTA &lt;&gt; 0) GROUP BY CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.TELEFONO, YEAR(FACTURACOBRAR.FECHAVCTO), MONTH(FACTURACOBRAR.FECHAVCTO)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        NOMBRE, RUC, TELEFONO, MES, AÑO, VALOR
+FROM            (SELECT        CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.TELEFONO,
+									(CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) &lt; 9 THEN (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                     = 1  THEN 'Enero'	ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+									 = 2  THEN 'Febrero'ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                     = 3  THEN 'Marzo'	ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+									 = 4  THEN 'Abril'	ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                     = 5  THEN 'Mayo'	ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+									 = 6  THEN 'Junio'	ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                     = 7  THEN 'Julio'	ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+									 = 8  THEN 'Agosto' END) END) END) END) END) END) END) END) ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+									 = 9  THEN 'Septiembre' ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                     = 10 THEN 'Octubre'	ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+									 = 11 THEN 'Noviembre'	ELSE (CASE WHEN MONTH(FACTURACOBRAR.FECHAVCTO) 
+                                     = 12 THEN 'Diciembre'	END) END) END) END) END) AS MES, YEAR(FACTURACOBRAR.FECHAVCTO) AS AÑO,
+													SUM(FACTURACOBRAR.SALDOCUOTA) AS VALOR
+                          FROM            FACTURACOBRAR INNER JOIN
+												VENTAS ON FACTURACOBRAR.CODVENTA = VENTAS.CODVENTA INNER JOIN
+                                                CLIENTES ON VENTAS.CodCliente = CLIENTES.CODCLIENTE
+                          WHERE        (VENTAS.ESTADO = 1) AND (FACTURACOBRAR.SALDOCUOTA &lt;&gt; 0)
+                          GROUP BY CLIENTES.NOMBRE, CLIENTES.RUC, CLIENTES.TELEFONO, YEAR(FACTURACOBRAR.FECHAVCTO), MONTH(FACTURACOBRAR.FECHAVCTO)) AS src</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EMPRESATableAdapter" GeneratorDataComponentClassName="EMPRESATableAdapter" Name="EMPRESA" UserDataComponentName="EMPRESATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectName="Fipar.dbo.EMPRESA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        NOMFANTASIA, DIRECCION, TELEFONO, EMAIL
+FROM            EMPRESA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NOMFANTASIA" DataSetColumn="NOMFANTASIA" />
+              <Mapping SourceColumn="DIRECCION" DataSetColumn="DIRECCION" />
+              <Mapping SourceColumn="TELEFONO" DataSetColumn="TELEFONO" />
+              <Mapping SourceColumn="EMAIL" DataSetColumn="EMAIL" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsProyeccionCobros" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsProyeccionCobros" msprop:Generator_UserDSName="DsProyeccionCobros">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ProyeccionCobros" msprop:Generator_TableClassName="ProyeccionCobrosDataTable" msprop:Generator_TableVarName="tableProyeccionCobros" msprop:Generator_TablePropName="ProyeccionCobros" msprop:Generator_RowDeletingName="ProyeccionCobrosRowDeleting" msprop:Generator_RowChangingName="ProyeccionCobrosRowChanging" msprop:Generator_RowEvHandlerName="ProyeccionCobrosRowChangeEventHandler" msprop:Generator_RowDeletedName="ProyeccionCobrosRowDeleted" msprop:Generator_UserTableName="ProyeccionCobros" msprop:Generator_RowChangedName="ProyeccionCobrosRowChanged" msprop:Generator_RowEvArgName="ProyeccionCobrosRowChangeEvent" msprop:Generator_RowClassName="ProyeccionCobrosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUC" msprop:Generator_ColumnVarNameInTable="columnRUC" msprop:Generator_ColumnPropNameInRow="RUC" msprop:Generator_ColumnPropNameInTable="RUCColumn" msprop:Generator_UserColumnName="RUC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TELEFONO" msprop:Generator_ColumnVarNameInTable="columnTELEFONO" msprop:Generator_ColumnPropNameInRow="TELEFONO" msprop:Generator_ColumnPropNameInTable="TELEFONOColumn" msprop:Generator_UserColumnName="TELEFONO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MES" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMES" msprop:Generator_ColumnPropNameInRow="MES" msprop:Generator_ColumnPropNameInTable="MESColumn" msprop:Generator_UserColumnName="MES" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AÑO" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAÑO" msprop:Generator_ColumnPropNameInRow="AÑO" msprop:Generator_ColumnPropNameInTable="AÑOColumn" msprop:Generator_UserColumnName="AÑO" type="xs:int" minOccurs="0" />
+              <xs:element name="VALOR" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVALOR" msprop:Generator_ColumnPropNameInRow="VALOR" msprop:Generator_ColumnPropNameInTable="VALORColumn" msprop:Generator_UserColumnName="VALOR" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EMPRESA" msprop:Generator_TableClassName="EMPRESADataTable" msprop:Generator_TableVarName="tableEMPRESA" msprop:Generator_TablePropName="EMPRESA" msprop:Generator_RowDeletingName="EMPRESARowDeleting" msprop:Generator_RowChangingName="EMPRESARowChanging" msprop:Generator_RowEvHandlerName="EMPRESARowChangeEventHandler" msprop:Generator_RowDeletedName="EMPRESARowDeleted" msprop:Generator_UserTableName="EMPRESA" msprop:Generator_RowChangedName="EMPRESARowChanged" msprop:Generator_RowEvArgName="EMPRESARowChangeEvent" msprop:Generator_RowClassName="EMPRESARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOMFANTASIA" msprop:Generator_ColumnVarNameInTable="columnNOMFANTASIA" msprop:Generator_ColumnPropNameInRow="NOMFANTASIA" msprop:Generator_ColumnPropNameInTable="NOMFANTASIAColumn" msprop:Generator_UserColumnName="NOMFANTASIA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIRECCION" msprop:Generator_ColumnVarNameInTable="columnDIRECCION" msprop:Generator_ColumnPropNameInRow="DIRECCION" msprop:Generator_ColumnPropNameInTable="DIRECCIONColumn" msprop:Generator_UserColumnName="DIRECCION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TELEFONO" msprop:Generator_ColumnVarNameInTable="columnTELEFONO" msprop:Generator_ColumnPropNameInRow="TELEFONO" msprop:Generator_ColumnPropNameInTable="TELEFONOColumn" msprop:Generator_UserColumnName="TELEFONO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_UserColumnName="EMAIL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
