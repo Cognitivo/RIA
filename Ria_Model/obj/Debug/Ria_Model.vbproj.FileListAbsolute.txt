@@ -43,3 +43,18 @@ C:\Users\Yolanda\Desktop\RIA\Ria_Model\obj\Debug\Ria_Model.vbproj.GenerateResour
 C:\Users\Yolanda\Desktop\RIA\Ria_Model\obj\Debug\Ria_Model.dll
 C:\Users\Yolanda\Desktop\RIA\Ria_Model\obj\Debug\Ria_Model.xml
 C:\Users\Yolanda\Desktop\RIA\Ria_Model\obj\Debug\Ria_Model.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\Ria_Model.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\Ria_Model.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\Ria_Model.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\BDConexión.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\Ria_DataAccessLayer.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\Ria_DataAccessLayer.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\bin\Debug\Ria_DataAccessLayer.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\obj\Debug\Ria_Model.vbprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\obj\Debug\Ria_Model.Resources.resources
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\obj\Debug\Ria_Model.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\obj\Debug\Ria_Model.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\obj\Debug\Ria_Model.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Model\obj\Debug\Ria_Model.pdb

@@ -40,3 +40,17 @@ C:\Users\Yolanda\Desktop\RIA\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.v
 C:\Users\Yolanda\Desktop\RIA\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.dll
 C:\Users\Yolanda\Desktop\RIA\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.xml
 C:\Users\Yolanda\Desktop\RIA\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\bin\Debug\Ria_DataAccessLayer.dll.config
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\bin\Debug\Ria_DataAccessLayer.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\bin\Debug\Ria_DataAccessLayer.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\bin\Debug\Ria_DataAccessLayer.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\bin\Debug\BDConexión.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\bin\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\bin\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.vbprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.Resources.resources
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_DataAccessLayer\obj\Debug\Ria_DataAccessLayer.pdb

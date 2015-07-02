@@ -23,3 +23,11 @@ C:\Users\Yolanda\Desktop\RIA\Reportes\bin\Debug\Reportes.xml
 C:\Users\Yolanda\Desktop\RIA\Reportes\obj\Debug\Reportes.dll
 C:\Users\Yolanda\Desktop\RIA\Reportes\obj\Debug\Reportes.xml
 C:\Users\Yolanda\Desktop\RIA\Reportes\obj\Debug\Reportes.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Reportes\bin\Debug\Reportes.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Reportes\bin\Debug\Reportes.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Reportes\bin\Debug\Reportes.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Reportes\obj\Debug\Reportes.Resources.resources
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Reportes\obj\Debug\Reportes.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Reportes\obj\Debug\Reportes.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Reportes\obj\Debug\Reportes.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Reportes\obj\Debug\Reportes.pdb

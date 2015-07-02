@@ -40,3 +40,17 @@ C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.vbproj.GenerateResour
 C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.dll
 C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.xml
 C:\Users\Yolanda\Desktop\RIA\Funciones\obj\Debug\Funciones.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\bin\Debug\Funciones.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\bin\Debug\Funciones.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\bin\Debug\Funciones.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\bin\Debug\BDConexión.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\bin\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\bin\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\obj\Debug\Funciones.vbprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\obj\Debug\Funciones.Resources.resources
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\obj\Debug\Funciones.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\obj\Debug\Funciones.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\obj\Debug\Funciones.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Funciones\obj\Debug\Funciones.pdb

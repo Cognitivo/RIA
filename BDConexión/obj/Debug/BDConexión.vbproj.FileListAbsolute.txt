@@ -38,3 +38,16 @@ C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.vbproj.GenerateRe
 C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.dll
 C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.xml
 C:\Users\Yolanda\Desktop\RIA\BDConexión\obj\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\bin\Debug\BDConexión.dll.config
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\bin\Debug\BDConexión.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\bin\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\bin\Debug\Osuna.Utiles.Conectividad.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\bin\Debug\Osuna.Utiles.Configuracion.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\bin\Debug\TicketCS.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\bin\Debug\TicketCS.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\obj\Debug\BDConexión.vbprojResolveAssemblyReference.cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\obj\Debug\BDConexión.Resources.resources
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\obj\Debug\BDConexión.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\obj\Debug\BDConexión.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\obj\Debug\BDConexión.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\BDConexión\obj\Debug\BDConexión.pdb
