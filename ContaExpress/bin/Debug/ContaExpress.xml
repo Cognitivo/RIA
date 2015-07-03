@@ -13669,6 +13669,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivo2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.periodofiscalRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -13677,11 +13681,19 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivo2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.periodofiscalRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivo21RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivo2RowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -13694,6 +13706,10 @@ Represents a strongly typed in-memory cache of data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscalTableAdapters.BalanceGeneralImpositivo21TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscalTableAdapters.BalanceGeneralImpositivo2TableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
