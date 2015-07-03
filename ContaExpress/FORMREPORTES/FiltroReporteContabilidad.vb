@@ -107,6 +107,7 @@ Public Class FiltroReporteContabilidad
                             {"rptBalanceGeneral", "Balance General", "Balances,General,Resultados,Suma, Saldo"},
                             {"rptBalanceGeneral173", "Balance General Según RES. 49", "Balances,General,Resultados,Suma, Saldo"},
                             {"rptBalanceGeneralImpositivo", "Balance General Impositivo", "Balance,Impositivo"},
+                            {"rptBalanceGeneralImpositivoResumido", "Balance General Impositivo Resumido", "Balance,Impositivo Resumido"},
                             {"rptCuadroResultado49", "Cuadro Resultado Según RES. 49", "Balances,General,Resultados,Suma, Saldo"},
                             {"rptCuadroResultado", "Cuadro Resultado", "Balances,General,Resultados,Suma, Saldo"},
                             {"rptBalanceSumaySaldo", "Balance Suma y Saldo", "Balances,General,Resultados,Suma, Saldo"},
@@ -122,7 +123,7 @@ Public Class FiltroReporteContabilidad
                             {"rptDetalleRetenciones", "Detalle de Retenciones IVA", "Retenciones,IVA"},
                             {"rptRetencionesRenta", "Retenciones Renta", "Retenciones,Renta"}}
 
-        For i = 0 To 24
+        For i = 0 To 25
             dgvListaReportes.Rows.Add()
             dgvListaReportes.Item(1, i).Value = ListaReportes(i, 0)
             dgvListaReportes.Item(0, i).Value = ListaReportes(i, 1)
@@ -292,6 +293,19 @@ Public Class FiltroReporteContabilidad
 
             lblReporte.Text = "Balance General Impositivo"
             lblReporteDescrip.Text = " Permite la emisión o impresión del Balance General Impositivo "
+            btnGenerar.Text = "Generar Datos"
+
+        ElseIf dgvListaReportes.CurrentRow.Cells("REFERENCIA").Value = "rptBalanceGeneralImpositivoResumido" Then
+            InvisivilizarTodo()
+
+            chbxMatricial.Visible = True
+            chbxNuevaVent.Visible = True
+
+            pnlPeriodoFiscal.Location = Pos1
+            pnlfechas.Location = Pos2
+
+            lblReporte.Text = "Balance General Impositivo Resumido"
+            lblReporteDescrip.Text = " Permite la emisión o impresión del Balance General Impositivo Resumido "
             btnGenerar.Text = "Generar Datos"
 
         ElseIf dgvListaReportes.CurrentRow.Cells("REFERENCIA").Value = "rptBalanceSumaySaldo" Then
@@ -521,6 +535,8 @@ Public Class FiltroReporteContabilidad
             rptBalanceGeneral173()
         ElseIf dgvListaReportes.CurrentRow.Cells("REFERENCIA").Value = "rptBalanceGeneralImpositivo" Then
             rptBalanceGeneralImpositivo()
+        ElseIf dgvListaReportes.CurrentRow.Cells("REFERENCIA").Value = "rptBalanceGeneralImpositivoResumido" Then
+            rptBalanceGeneralImpositivoResumido()
         ElseIf dgvListaReportes.CurrentRow.Cells("REFERENCIA").Value = "rptBalanceSumaySaldo" Then
             rptBalanceSumaySaldo()
         ElseIf dgvListaReportes.CurrentRow.Cells("REFERENCIA").Value = "rptCuadroResultado" Then
@@ -1228,6 +1244,48 @@ Public Class FiltroReporteContabilidad
         Dim connstring As String = My.Settings.GESTIONConnectionString2.ToString()
 
         dt = Ria_DataAccessLayer.loadDataTable("Exec BalanceGeneralImpositivo " & NroPeriodo & ",'" & fechaini & "','" & fechafin & "'", connstring)
+        'Try
+        '    Me.CalculoResultadoTableAdapter.Fill(Me.DsCalculoResultado.CalculoResultado, fechaini, fechafin, CInt(Me.cmbPeriodoFiscal.SelectedValue))
+        'Catch
+        'End Try
+        'Me.BalanceGeneralTableAdapter.Fill(Me.DsInfContabilidad.BalanceGeneral, CInt(Me.cmbPeriodoFiscal.SelectedValue), fechaini, fechafin)
+
+        rpt.SetDataSource([dt])
+        'rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
+        'rpt.SetParameterValue("pmtRangoFecha", "De : " + dtpFechaDesde.Text.ToString + "  Hasta : " + dtpFechaHasta.Text.ToString)
+
+        If chbxNuevaVent.Checked = True Then
+            frm.CrystalReportViewer1.ReportSource = rpt
+            frm.WindowState = FormWindowState.Maximized
+            frm.Show()
+        Else
+            CrystalReportViewer.ReportSource = rpt
+            CrystalReportViewer.Refresh()
+        End If
+    End Sub
+
+    Private Sub rptBalanceGeneralImpositivoResumido()
+        Dim frm = New VerInformes
+        Dim rpt As New Reportes.ContaBalanceGeneralImpositivoResumido
+        'Dim rptmat As New Reportes.ContaBalanceGeneralMATR
+        Dim fechaini As String
+        Dim fechafin As String
+        fechaini = dtpFechaDesde.Text + " 00:00:00"
+        fechafin = dtpFechaHasta.Text + " 23:59:59"
+
+        Dim dt As DataTable
+        Dim Ria_DataAccessLayer As New Ria_DataAccessLayer.exeDataTable
+
+        Dim NroPeriodo As Integer = cmbPeriodoFiscal.SelectedValue
+
+        Dim Array As New ArrayList
+        Array.Add(NroPeriodo)
+        Array.Add(fechaini)
+        Array.Add(fechafin)
+
+        Dim connstring As String = My.Settings.GESTIONConnectionString2.ToString()
+
+        dt = Ria_DataAccessLayer.loadDataTable("Exec BalanceGeneralImpositivo2 " & NroPeriodo & ",'" & fechaini & "','" & fechafin & "'", connstring)
         'Try
         '    Me.CalculoResultadoTableAdapter.Fill(Me.DsCalculoResultado.CalculoResultado, fechaini, fechafin, CInt(Me.cmbPeriodoFiscal.SelectedValue))
         'Catch
