@@ -4430,11 +4430,10 @@ Public Class CompraPlus
                 SubtotDesc = ValSubt - SubProc 'Restamos del subtotal el descuento a aplicar
                 PrecioDescontado = SubtotDesc / CDec(DetalleCompraGridView.Rows(i).Cells("CANTIDADCOMPRA").Value)
                 '   PrecioDescontado = Math.Round(PrecioDescontado)
-
                 'Guardamos en la base de datos el nuevo valor del subtotal con los nuevos datos del IVA - VENTASDETALLE
                 Try
                     Dim subTotalString As String = Replace(PrecioDescontado, ",", ".")
-                    Dim LineaNro As String = DetalleCompraGridView.Rows(i).Cells("LINEANROCOMPRA").Value
+                    Dim _compras_DetalleID As String = DetalleCompraGridView.Rows(i).Cells("ComprasDetalleID").Value
                     TipoIva = DetalleCompraGridView.Rows(i).Cells("TIPOIVA").Value
 
                     If TipoIva = "5.00" Then
@@ -4456,8 +4455,8 @@ Public Class CompraPlus
                         vExcenta = vExcenta + CDec(vImporteExcento)
                     End If
 
-                    sql = "UPDATE COMPRASDETALLE SET  COSTOUNITARIO = " & subTotalString & ", IMPORTEGRAVADO5 = " & Replace(vImporteGrab5, ",", ".") & ", IMPORTEGRAVADO10 = " & Replace(vImporteGrab10, ",", ".") & ", " & _
-                          "IMPORTEEXENTO = " & Replace(vImporteExcento, ",", ".") & "  WHERE LINEANROCOMPRA = " & LineaNro & "  "
+                    sql = "UPDATE COMPRASDETALLE SET COSTOUNITARIO = " & subTotalString & ", IMPORTEGRAVADO5 = " & Replace(vImporteGrab5, ",", ".") & ", IMPORTEGRAVADO10 = " & Replace(vImporteGrab10, ",", ".") & ", " & _
+                          "IMPORTEEXENTO = " & Replace(vImporteExcento, ",", ".") & "  WHERE ComprasDetalleID = " & _compras_DetalleID & "  "
 
                     cmd.CommandText = sql
                     cmd.ExecuteNonQuery()

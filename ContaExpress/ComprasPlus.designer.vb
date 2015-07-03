@@ -1529,9 +1529,9 @@ Partial Class CompraPlus
         Me.btnAgregar.BackColor = System.Drawing.Color.Transparent
         Me.btnAgregar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAgregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(712, 24)
+        Me.btnAgregar.Location = New System.Drawing.Point(711, 24)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(109, 27)
+        Me.btnAgregar.Size = New System.Drawing.Size(110, 27)
         Me.btnAgregar.TabIndex = 15
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.ThemeName = "ControlDefault"
@@ -1542,9 +1542,9 @@ Partial Class CompraPlus
         Me.btnEliminar.BackColor = System.Drawing.Color.Transparent
         Me.btnEliminar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEliminar.Location = New System.Drawing.Point(712, 57)
+        Me.btnEliminar.Location = New System.Drawing.Point(711, 57)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(109, 25)
+        Me.btnEliminar.Size = New System.Drawing.Size(110, 25)
         Me.btnEliminar.TabIndex = 5424545
         Me.btnEliminar.TabStop = False
         Me.btnEliminar.Text = "Eliminar"
@@ -1785,7 +1785,7 @@ Partial Class CompraPlus
         Me.TableLayoutPanel3.ColumnCount = 3
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.81146!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.18854!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 274.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 259.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235.0!))
@@ -1827,7 +1827,7 @@ Partial Class CompraPlus
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(549, 27)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(548, 27)
         Me.TableLayoutPanel5.TabIndex = 501
         '
         'TipoIvaComboBox
@@ -1842,7 +1842,7 @@ Partial Class CompraPlus
         Me.TipoIvaComboBox.FormattingEnabled = True
         Me.TipoIvaComboBox.Location = New System.Drawing.Point(421, 3)
         Me.TipoIvaComboBox.Name = "TipoIvaComboBox"
-        Me.TipoIvaComboBox.Size = New System.Drawing.Size(125, 24)
+        Me.TipoIvaComboBox.Size = New System.Drawing.Size(124, 24)
         Me.TipoIvaComboBox.TabIndex = 454
         Me.TipoIvaComboBox.ValueMember = "CODIVA"
         '
@@ -1895,7 +1895,7 @@ Partial Class CompraPlus
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.77778!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.07868!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159.0!))
@@ -1912,7 +1912,7 @@ Partial Class CompraPlus
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(549, 15)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(548, 15)
         Me.TableLayoutPanel4.TabIndex = 5424546
         '
         'lblCantidad
@@ -1965,7 +1965,7 @@ Partial Class CompraPlus
         Me.lblPrecio.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblPrecio.Enabled = False
         Me.lblPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.lblPrecio.Location = New System.Drawing.Point(270, 0)
+        Me.lblPrecio.Location = New System.Drawing.Point(269, 0)
         Me.lblPrecio.Name = "lblPrecio"
         Me.lblPrecio.Size = New System.Drawing.Size(42, 15)
         Me.lblPrecio.TabIndex = 472
@@ -1978,7 +1978,7 @@ Partial Class CompraPlus
         Me.Label17.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label17.Enabled = False
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.Label17.Location = New System.Drawing.Point(395, 0)
+        Me.Label17.Location = New System.Drawing.Point(393, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(24, 15)
         Me.Label17.TabIndex = 473
@@ -1991,7 +1991,7 @@ Partial Class CompraPlus
         Me.lblSimboloPrecio.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MONEDABindingSource, "SIMBOLO", True))
         Me.lblSimboloPrecio.Enabled = False
         Me.lblSimboloPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.lblSimboloPrecio.Location = New System.Drawing.Point(340, 0)
+        Me.lblSimboloPrecio.Location = New System.Drawing.Point(338, 0)
         Me.lblSimboloPrecio.Name = "lblSimboloPrecio"
         Me.lblSimboloPrecio.Size = New System.Drawing.Size(39, 15)
         Me.lblSimboloPrecio.TabIndex = 479
@@ -2056,7 +2056,7 @@ Partial Class CompraPlus
         Me.DesProdComTextBox.Location = New System.Drawing.Point(157, 57)
         Me.DesProdComTextBox.Name = "DesProdComTextBox"
         Me.DesProdComTextBox.ReadOnly = True
-        Me.DesProdComTextBox.Size = New System.Drawing.Size(549, 26)
+        Me.DesProdComTextBox.Size = New System.Drawing.Size(548, 26)
         Me.DesProdComTextBox.TabIndex = 1
         '
         'lblMensajeInteractivo
@@ -2064,9 +2064,9 @@ Partial Class CompraPlus
         Me.lblMensajeInteractivo.AutoSize = True
         Me.lblMensajeInteractivo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblMensajeInteractivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
-        Me.lblMensajeInteractivo.Location = New System.Drawing.Point(712, 0)
+        Me.lblMensajeInteractivo.Location = New System.Drawing.Point(711, 0)
         Me.lblMensajeInteractivo.Name = "lblMensajeInteractivo"
-        Me.lblMensajeInteractivo.Size = New System.Drawing.Size(109, 21)
+        Me.lblMensajeInteractivo.Size = New System.Drawing.Size(110, 21)
         Me.lblMensajeInteractivo.TabIndex = 5424547
         Me.lblMensajeInteractivo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -3738,7 +3738,7 @@ Partial Class CompraPlus
         Me.TableLayoutPanel2.ColumnCount = 3
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.80198!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.19802!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.68627!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.31373!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103.0!))
@@ -3764,7 +3764,7 @@ Partial Class CompraPlus
         Me.IngresarCotCheckBox.Font = New System.Drawing.Font("Arial", 8.25!)
         Me.IngresarCotCheckBox.Location = New System.Drawing.Point(3, 3)
         Me.IngresarCotCheckBox.Name = "IngresarCotCheckBox"
-        Me.IngresarCotCheckBox.Size = New System.Drawing.Size(15, 26)
+        Me.IngresarCotCheckBox.Size = New System.Drawing.Size(14, 26)
         Me.IngresarCotCheckBox.TabIndex = 1000
         Me.IngresarCotCheckBox.UseVisualStyleBackColor = True
         '
@@ -3781,7 +3781,7 @@ Partial Class CompraPlus
         Me.cbxComprasMoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbxComprasMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.cbxComprasMoneda.FormattingEnabled = True
-        Me.cbxComprasMoneda.Location = New System.Drawing.Point(24, 3)
+        Me.cbxComprasMoneda.Location = New System.Drawing.Point(23, 3)
         Me.cbxComprasMoneda.Name = "cbxComprasMoneda"
         Me.cbxComprasMoneda.Size = New System.Drawing.Size(79, 26)
         Me.cbxComprasMoneda.TabIndex = 8
@@ -3795,9 +3795,9 @@ Partial Class CompraPlus
         Me.tbxCompraCotizacion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbxCompraCotizacion.Enabled = False
         Me.tbxCompraCotizacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxCompraCotizacion.Location = New System.Drawing.Point(109, 3)
+        Me.tbxCompraCotizacion.Location = New System.Drawing.Point(108, 3)
         Me.tbxCompraCotizacion.Name = "tbxCompraCotizacion"
-        Me.tbxCompraCotizacion.Size = New System.Drawing.Size(133, 27)
+        Me.tbxCompraCotizacion.Size = New System.Drawing.Size(134, 27)
         Me.tbxCompraCotizacion.TabIndex = 469
         '
         'CmbDeposito
