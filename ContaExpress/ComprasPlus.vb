@@ -5765,7 +5765,7 @@ todasfechas:
                 'Guardamos en la base de datos el nuevo valor del subtotal con los nuevos datos del IVA - VENTASDETALLE
                 Try
                     Dim subTotalString As String = Replace(PrecioDescontado, ",", ".")
-                    Dim LineaNro As String = DetalleCompraGridView.Rows(i).Cells("LINEANROCOMPRA").Value
+                    Dim _compras_DetalleID As String = DetalleCompraGridView.Rows(i).Cells("COMPRASDETALLEID").Value
                     TipoIva = DetalleCompraGridView.Rows(i).Cells("TIPOIVA").Value
 
                     If TipoIva = "5.00" Then
@@ -5788,7 +5788,7 @@ todasfechas:
                     End If
 
                     sql = "UPDATE COMPRASDETALLE SET  COSTOUNITARIO = " & subTotalString & ", IMPORTEGRAVADO5 = " & Replace(vImporteGrab5, ",", ".") & ", IMPORTEGRAVADO10 = " & Replace(vImporteGrab10, ",", ".") & ", " & _
-                          "IMPORTEEXENTO = " & Replace(vImporteExcento, ",", ".") & "  WHERE LINEANROCOMPRA = " & LineaNro & "  "
+                          "IMPORTEEXENTO = " & Replace(vImporteExcento, ",", ".") & "  WHERE COMPRASDETALLEID = " & _compras_DetalleID & "  "
 
                     cmd.CommandText = sql
                     cmd.ExecuteNonQuery()
