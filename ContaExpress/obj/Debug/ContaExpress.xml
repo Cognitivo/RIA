@@ -13865,7 +13865,7 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:ContaExpress.DSContaBalanceGeneral.BalanceGeneralNewDataTable">
+</member><member name="T:ContaExpress.DSContaBalanceGeneral.BalanceGeneralImpositivoCabDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -13877,7 +13877,7 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:ContaExpress.DSContaBalanceGeneral.BalanceGeneralNewRow">
+</member><member name="T:ContaExpress.DSContaBalanceGeneral.BalanceGeneralImpositivoCabRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
@@ -13889,7 +13889,7 @@ Represents strongly named DataRow class.
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:ContaExpress.DSContaBalanceGeneral.BalanceGeneralNewRowChangeEvent">
+</member><member name="T:ContaExpress.DSContaBalanceGeneral.BalanceGeneralImpositivoCabRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -13905,7 +13905,7 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ContaExpress.DSContaBalanceGeneralTableAdapters.BalanceGeneralNewTableAdapter">
+</member><member name="T:ContaExpress.DSContaBalanceGeneralTableAdapters.BalanceGeneralImpositivoCabTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
