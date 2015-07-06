@@ -615,6 +615,7 @@ C:\Users\Yolanda\Desktop\RIA\ContaExpress\obj\Debug\ContaExpress.exe
 C:\Users\Yolanda\Desktop\RIA\ContaExpress\obj\Debug\ContaExpress.xml
 C:\Users\Yolanda\Desktop\RIA\ContaExpress\obj\Debug\ContaExpress.pdb
 C:\Users\Yolanda\Desktop\RIA\ContaExpress\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\ContaExpress.exe.config
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\Configuraciones.xml
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\FORMREPORTES\Lib\Imagenes\Arcoiris.jpg
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\FORMREPORTES\Lib\Imagenes\BajoConstruccion.jpg
@@ -643,7 +644,6 @@ C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\FORMREPOR
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\FORMREPORTES\Lib\Fecha.dll
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\FORMREPORTES\Lib\TextConta.dll
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\FORMREPORTES\Lib\TxtMoneda.dll
-C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\ContaExpress.exe.config
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\ContaExpress.exe
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\ContaExpress.pdb
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\bin\Debug\ContaExpress.xml
