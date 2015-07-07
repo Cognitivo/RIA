@@ -454,6 +454,11 @@
     <Compile Include="Contabilidad\CostodeVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Contabilidad\dsBalanceGeneral.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBalanceGeneral.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Contabilidad\DsCosteo.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2059,6 +2064,17 @@
     </None>
     <None Include="consultaprecio_ventasimple.xss">
       <DependentUpon>consultaprecio_ventasimple.xsd</DependentUpon>
+    </None>
+    <None Include="Contabilidad\dsBalanceGeneral.xsc">
+      <DependentUpon>dsBalanceGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Contabilidad\dsBalanceGeneral.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBalanceGeneral.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Contabilidad\dsBalanceGeneral.xss">
+      <DependentUpon>dsBalanceGeneral.xsd</DependentUpon>
     </None>
     <None Include="Contabilidad\DsCosteo.xsc">
       <DependentUpon>DsCosteo.xsd</DependentUpon>

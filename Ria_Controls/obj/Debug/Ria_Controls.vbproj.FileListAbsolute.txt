@@ -28,3 +28,13 @@ C:\Users\Yolanda\Desktop\RIA\Ria_Controls\obj\Debug\Ria_Controls.vbproj.Generate
 C:\Users\Yolanda\Desktop\RIA\Ria_Controls\obj\Debug\Ria_Controls.dll
 C:\Users\Yolanda\Desktop\RIA\Ria_Controls\obj\Debug\Ria_Controls.xml
 C:\Users\Yolanda\Desktop\RIA\Ria_Controls\obj\Debug\Ria_Controls.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\bin\Debug\Ria_Controls.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\bin\Debug\Ria_Controls.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\bin\Debug\Ria_Controls.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\obj\Debug\Ria_Controls.Importacion_uctrl.resources
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\obj\Debug\Ria_Controls.Resources.resources
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\obj\Debug\Ria_Controls.ucToolbar.resources
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\obj\Debug\Ria_Controls.vbproj.GenerateResource.Cache
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\obj\Debug\Ria_Controls.dll
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\obj\Debug\Ria_Controls.xml
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\Ria_Controls\obj\Debug\Ria_Controls.pdb

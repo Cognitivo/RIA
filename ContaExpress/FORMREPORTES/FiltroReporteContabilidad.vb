@@ -657,191 +657,6 @@ Public Class FiltroReporteContabilidad
 
     End Sub
 
-    Private Sub rptLibroMayor()
-
-        Dim dsBalance As New DSContaBalanceGeneral()
-        Dim LibroMayor As New DSContaBalanceGeneralTableAdapters.LibroMayorTableAdapter()
-
-        '        SELECT        periodofiscal.DESEJERCICIO, ASIENTOS.IMPORTED, ASIENTOS.IMPORTEH, ASIENTOS.DETALLE, ASIENTOS.NUMCOMPROBANTE, ASIENTOS.FECHAASIENTO, ASIENTOS.NUMASIENTO, 
-        '                         plancuentas.DESPLANCUENTA, plancuentas.NUMPLANCUENTA, periodofiscal.CODPERIODOFISCAL
-        'FROM            ASIENTOS INNER JOIN
-        '                         plancuentas ON ASIENTOS.CODPLANCUENTA = plancuentas.CODPLANCUENTA INNER JOIN
-        '                         periodofiscal ON ASIENTOS.CODPERIODOFISCAL = periodofiscal.CODPERIODOFISCAL
-        'WHERE        (ASIENTOS.FECHAASIENTO > CONVERT(DATETIME, @FECHADESDE, 102)) AND (ASIENTOS.FECHAASIENTO < CONVERT(DATETIME, @FECHAHASTA, 102)) AND 
-        '                         (periodofiscal.CODPERIODOFISCAL = @CODPERIODO)
-        'ORDER BY plancuentas.NUMPLANCUENTA, ASIENTOS.FECHAASIENTO
-
-        Dim PlanCuentaList As String = ","
-
-        For r As Integer = 0 To dgvCuenta.Rows.Count - 1
-            If Convert.ToBoolean(dgvCuenta.Rows(r).Cells(2).Value) = True Then
-                PlanCuentaList = PlanCuentaList & dgvCuenta.Rows(r).Cells(3).Value & ","
-            End If
-        Next
-        LibroMayor.Fill(dsBalance.LibroMayor, dtpFechaDesde.Value, dtpFechaHasta.Value, Me.cmbPeriodoFiscal.SelectedValue, PlanCuentaList)
-
-        'Dim cuenta, SaldoEsperado As String
-        'Dim Primero As Integer = 0
-        'Dim Saldo, SaldoAnt, AcumDebe, AcumHaber As Long
-        'Dim dtSaldoAnterior As New DataTable
-        'Dim dtHistoricoMayor As New DataTable
-        'Dim ds As New EnviaInformes.DsInformes
-        'Dim drHistoricoMayor As DataRow
-        'Dim drSaldoAnt As DataRow
-        'Dim drInf As DataRow
-        'Dim FechaPeriodo As String = ""
-
-        'SaldoEsperado = "" : cuenta = ""
-
-        'For i = 1 To dgvCuenta.Rows.Count
-        '    If (dgvCuenta.Rows(i - 1).Cells("Ver").Value) <> 0 Then
-        '        If (dgvCuenta.Rows(i - 1).Cells("CODPLANCUENTA1").Value) <> 0 Then
-        '            cuenta = dgvCuenta.Rows(i - 1).Cells("CODPLANCUENTA1").Value.ToString
-        '            Try
-        '                dtHistoricoMayor.Clear()
-        '                HISTORICOLIBROMAYOTableAdapter.Fill(DsInfContabilidad.HISTORICOLIBROMAYO, dtpFechaDesde.Text, dtpFechaHasta.Text, cmbPeriodoFiscal.SelectedValue, cuenta)
-        '                dtHistoricoMayor = HISTORICOLIBROMAYOTableAdapter.GetData(dtpFechaDesde.Text, dtpFechaHasta.Text, cmbPeriodoFiscal.SelectedValue, cuenta)
-
-        '                'SI LA FECHA DESDE ES IGUAL AL 01/01/XXXX, DEBEMOS HACER UN FILL ESPECIAL
-        '                Dim FechaDesde As Date = dtpFechaDesde.Text
-        '                Dim FechaHasta As Date = dtpFechaDesde.Text
-        '                Dim Day As String = FechaDesde.ToString("dd")
-        '                Dim vMothn As String = FechaDesde.ToString("MM")
-
-        '                If Day = "01" And vMothn = "01" Then
-        '                    SaldoAnteriorTableAdapter.FillBy(DsInfContabilidad.SaldoAnterior, cuenta, CInt(cmbPeriodoFiscal.SelectedValue))
-        '                    dtSaldoAnterior = SaldoAnteriorTableAdapter.GetDataBy(cuenta, CInt(cmbPeriodoFiscal.SelectedValue))
-        '                Else
-        '                    Try 'Obtenemos la fecha de inicio del Periodo fiscal seleccionado
-        '                        FechaPeriodo = f.FuncionConsultaString("FECHAINICIO", "periodofiscal", "CODPERIODOFISCAL", cmbPeriodoFiscal.SelectedValue)
-        '                    Catch ex As Exception
-        '                    End Try
-
-        '                    dtSaldoAnterior.Clear()
-        '                    SaldoAnteriorTableAdapter.FillBy1(DsInfContabilidad.SaldoAnterior, cuenta, FechaHasta, cmbPeriodoFiscal.SelectedValue)
-        '                    dtSaldoAnterior = SaldoAnteriorTableAdapter.GetDataBy1(cuenta, FechaHasta, cmbPeriodoFiscal.SelectedValue)
-        '                End If
-
-        '                'Obtenemos el Saldo Anterior
-        '                If dtSaldoAnterior.Rows.Count = 0 Then
-        '                    SaldoAnt = 0
-        '                    Dim se As String = f.FuncionConsultaString("SALDOESPERADO", "PLANCUENTAS", "CODPLANCUENTA", cuenta)
-        '                    SaldoEsperado = se
-        '                    AcumDebe = 0
-        '                    AcumHaber = 0
-        '                Else
-        '                    drSaldoAnt = dtSaldoAnterior.Rows.Item(0)
-
-        '                    SaldoEsperado = CStr(drSaldoAnt("SALDOESPERADO"))
-        '                    If CStr(drSaldoAnt("SALDOESPERADO")) = 2 Then
-        '                        SaldoAnt = drSaldoAnt("TOTALHABER") - drSaldoAnt("TOTALDEBE")
-        '                    Else
-        '                        SaldoAnt = drSaldoAnt("TOTALDEBE") - drSaldoAnt("TOTALHABER")
-        '                    End If
-        '                    AcumDebe = drSaldoAnt("TOTALDEBE")
-        '                    AcumHaber = drSaldoAnt("TOTALHABER")
-        '                End If
-
-        '                Saldo = SaldoAnt
-        '                'Ahora debemos hacer el calculo de los saldos
-        '                Dim c As Integer
-        '                If dtHistoricoMayor.Rows.Count <> 0 Then
-        '                    For c = 0 To dtHistoricoMayor.Rows.Count - 1
-        '                        drHistoricoMayor = dtHistoricoMayor.Rows.Item(c)
-        '                        drInf = ds.Tables("Detalle").NewRow()
-
-        '                        If SaldoEsperado = 2 Then
-        '                            Saldo = Saldo - drHistoricoMayor("IMPORTED") + drHistoricoMayor("IMPORTEH")
-        '                        Else
-        '                            Saldo = Saldo + drHistoricoMayor("IMPORTED") - drHistoricoMayor("IMPORTEH")
-        '                        End If
-
-        '                        If SaldoEsperado = Nothing Then
-        '                            SaldoEsperado = 0
-        '                        End If
-
-        '                        drInf.Item("Numero1") = Saldo
-        '                        drInf.Item("Numero2") = SaldoAnt
-        '                        drInf.Item("Numero3") = drHistoricoMayor("IMPORTED")
-        '                        drInf.Item("Numero4") = drHistoricoMayor("IMPORTEH")
-        '                        drInf.Item("Numero5") = AcumDebe
-        '                        drInf.Item("Numero6") = AcumHaber
-        '                        drInf.Item("Campo1") = drHistoricoMayor("NUMPLANCUENTA")
-        '                        drInf.Item("Campo2") = drHistoricoMayor("DESCRIPCION")
-        '                        drInf.Item("Campo3") = drHistoricoMayor("NUMASIENTO")
-        '                        drInf.Item("Campo4") = drHistoricoMayor("DETALLE")
-        '                        drInf.Item("Campo5") = drHistoricoMayor("CODPLANCUENTA")
-        '                        drInf.Item("Fecha1") = drHistoricoMayor("FECHAASIENTO")
-
-        '                        ds.Tables("Detalle").Rows.Add(drInf)
-        '                    Next
-        '                Else
-        '                    drInf = ds.Tables("Detalle").NewRow()
-        '                    drInf.Item("Numero2") = SaldoAnt
-        '                    ds.Tables("Detalle").Rows.Add(drInf)
-        '                End If
-        '            Catch ex As Exception
-        '            End Try
-
-        '        End If
-        '    End If
-        'Next
-
-        Dim frm = New VerInformes
-        Dim rpt As New Reportes.ContaLibroMayor_Simple
-        rpt.SetDataSource(dsBalance)
-        'Dim rptmat As New Reportes.ContaLibroMayorMATR
-
-        'If SaldoEsperado = Nothing Then
-        '    SaldoEsperado = 0
-        'End If
-
-        frm.CrystalReportViewer1.ReportSource = rpt
-        frm.WindowState = FormWindowState.Maximized
-        frm.Show()
-
-        'Try
-        '    rpt.SetDataSource([ds])
-        '    rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
-        '    rpt.SetParameterValue("pmtRangoFecha", "De : " + dtpFechaDesde.Text.ToString + "  Hasta : " + dtpFechaHasta.Text.ToString)
-        '    rpt.SetParameterValue("pmtSaldoEsp", SaldoEsperado)
-
-        '    If chbxMatricial.Checked = True Then
-        '        rptmat.SetDataSource([ds])
-        '        rptmat.SetParameterValue("pmtEmpresa", EmpNomFantasia)
-        '        rptmat.SetParameterValue("pmtRangoFecha", "De : " + dtpFechaDesde.Text.ToString + "  Hasta : " + dtpFechaHasta.Text.ToString)
-        '        rptmat.SetParameterValue("pmtSaldoEsp", SaldoEsperado)
-
-        '        If chbxNuevaVent.Checked = True Then
-        '            frm.CrystalReportViewer1.ReportSource = rptmat
-        '            frm.WindowState = FormWindowState.Maximized
-        '            frm.Show()
-        '        Else
-        '            CrystalReportViewer.ReportSource = rptmat
-        '            CrystalReportViewer.Refresh()
-        '        End If
-        '    Else
-        '        rpt.SetDataSource([ds])
-        '        rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
-        '        rpt.SetParameterValue("pmtRangoFecha", "De : " + dtpFechaDesde.Text.ToString + "  Hasta : " + dtpFechaHasta.Text.ToString)
-        '        rpt.SetParameterValue("pmtSaldoEsp", SaldoEsperado)
-
-        '        If chbxNuevaVent.Checked = True Then
-        '            frm.CrystalReportViewer1.ReportSource = rpt
-        '            frm.WindowState = FormWindowState.Maximized
-        '            frm.Show()
-        '        Else
-        '            CrystalReportViewer.ReportSource = rpt
-        '            CrystalReportViewer.Refresh()
-        '        End If
-        '    End If
-        'Catch ex As Exception
-        '    If MessageBox.Show("Ocurrio un Error. Si desea ver el mensaje que produce, favor hacer click en si.", "COGENT", MessageBoxButtons.YesNo, MessageBoxIcon.Error) = Windows.Forms.DialogResult.Yes Then
-        '        MessageBox.Show("Contacte se con COGENT. Mensaje de Error: " + ex.Message, "COGENT", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        '    End If
-        'End Try
-    End Sub
-
     Private Sub rptLibroIvaCompras()
         Dim frm = New VerInformes
         Dim rpt
@@ -889,7 +704,6 @@ Public Class FiltroReporteContabilidad
             End If
         End If
     End Sub
-
     Private Sub rptLibroIvaTicket()
         Try
             Dim frm = New VerInformes
@@ -923,7 +737,6 @@ Public Class FiltroReporteContabilidad
         End Try
 
     End Sub
-
     Private Sub rptLibroIvaVentas()
         Dim frm = New VerInformes
         Dim FechaInicio, FechaFin As String
@@ -971,7 +784,6 @@ Public Class FiltroReporteContabilidad
             End If
         End If
     End Sub
-
     Private Sub rptCuadroResultado49()
         Dim frm = New VerInformes
         Dim rpt As New Reportes.ContaEstadosDeResultados49
@@ -995,10 +807,6 @@ Public Class FiltroReporteContabilidad
             CrystalReportViewer.Refresh()
         End If
     End Sub
-
-
-
-
     Private Sub rptCuadroResultado()
         Dim frm = New VerInformes
         Dim rpt As New Reportes.ContaCuadroResultados
@@ -1035,7 +843,6 @@ Public Class FiltroReporteContabilidad
             End If
         End If
     End Sub
-
     Private Sub rptBalanceSumaySaldo()
         Dim frm = New VerInformes
         Dim rpt As New Reportes.ContaBalanceSumaSaldo
@@ -1071,7 +878,6 @@ Public Class FiltroReporteContabilidad
             End If
         End If
     End Sub
-
     Private Sub rptHechaukaCompra()
         Dim ruta, ArchivoMes As String
         Dim Periodo, anho, mes, Cadena As String
@@ -1154,8 +960,6 @@ Public Class FiltroReporteContabilidad
 
 
     End Sub
-
-
     Private Sub rptBalanceGeneral()
         Dim frm = New VerInformes
         Dim rpt As New Reportes.ContaBalanceGeneral
@@ -1198,7 +1002,6 @@ Public Class FiltroReporteContabilidad
             End If
         End If
     End Sub
-
     Private Sub rptBalanceGeneral173()
         Dim frm = New VerInformes
         Dim rpt As New Reportes.ContaBalanceGeneral173
@@ -1222,37 +1025,46 @@ Public Class FiltroReporteContabilidad
             CrystalReportViewer.Refresh()
         End If
     End Sub
+
+    Private Sub rptLibroMayor()
+
+        Dim dsBalance As New DSContaBalanceGeneral()
+        Dim LibroMayor As New DSContaBalanceGeneralTableAdapters.LibroMayorTableAdapter()
+
+        Dim PlanCuentaList As String = ","
+
+        For r As Integer = 0 To dgvCuenta.Rows.Count - 1
+            If Convert.ToBoolean(dgvCuenta.Rows(r).Cells(2).Value) = True Then
+                PlanCuentaList = PlanCuentaList & dgvCuenta.Rows(r).Cells(3).Value & ","
+            End If
+        Next
+        LibroMayor.Fill(dsBalance.LibroMayor, dtpFechaDesde.Value, dtpFechaHasta.Value, Me.cmbPeriodoFiscal.SelectedValue, PlanCuentaList)
+
+        Dim frm = New VerInformes
+        Dim rpt As New Reportes.ContaLibroMayor_Simple
+        rpt.SetDataSource(dsBalance)
+
+        frm.CrystalReportViewer1.ReportSource = rpt
+        frm.WindowState = FormWindowState.Maximized
+        frm.Show()
+
+    End Sub
     Private Sub rptBalanceGeneralImpositivo()
         Dim frm = New VerInformes
         Dim rpt As New Reportes.ContaBalanceGeneralImpositivo
-        'Dim rptmat As New Reportes.ContaBalanceGeneralMATR
+        Dim NroPeriodo As Integer = cmbPeriodoFiscal.SelectedValue
         Dim fechaini As String
         Dim fechafin As String
         fechaini = dtpFechaDesde.Text + " 00:00:00"
         fechafin = dtpFechaHasta.Text + " 23:59:59"
 
-        Dim dt As DataTable
-        Dim Ria_DataAccessLayer As New Ria_DataAccessLayer.exeDataTable
+        Dim dsBalanceGeneral As New dsBalanceGeneral()
+        Dim cabeceraImpositivo As New dsBalanceGeneralTableAdapters.BalanceGeneralCabeceraTableAdapter()
+        Dim detalleImpositivo As New dsBalanceGeneralTableAdapters.BalanceGeneralImpositivoTableAdapter()
 
-        Dim NroPeriodo As Integer = cmbPeriodoFiscal.SelectedValue
-
-        Dim Array As New ArrayList
-        Array.Add(NroPeriodo)
-        Array.Add(fechaini)
-        Array.Add(fechafin)
-
-        Dim connstring As String = My.Settings.GESTIONConnectionString2.ToString()
-
-        dt = Ria_DataAccessLayer.loadDataTable("Exec BalanceGeneralImpositivo " & NroPeriodo & ",'" & fechaini & "','" & fechafin & "'", connstring)
-        'Try
-        '    Me.CalculoResultadoTableAdapter.Fill(Me.DsCalculoResultado.CalculoResultado, fechaini, fechafin, CInt(Me.cmbPeriodoFiscal.SelectedValue))
-        'Catch
-        'End Try
-        'Me.BalanceGeneralTableAdapter.Fill(Me.DsInfContabilidad.BalanceGeneral, CInt(Me.cmbPeriodoFiscal.SelectedValue), fechaini, fechafin)
-
-        rpt.SetDataSource([dt])
-        'rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
-        'rpt.SetParameterValue("pmtRangoFecha", "De : " + dtpFechaDesde.Text.ToString + "  Hasta : " + dtpFechaHasta.Text.ToString)
+        cabeceraImpositivo.Fill(dsBalanceGeneral.BalanceGeneralCabecera)
+        detalleImpositivo.Fill(dsBalanceGeneral.BalanceGeneralImpositivo, NroPeriodo, fechaini, fechafin)
+        rpt.SetDataSource(dsBalanceGeneral)
 
         If chbxNuevaVent.Checked = True Then
             frm.CrystalReportViewer1.ReportSource = rpt
@@ -1293,6 +1105,7 @@ Public Class FiltroReporteContabilidad
         'Me.BalanceGeneralTableAdapter.Fill(Me.DsInfContabilidad.BalanceGeneral, CInt(Me.cmbPeriodoFiscal.SelectedValue), fechaini, fechafin)
 
         rpt.SetDataSource([dt])
+
         'rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
         'rpt.SetParameterValue("pmtRangoFecha", "De : " + dtpFechaDesde.Text.ToString + "  Hasta : " + dtpFechaHasta.Text.ToString)
 

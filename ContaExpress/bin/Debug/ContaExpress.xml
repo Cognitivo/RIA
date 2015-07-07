@@ -6,7 +6,75 @@ ContaExpress
 </name>
 </assembly>
 <members>
-<member name="T:ContaExpress.dsContactos.CONTACTOSDataTable">
+<member name="T:ContaExpress.dsBalanceGeneral.BalanceGeneralImpositivoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneral.BalanceGeneralCabeceraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneral.BalanceGeneralImpositivoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneral.BalanceGeneralCabeceraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneral.BalanceGeneralImpositivoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneral.BalanceGeneralCabeceraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneral">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneralTableAdapters.BalanceGeneralImpositivoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneralTableAdapters.BalanceGeneralCabeceraTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ContaExpress.dsBalanceGeneralTableAdapters.TableAdapterManager.UpdateUpdatedRows(ContaExpress.dsBalanceGeneral,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ContaExpress.dsBalanceGeneralTableAdapters.TableAdapterManager.UpdateInsertedRows(ContaExpress.dsBalanceGeneral,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ContaExpress.dsBalanceGeneralTableAdapters.TableAdapterManager.UpdateDeletedRows(ContaExpress.dsBalanceGeneral,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ContaExpress.dsBalanceGeneralTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ContaExpress.dsBalanceGeneralTableAdapters.TableAdapterManager.UpdateAll(ContaExpress.dsBalanceGeneral)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneralTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneralTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ContaExpress.dsBalanceGeneralTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:ContaExpress.dsContactos.CONTACTOSDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -13673,6 +13741,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivoCabDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.periodofiscalRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -13685,6 +13757,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivoCabRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.periodofiscalRowChangeEvent">
 	<summary>
 Row event argument class
@@ -13694,6 +13770,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivo2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivoCabRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -13710,6 +13790,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscalTableAdapters.BalanceGeneralImpositivo2TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscalTableAdapters.BalanceGeneralImpositivoCabTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

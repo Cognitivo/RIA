@@ -263,6 +263,12 @@
       <DependentUpon>ContaBalanceGeneralImpositivoResumido.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ContaBalanceImpositivo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContaBalanceImpositivo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ContaBalanceSumaSaldo.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2944,6 +2950,10 @@
     <EmbeddedResource Include="ContaBalanceGeneralImpositivoResumido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ContaBalanceGeneralImpositivoResumido.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContaBalanceImpositivo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ContaBalanceImpositivo.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ContaBalanceSumaSaldo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
