@@ -1236,11 +1236,15 @@ Public Class VentasPlus
             TotalGravado10V = sumaimpgrav10
             TotalGravado5V = sumaimpgrav5
             TotalGravada = sumaimpgrav10 + sumaimpgrav5
-            TotalVentaV = sumaimpgrav10 + sumaimpgrav5 + sumaimpexe '+ Subtotal
+            TotalVentaV = sumaimpgrav10 + sumaimpgrav5 + sumaimpexe
             total10 = CDbl(sumaimpgrav10 / 11)
             total5 = CDbl(sumaimpgrav5 / 21)
             TotalExenta = sumaimpexe
             TotalIva = CDbl(total10) + CDbl(total5)
+            If servicio = 1 And TotalVentaV = 0 Then
+                TotalVentaV = Subtotal
+                TotalExenta = Subtotal
+            End If
 
             If CmbMoneda.SelectedValue = 1 Or CmbMoneda.SelectedValue = Nothing Then
                 TotalVentaTextBox.Text = FormatNumber(TotalVentaV, 0)
