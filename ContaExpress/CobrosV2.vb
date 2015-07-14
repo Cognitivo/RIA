@@ -4790,7 +4790,7 @@ todasfechas:
                     consulta = consulta + "UPDATE FACTURACOBRAR SET SALDOCUOTA = SALDOCUOTA + replace('" & CDec(importecuota) & "', ',', '.'), PAGADO = 0 WHERE CODVENTA = " & CDec(codventa) & " AND CODNUMEROCUOTA = " & CDec(nrocuota) & "  "
                 End If
                 If dgvFormaCobro.Rows(i - 1).Cells("DESTIPOPAGO").Value = "Nota de Credito" Then
-                    consulta = consulta + "UPDATE DEVOLUCIONES SET COBRADO = 0 WHERE NUMDEVOLUCION = " & dgvFormaCobro.Rows(i - 1).Cells("NUMDEVOLUCION").Value & ""
+                    consulta = consulta + "UPDATE DEVOLUCION SET COBRADO = 0 WHERE NUMDEVOLUCION =' " & dgvFormaCobro.Rows(i - 1).Cells("NUMDEVOLUCION").FormattedValue.ToString & "'"
                 ElseIf dgvFormaCobro.Rows(i - 1).Cells("DESTIPOPAGO").Value = "Aplique Saldo a Favor" Then
                     consulta = consulta + "UPDATE FACTURACOBRAR SET CODNUMEROCUOTA = 0 WHERE IDFORMACOBRAR = " & aux & ""
                 End If

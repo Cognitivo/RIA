@@ -1117,7 +1117,7 @@ Public Class FiltroReporteVentas
         Dim rpt As New Reportes.VentasRankingProductos
         Dim fechadesde2, fechahasta2 As String
         fechadesde2 = dtpFechaDesde.Value.ToString("yyy/MM/dd") & " 00:00:00"
-        fechahasta2 = dtpFechaHasta.Value.ToString("yyy/MM/dd") & " 23:59:00"
+        fechahasta2 = dtpFechaHasta.Value.ToString("yyy/MM/dd") & " 23:59:59"
 
         Me.RvRankingProductosTableAdapter.Fill(DsRVEstadisticas.RVRankingProductos, fechadesde2, fechahasta2)
 
@@ -1139,7 +1139,7 @@ Public Class FiltroReporteVentas
         Dim rpt As New Reportes.VentasRankingClientes
         Dim fechadesde2, fechahasta2 As String
         fechadesde2 = dtpFechaDesde.Value.ToString("yyy/MM/dd") & " 00:00:00"
-        fechahasta2 = dtpFechaHasta.Value.ToString("yyy/MM/dd") & " 23:59:00"
+        fechahasta2 = dtpFechaHasta.Value.ToString("yyy/MM/dd") & " 23:59:59"
 
         Me.RvRankingClientesTableAdapter.Fill(DsRVEstadisticas.RVRankingClientes, fechadesde2, fechahasta2)
 
@@ -1161,7 +1161,7 @@ Public Class FiltroReporteVentas
         Dim rpt As New Reportes.MovimientoRemision
         Dim fechadesde2, fechahasta2 As String
         fechadesde2 = dtpFechaDesde.Value.ToString("yyy/MM/dd") & " 00:00:00"
-        fechahasta2 = dtpFechaHasta.Value.ToString("yyy/MM/dd") & " 23:59:00"
+        fechahasta2 = dtpFechaHasta.Value.ToString("yyy/MM/dd") & " 23:59:59"
 
         Me.MovimientoRemisionesTableAdapter.Fill(DsContaBalanceGeneral173.MovimientoRemisiones, fechadesde2, fechahasta2)
 
@@ -1185,16 +1185,14 @@ Public Class FiltroReporteVentas
         'Dim ds As New DataSet
         Dim fechadesde2, fechahasta2 As String
         fechadesde2 = dtpFechaDesde.Value.ToString("yyy/MM/dd") & " 00:00:00"
-        fechahasta2 = dtpFechaHasta.Value.ToString("yyy/MM/dd") & " 23:59:00"
+        fechahasta2 = dtpFechaHasta.Value.ToString("yyy/MM/dd") & " 23:59:59"
 
         If chbxCodCliente.Checked = False Then
             If cmbCliente.Text = "%" Then
                 Me.RvMovimientosClienteTableAdapter.FillTodos(DsRVFacturacion.RVMovimientosCliente, fechadesde2, fechahasta2)
             Else
                 Me.RvMovimientosClienteTableAdapter.Fill(DsRVFacturacion.RVMovimientosCliente, CDec(cmbCliente.SelectedValue), fechadesde2, fechahasta2)
-                Me.MovClienteTOTALESTableAdapter.Fill(DsRVFacturacion.MovClienteTOTALES, CDec(cmbCliente.SelectedValue), fechadesde2, fechahasta2)
-                'ds = DsRVFacturacion.Copy()
-                'ds.Tables.Add(DsTotalMovimientoHistorico.MovimientoHistoricoTotales.Copy())
+
             End If
         Else
             Dim TestPos As Integer

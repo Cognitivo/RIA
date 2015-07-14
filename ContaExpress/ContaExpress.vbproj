@@ -454,11 +454,6 @@
     <Compile Include="Contabilidad\CostodeVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Contabilidad\dsBalanceGeneral.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsBalanceGeneral.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Contabilidad\DsCosteo.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -544,6 +539,11 @@
     </Compile>
     <Compile Include="Contactos.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DsBalanceGeneral.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsBalanceGeneral.xsd</DependentUpon>
     </Compile>
     <Compile Include="DsCaja1.vb">
       <DependentUpon>DsCaja1.xsd</DependentUpon>
@@ -2065,17 +2065,6 @@
     <None Include="consultaprecio_ventasimple.xss">
       <DependentUpon>consultaprecio_ventasimple.xsd</DependentUpon>
     </None>
-    <None Include="Contabilidad\dsBalanceGeneral.xsc">
-      <DependentUpon>dsBalanceGeneral.xsd</DependentUpon>
-    </None>
-    <None Include="Contabilidad\dsBalanceGeneral.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsBalanceGeneral.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Contabilidad\dsBalanceGeneral.xss">
-      <DependentUpon>dsBalanceGeneral.xsd</DependentUpon>
-    </None>
     <None Include="Contabilidad\DsCosteo.xsc">
       <DependentUpon>DsCosteo.xsd</DependentUpon>
     </None>
@@ -2086,6 +2075,17 @@
     </None>
     <None Include="Contabilidad\DsCosteo.xss">
       <DependentUpon>DsCosteo.xsd</DependentUpon>
+    </None>
+    <None Include="DsBalanceGeneral.xsc">
+      <DependentUpon>DsBalanceGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="DsBalanceGeneral.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsBalanceGeneral.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DsBalanceGeneral.xss">
+      <DependentUpon>DsBalanceGeneral.xsd</DependentUpon>
     </None>
     <None Include="dsCalculoAjusteHistórico.xsc">
       <DependentUpon>dsCalculoAjusteHistórico.xsd</DependentUpon>
