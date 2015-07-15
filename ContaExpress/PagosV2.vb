@@ -2704,7 +2704,7 @@ verificarnrorecibo:
                         If MontoPagado > 0 Then
                             If MontoPagado >= Monto Then
                                 dgvFacturasaPagar.Rows(i - 1).Cells("SALDOCUOTA").Value = "0"
-                                ImporteGrilla = Monto
+                                ImporteGrilla = tbxMonto.Text
                             Else
                                 dgvFacturasaPagar.Rows(i - 1).Cells("SALDOCUOTA").Value = Monto - MontoPagado
                                 ImporteGrilla = MontoPagado
