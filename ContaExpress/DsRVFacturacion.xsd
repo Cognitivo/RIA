@@ -887,10 +887,9 @@ WHERE        (FECHA &gt;= @fechaini) AND (FECHA &lt;= @fechafin)</CommandText>
               <DbSource ConnectionRef="GESTIONConnectionString2 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        TOP (100) PERCENT VENTAS.FECHAVENTA AS FECHA, VENTAS.NUMVENTA, CLIENTES.NUMCLIENTE, VENTAS.NOMBRECLIENTE, VENTAS.COTIZACION1, 
-                         VENTAS.MOTIVOANULADO, VENDEDOR.NUMVENDEDOR, TIPOCLIENTE.NUMTIPOCLIENTE, MONEDA.SIMBOLO, VENTAS.TOTALIVA, VENTAS.TOTALVENTA, 
-                         CLIENTES.NOMBREFANTASIA, VENDEDOR.DESVENDEDOR, CLIENTES.CODZONA, ZONA.DESZONA, ZONA.NUMZONA, SUM(VENTASDETALLE.CANTIDADVENTA) 
-                         AS CANTIDAD, VENDEDOR.CODVENDEDOR, VENTAS.TIPOVENTA, VENTAS.MODALIDADPAGO
+                    <CommandText>SELECT        TOP (100) PERCENT VENTAS.FECHAVENTA AS FECHA, VENTAS.NUMVENTA, CLIENTES.NUMCLIENTE, VENTAS.NOMBRECLIENTE, VENTAS.COTIZACION1, VENTAS.MOTIVOANULADO, VENDEDOR.NUMVENDEDOR, 
+                         TIPOCLIENTE.NUMTIPOCLIENTE, MONEDA.SIMBOLO, VENTAS.TOTALIVA, VENTAS.TOTAL5, VENTAS.TOTALGRAVADO5, VENTAS.TOTALVENTA, CLIENTES.NOMBREFANTASIA, VENDEDOR.DESVENDEDOR, 
+                         CLIENTES.CODZONA, ZONA.DESZONA, ZONA.NUMZONA, SUM(VENTASDETALLE.CANTIDADVENTA) AS CANTIDAD, VENDEDOR.CODVENDEDOR, VENTAS.TIPOVENTA, VENTAS.MODALIDADPAGO
 FROM            VENTAS LEFT OUTER JOIN
                          VENTASDETALLE ON VENTAS.CODVENTA = VENTASDETALLE.CODVENTA LEFT OUTER JOIN
                          MONEDA ON VENTASDETALLE.CODMONEDA = MONEDA.CODMONEDA AND VENTAS.CODMONEDA = MONEDA.CODMONEDA LEFT OUTER JOIN
@@ -902,11 +901,11 @@ FROM            VENTAS LEFT OUTER JOIN
                          ZONA ON ZONA.CODZONA = CLIENTES.CODZONA LEFT OUTER JOIN
                          CIUDAD ON ZONA.CODCIUDAD = CIUDAD.CODCIUDAD LEFT OUTER JOIN
                          PAIS ON PAIS.CODPAIS = CIUDAD.CODPAIS
-WHERE        (VENTAS.ESTADO = 1 or VENTAS.ESTADO = 2)
-GROUP BY VENTAS.FECHAVENTA, VENTAS.NUMVENTA, CLIENTES.NUMCLIENTE, VENDEDOR.NUMVENDEDOR, TIPOCLIENTE.NUMTIPOCLIENTE, VENTAS.TOTALIVA, 
-                         VENTAS.TOTALVENTA, VENTAS.COTIZACION1, MONEDA.SIMBOLO, VENTAS.NOMBRECLIENTE, CLIENTES.NOMBREFANTASIA, VENDEDOR.DESVENDEDOR, 
-                         CLIENTES.CODZONA, ZONA.DESZONA, ZONA.NUMZONA, VENTAS.MOTIVOANULADO, VENDEDOR.CODVENDEDOR, VENTAS.TIPOVENTA, 
-                         VENTAS.MODALIDADPAGO
+WHERE        (VENTAS.ESTADO = 1) OR
+                         (VENTAS.ESTADO = 2)
+GROUP BY VENTAS.FECHAVENTA, VENTAS.NUMVENTA, CLIENTES.NUMCLIENTE, VENDEDOR.NUMVENDEDOR, TIPOCLIENTE.NUMTIPOCLIENTE, VENTAS.TOTALIVA, VENTAS.TOTAL5, VENTAS.TOTALGRAVADO5, 
+                         VENTAS.TOTALVENTA, VENTAS.COTIZACION1, MONEDA.SIMBOLO, VENTAS.NOMBRECLIENTE, CLIENTES.NOMBREFANTASIA, VENDEDOR.DESVENDEDOR, CLIENTES.CODZONA, ZONA.DESZONA, 
+                         ZONA.NUMZONA, VENTAS.MOTIVOANULADO, VENDEDOR.CODVENDEDOR, VENTAS.TIPOVENTA, VENTAS.MODALIDADPAGO
 ORDER BY FECHA</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -933,7 +932,9 @@ ORDER BY FECHA</CommandText>
               <Mapping SourceColumn="MOTIVOANULADO" DataSetColumn="MOTIVOANULADO" />
               <Mapping SourceColumn="TIPOVENTA" DataSetColumn="TIPOVENTA" />
               <Mapping SourceColumn="MODALIDADPAGO" DataSetColumn="MODALIDADPAGO" />
-              <Mapping SourceColumn="CODVENDEDOR" DataSetColumn="CODVENDEDOR1" />
+              <Mapping SourceColumn="CODVENDEDOR" DataSetColumn="CODVENDEDOR" />
+              <Mapping SourceColumn="TOTAL5" DataSetColumn="TOTAL5" />
+              <Mapping SourceColumn="TOTALGRAVADO5" DataSetColumn="TOTALGRAVADO5" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2298,7 +2299,9 @@ FROM            (SELECT TOP (100) PERCENT MAX(CASE WHEN TIPO = 'VENTA_ANUL' OR
               <xs:element name="CODVENDEDOR" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCODVENDEDOR" msprop:Generator_ColumnPropNameInRow="CODVENDEDOR" msprop:Generator_ColumnPropNameInTable="CODVENDEDORColumn" msprop:Generator_UserColumnName="CODVENDEDOR" type="xs:int" minOccurs="0" />
               <xs:element name="TIPOVENTA" msprop:Generator_ColumnVarNameInTable="columnTIPOVENTA" msprop:Generator_ColumnPropNameInRow="TIPOVENTA" msprop:Generator_ColumnPropNameInTable="TIPOVENTAColumn" msprop:Generator_UserColumnName="TIPOVENTA" type="xs:unsignedByte" minOccurs="0" />
               <xs:element name="MODALIDADPAGO" msprop:Generator_ColumnVarNameInTable="columnMODALIDADPAGO" msprop:Generator_ColumnPropNameInRow="MODALIDADPAGO" msprop:Generator_ColumnPropNameInTable="MODALIDADPAGOColumn" msprop:Generator_UserColumnName="MODALIDADPAGO" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="CODVENDEDOR1" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msdata:Caption="CODVENDEDOR" msprop:Generator_ColumnVarNameInTable="columnCODVENDEDOR1" msprop:Generator_ColumnPropNameInRow="CODVENDEDOR1" msprop:Generator_ColumnPropNameInTable="CODVENDEDOR1Column" msprop:Generator_UserColumnName="CODVENDEDOR1" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTAL5" msprop:Generator_ColumnVarNameInTable="columnTOTAL5" msprop:Generator_ColumnPropNameInRow="TOTAL5" msprop:Generator_ColumnPropNameInTable="TOTAL5Column" msprop:Generator_UserColumnName="TOTAL5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TOTALGRAVADO5" msprop:Generator_ColumnVarNameInTable="columnTOTALGRAVADO5" msprop:Generator_ColumnPropNameInRow="TOTALGRAVADO5" msprop:Generator_ColumnPropNameInTable="TOTALGRAVADO5Column" msprop:Generator_UserColumnName="TOTALGRAVADO5" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total5" msprop:Generator_ColumnVarNameInTable="_columnTotal5" msprop:Generator_ColumnPropNameInRow="_Total5" msprop:Generator_ColumnPropNameInTable="_Total5Column" msprop:Generator_UserColumnName="Total5" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2799,10 +2802,6 @@ FROM            (SELECT TOP (100) PERCENT MAX(CASE WHEN TIPO = 'VENTA_ANUL' OR
     <xs:unique name="RVComprobantesResumido_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:RVComprobantesResumido" />
       <xs:field xpath="mstns:CODVENDEDOR" />
-    </xs:unique>
-    <xs:unique name="Constraint2">
-      <xs:selector xpath=".//mstns:RVComprobantesResumido" />
-      <xs:field xpath="mstns:CODVENDEDOR1" />
     </xs:unique>
     <xs:unique name="RVComprobantesAgrupCli_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:RVComprobantesAgrupCli" />

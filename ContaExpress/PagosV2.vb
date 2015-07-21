@@ -2695,7 +2695,7 @@ verificarnrorecibo:
             'Verificamos si se chequeo o no algun campo de la grilla
             Chequeado = VerificarCkequet()
             Dim rows As Integer = dgvFacturasaPagar.RowCount
-            MontoPagado = CDec(tbxMonto.Text) * CDec(Coheficiente)
+            MontoPagado = CDec(tbxMonto.Text) '* CDec(Coheficiente)
             If Chequeado = True Then
                 For i = 1 To rows
                     If dgvFacturasaPagar.Rows(i - 1).Cells("Pagar").Value = True Then
@@ -2703,11 +2703,13 @@ verificarnrorecibo:
 
                         If MontoPagado > 0 Then
                             If MontoPagado >= Monto Then
+                                MontoPagado = MontoPagado - Monto
                                 dgvFacturasaPagar.Rows(i - 1).Cells("SALDOCUOTA").Value = "0"
-                                ImporteGrilla = tbxMonto.Text
+                                ImporteGrilla = Monto
                             Else
-                                dgvFacturasaPagar.Rows(i - 1).Cells("SALDOCUOTA").Value = Monto - MontoPagado
                                 ImporteGrilla = MontoPagado
+                                dgvFacturasaPagar.Rows(i - 1).Cells("SALDOCUOTA").Value = Monto - MontoPagado
+                                MontoPagado = MontoPagado - Monto
                             End If
                             'Actualizar Saldo de la NC
                             If i = 1 And lbxTipoPago.Text = "Nota de Credito" Then ' Solo hace falta 1 vez
@@ -2718,8 +2720,8 @@ verificarnrorecibo:
                                 End If
                             End If
 
-                            MontoPagado = Monto - MontoPagado
-                            MontoPagado = MontoPagado * (-1)
+                            'MontoPagado = Monto - MontoPagado
+                            'MontoPagado = MontoPagado * (-1)
 
                             If dgvFacturasaPagar.Rows(i - 1).Cells("TIPOFACTURA").Value = "CONTADO" Or dgvFacturasaPagar.Rows(i - 1).Cells("TIPOFACTURA").Value = "Contado" Then
                                 TipoFormaPago = 0
@@ -2766,7 +2768,7 @@ verificarnrorecibo:
 
                             CobroFormaPagoDataGridView.Rows(c - 1).Cells("NUMCOMPRA").Value = dgvFacturasaPagar.Rows(i - 1).Cells("NUMFACTURA").Value
                             CobroFormaPagoDataGridView.Rows(c - 1).Cells("CODCOMPRA").Value = dgvFacturasaPagar.Rows(i - 1).Cells("CODCOMPRA1").Value
-                            CobroFormaPagoDataGridView.Rows(c - 1).Cells("IMPORTE").Value = ImporteGrilla
+                            CobroFormaPagoDataGridView.Rows(c - 1).Cells("IMPORTE").Value = ImporteGrilla * Coheficiente
                             CobroFormaPagoDataGridView.Rows(c - 1).Cells("DESTIPOPAGO").Value = lbxTipoPago.Text
                             CobroFormaPagoDataGridView.Rows(c - 1).Cells("FECHAPAGO").Value = conctFechaHora
                             CobroFormaPagoDataGridView.Rows(c - 1).Cells("CODTIPOPAGO").Value = lbxTipoPago.SelectedValue

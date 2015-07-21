@@ -650,6 +650,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DsRVCobros.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DsRVFacturacion1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsRVFacturacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsSHPRCNEE1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1126,11 +1131,6 @@
     </Compile>
     <Compile Include="DsRVCobros.vb">
       <DependentUpon>DsRVCobros.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DsRVFacturacion.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsRVFacturacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="DsRVFacturacion.vb">
       <DependentUpon>DsRVFacturacion.xsd</DependentUpon>

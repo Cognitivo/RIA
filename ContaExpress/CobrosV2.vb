@@ -1274,8 +1274,29 @@ Public Class CobroV2
         End If
 
         If KeyAscii = 42 Then
+            Dim id_cliente As Integer = CmbCliente.SelectedValue
+
+            Dim RiaDAL As New Ria_DataAccessLayer.exeDataTable
+            Dim Array As New ArrayList
+            Array.Add(id_cliente)
+            Dim sql As String = "SELECT DEVOLUCION.CODVENTA, DEVOLUCION.FECHADEVOLUCION AS FECHA, " & _
+                                "cast((DEVOLUCION.TOTALDEVOLUCION/DEVOLUCION.COTIZACION1) as decimal(16,2)) AS IMPORTE," & _
+                               " cast((DEVOLUCION.SALDO/DEVOLUCION.COTIZACION1) as decimal(16,2)) AS SALDO, DEVOLUCION.CODCLIENTE, DEVOLUCION.NUMDEVOLUCION, " & _
+                               " VENTAS.NUMVENTA, DEVOLUCION.COBRADO, DEVOLUCION.CODDEVOLUCION, DEVOLUCION.CODMONEDA " & _
+                               " FROM            DEVOLUCION INNER JOIN " & _
+                               " CLIENTES ON DEVOLUCION.CODCLIENTE = CLIENTES.CODCLIENTE LEFT OUTER JOIN " & _
+                                " VENTAS ON DEVOLUCION.CODVENTA = VENTAS.CODVENTA " & _
+                               " WHERE        (DEVOLUCION.CODCLIENTE =" & id_cliente & ") AND (DEVOLUCION.SALDO <> 0) AND (DEVOLUCION.COBRADO = 0) AND (DEVOLUCION.ESTADO = 1)"
+
+            Dim connstring As String = My.Settings.GESTIONConnectionString2.ToString()
+            Dim dt As DataTable = RiaDAL.loadDataTable(sql, connstring)
             If ModifNC = 0 Then
-                NCREDITOTableAdapter.Fill(DsCobros2.NCREDITO, CmbCliente.SelectedValue)
+
+                For Each Row As DataRow In dt.Rows
+                    DsCobros2.NCREDITO.ImportRow(Row)
+                Next
+
+                'NCREDITOTableAdapter.Fill(DsCobros2.NCREDITO, id_cliente)
             End If
             gbxNotaCredito.HeaderText = "Buscador de Nota de Crédito de " + CmbCliente.Text
             cbxNotaCredito.Checked = False

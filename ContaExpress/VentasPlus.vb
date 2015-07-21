@@ -6884,6 +6884,7 @@ SupervisorOK:
             Dim RangoID As Integer
             Dim conexion As System.Data.SqlClient.SqlConnection
             Dim myTrans As System.Data.SqlClient.SqlTransaction
+            Dim numeroQuemado As String = "NUMERO QUEMADO"
             Me.Cursor = Cursors.AppStarting
             conexion = ser.Abrir()
             myTrans = conexion.BeginTransaction(IsolationLevel.ReadCommitted, "Actualizar")
@@ -6935,6 +6936,7 @@ SupervisorOK:
                     Dim mes As Integer = Today.Month
                     Dim anho As Integer = Today.Year
 
+
                     Dim Fecha As String = day.ToString + "/" + mes.ToString + "/" + anho.ToString
                     dtpFechaHora.Value = Fecha
 
@@ -6945,8 +6947,10 @@ SupervisorOK:
                     End If
                 End If
 
+
+
                 'Nrango acaba de calcular en CalculaNroFactura()
-                consulta = "INSERT INTO VENTAS (CODCOMPROBANTE,NUMVENTA,FECHAVENTA,ESTADO,CODSUCURSAL,CODRANGO,CODUSUARIO) VALUES (" & tipocomp2 & ", '" & NumVentaV & "', CONVERT(DATETIME,'" & dtpFechaHora.Text & "',103) , 2, " & codsuc & ", " & RangoID & "," & UsuCodigo & ")"
+                consulta = "INSERT INTO VENTAS (CODCOMPROBANTE,NUMVENTA,FECHAVENTA,ESTADO,CODSUCURSAL,CODRANGO,CODUSUARIO,MOTIVOANULADO) VALUES (" & tipocomp2 & ", '" & NumVentaV & "', CONVERT(DATETIME,'" & dtpFechaHora.Text & "',103) , 2, " & codsuc & ", " & RangoID & "," & UsuCodigo & ",'" & numeroQuemado + " " + NumVentaV & "')"
 
 
                 consulta = consulta + " UPDATE DETPC SET ULTIMO =" & NroRango & " WHERE RANDOID =" & RangoID & ""

@@ -1234,6 +1234,378 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaProductoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVTipoComprobanteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasPorVendedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVProductosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVCLIENTESDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteProductoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasResumenDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVMovimientosClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumidoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesAgrupCliDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVENTASPORCLIENTESDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVListaPresupuestoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPresupuestoDetalladoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumido2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesPendNuevoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.VentasTipoPagoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.TIPOFORMACOBRODataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.MovClienteTOTALESDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaProductoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVTipoComprobanteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasPorVendedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVProductosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVCLIENTESRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteProductoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasResumenRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVMovimientosClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumidoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesAgrupCliRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVENTASPORCLIENTESRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVListaPresupuestoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPresupuestoDetalladoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumido2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesPendNuevoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.VentasTipoPagoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.TIPOFORMACOBRORow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.MovClienteTOTALESRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaProductoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVTipoComprobanteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasPorVendedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVProductosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVCLIENTESRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteProductoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasResumenRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVMovimientosClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumidoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesAgrupCliRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVVENTASPORCLIENTESRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVListaPresupuestoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVPresupuestoDetalladoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumido2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesPendNuevoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.VentasTipoPagoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.TIPOFORMACOBRORowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion.MovClienteTOTALESRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacion">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPendientePorZonaClienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPendientePorZonaProductoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPendientePorClienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVTipoComprobanteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVVentasPorVendedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVProductosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVCLIENTESTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPendientePorClienteProductoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVVentasResumenTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVMovimientosClienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesResumidoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesAgrupCliTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVVENTASPORCLIENTESTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVListaPresupuestoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPresupuestoDetalladoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesResumido2TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesPendNuevoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.VentasTipoPagoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.TIPOFORMACOBROTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.MovClienteTOTALESTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateUpdatedRows(ContaExpress.DsRVFacturacion,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateInsertedRows(ContaExpress.DsRVFacturacion,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateDeletedRows(ContaExpress.DsRVFacturacion,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateAll(ContaExpress.DsRVFacturacion)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
 </member><member name="T:ContaExpress.dsCarnetClientes.CLIENTESCarnetDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -18134,378 +18506,6 @@ Update Order Option
 Used to sort self-referenced table's rows
 </summary>
 </member><member name="T:ContaExpress.DsMovBancarioTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaProductoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVTipoComprobanteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasPorVendedorDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVProductosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVCLIENTESDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteProductoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasResumenDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVMovimientosClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumidoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesAgrupCliDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVENTASPORCLIENTESDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVListaPresupuestoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPresupuestoDetalladoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumido2DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesPendNuevoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.VentasTipoPagoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.TIPOFORMACOBRODataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.MovClienteTOTALESDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaProductoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVTipoComprobanteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasPorVendedorRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVProductosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVCLIENTESRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteProductoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasResumenRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVMovimientosClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumidoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesAgrupCliRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVENTASPORCLIENTESRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVListaPresupuestoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPresupuestoDetalladoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumido2Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesPendNuevoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.VentasTipoPagoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.TIPOFORMACOBRORow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.MovClienteTOTALESRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorZonaProductoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVTipoComprobanteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasPorVendedorRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVProductosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVCLIENTESRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPendientePorClienteProductoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVentasResumenRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVMovimientosClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumidoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesAgrupCliRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVVENTASPORCLIENTESRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVListaPresupuestoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVPresupuestoDetalladoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesResumido2RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.RVComprobantesPendNuevoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.VentasTipoPagoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.TIPOFORMACOBRORowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion.MovClienteTOTALESRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacion">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPendientePorZonaClienteTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPendientePorZonaProductoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPendientePorClienteTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVTipoComprobanteTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVVentasPorVendedorTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVProductosTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVCLIENTESTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPendientePorClienteProductoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVVentasResumenTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVMovimientosClienteTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesResumidoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesAgrupCliTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVVENTASPORCLIENTESTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVListaPresupuestoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVPresupuestoDetalladoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesResumido2TableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.RVComprobantesPendNuevoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.VentasTipoPagoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.TIPOFORMACOBROTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.MovClienteTOTALESTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateUpdatedRows(ContaExpress.DsRVFacturacion,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateInsertedRows(ContaExpress.DsRVFacturacion,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateDeletedRows(ContaExpress.DsRVFacturacion,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateAll(ContaExpress.DsRVFacturacion)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:ContaExpress.DsRVFacturacionTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
