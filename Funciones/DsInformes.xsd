@@ -12,7 +12,7 @@
   <xs:element name="DsInformes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsInformes" msprop:Generator_UserDSName="DsInformes">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_RowEvArgName="DetalleRowChangeEvent" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowClassName="DetalleRow">
+        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_RowEvArgName="DetalleRowChangeEvent" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_RowClassName="DetalleRow" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_UserTableName="Detalle">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Campo1" msprop:Generator_ColumnVarNameInTable="columnCampo1" msprop:Generator_ColumnPropNameInRow="Campo1" msprop:Generator_ColumnPropNameInTable="Campo1Column" msprop:Generator_UserColumnName="Campo1" type="xs:string" minOccurs="0" />
@@ -69,7 +69,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cabecera" msprop:Generator_TableClassName="CabeceraDataTable" msprop:Generator_RowEvArgName="CabeceraRowChangeEvent" msprop:Generator_TableVarName="tableCabecera" msprop:Generator_TablePropName="Cabecera" msprop:Generator_RowDeletingName="CabeceraRowDeleting" msprop:Generator_RowChangingName="CabeceraRowChanging" msprop:Generator_RowDeletedName="CabeceraRowDeleted" msprop:Generator_RowEvHandlerName="CabeceraRowChangeEventHandler" msprop:Generator_RowChangedName="CabeceraRowChanged" msprop:Generator_UserTableName="Cabecera" msprop:Generator_RowClassName="CabeceraRow">
+        <xs:element name="Cabecera" msprop:Generator_TableClassName="CabeceraDataTable" msprop:Generator_RowEvArgName="CabeceraRowChangeEvent" msprop:Generator_TableVarName="tableCabecera" msprop:Generator_TablePropName="Cabecera" msprop:Generator_RowDeletingName="CabeceraRowDeleting" msprop:Generator_RowChangingName="CabeceraRowChanging" msprop:Generator_RowDeletedName="CabeceraRowDeleted" msprop:Generator_RowClassName="CabeceraRow" msprop:Generator_RowEvHandlerName="CabeceraRowChangeEventHandler" msprop:Generator_RowChangedName="CabeceraRowChanged" msprop:Generator_UserTableName="Cabecera">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Campo1" msprop:Generator_ColumnVarNameInTable="columnCampo1" msprop:Generator_ColumnPropNameInRow="Campo1" msprop:Generator_ColumnPropNameInTable="Campo1Column" msprop:Generator_UserColumnName="Campo1" type="xs:string" minOccurs="0" />
@@ -95,6 +95,7 @@
               <xs:element name="Numero9" msprop:Generator_ColumnVarNameInTable="columnNumero9" msprop:Generator_ColumnPropNameInRow="Numero9" msprop:Generator_ColumnPropNameInTable="Numero9Column" msprop:Generator_UserColumnName="Numero9" type="xs:decimal" minOccurs="0" />
               <xs:element name="Numero10" msprop:Generator_ColumnVarNameInTable="columnNumero10" msprop:Generator_ColumnPropNameInRow="Numero10" msprop:Generator_ColumnPropNameInTable="Numero10Column" msprop:Generator_UserColumnName="Numero10" type="xs:decimal" minOccurs="0" />
               <xs:element name="Fecha3" msprop:Generator_ColumnVarNameInTable="columnFecha3" msprop:Generator_ColumnPropNameInRow="Fecha3" msprop:Generator_ColumnPropNameInTable="Fecha3Column" msprop:Generator_UserColumnName="Fecha3" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Numero15" msprop:Generator_ColumnVarNameInTable="columnNumero15" msprop:Generator_ColumnPropNameInRow="Numero15" msprop:Generator_ColumnPropNameInTable="Numero15Column" msprop:Generator_UserColumnName="Numero15" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

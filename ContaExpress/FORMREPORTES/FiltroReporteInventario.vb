@@ -1520,164 +1520,192 @@ Public Class FiltroReporteInventario
     End Sub
 
     Sub ReporteStockValAgrupado()
-        Try
-            Dim Hasta As String = dtpFechaDesde.Value
-            FechaDesde = Hasta & " 00:00:00"
-            FechaHasta = Hasta & " 23:59:59"
-            Dim año As Integer = dtpFechaDesde.Value.Year
-            'OBTENER PRIMER DIA DEL MES DE LA FECHA SELECCIONADA
-            Dim primerdiadelmes As New DateTime
-            primerdiadelmes = FechaDesde
-            primerdiadelmes = primerdiadelmes.AddDays(-primerdiadelmes.Day + 1)
-
-            FormatF1 = FormatearFiltroCheckCombo(cmbSucursal, dtSucursal, "CODSUCURSAL", "NO")
-            FormatF2 = FormatearFiltroCheckCombo(cmbFamilia, dtFamilia, "CODFAMILIA", "NO")
-            'Me.RvfistockaunafechaTableAdapter.FillByListaProd(Me.DsRVFiltroInventario.RVFISTOCKAUNAFECHA, dtpFechaDesde.Value.Month, año, primerdiadelmes, FechaHasta, tbxcodProd.Text, FormatF1)
-
-            If chbxCosto0Neg.Checked = True Then
-
-                Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText = "SELECT CODFAMILIA, DESFAMILIA, DESLINEA,PRODUCTO, CODIGO, CODCODIGO, AVG(PRECIO) AS PRECIO, SUM(STOCKFECHA) AS STOCKFECHA, CASE WHEN SUM(STOCKFECHA)< 0 THEN 0 ELSE (CASE WHEN ISNULL (AVG(FIFO) * SUM(STOCKFECHA),0) = 0 THEN 0 ELSE AVG(FIFO) * SUM(STOCKFECHA) END) END  AS VALOR, CASE WHEN FIFO <> 0 THEN FIFO ELSE 0 END AS COSTO " & _
-                "FROM (SELECT dbo.FAMILIA.CODFAMILIA, dbo.FAMILIA.DESFAMILIA,dbo.LINEA.DESLINEA, PRODUCTOS.DESPRODUCTO + ISNULL(COD.DESCODIGO1, '') + ISNULL(COD.DESCODIGO2, '') AS PRODUCTO, COD.CODIGO, COD.CODCODIGO, COD.PRECIO, ISNULL " & _
-                                                        "((SELECT top (1) STOCK FROM STOCKHISTORICO WHERE (MONTH(FECHA) = '" & dtpFechaDesde.Value.Month & "') AND (YEAR(FECHA) = " & año & ") AND (CODCODIGO = COD.CODCODIGO) AND (CODDEPOSITO = SD.CODDEPOSITO)) + ISNULL " & _
-                                                        "((SELECT SUM(CANTIDAD) AS Expr1 FROM MOVPRODUCTO " & _
-                                                            "WHERE (FECHAMOVIMIENTO >= CONVERT(DATETIME,'" & primerdiadelmes & "',103)) AND (FECHAMOVIMIENTO <= CONVERT(DATETIME,'" & FechaHasta & "',103)) AND (CODCODIGO = COD.CODCODIGO) AND (CODDEPOSITO = SD.CODDEPOSITO)), 0), 0) AS STOCKFECHA, " & _
-                                                            "(SELECT dbo.fnFifoAFecha(CONVERT(DATETIME,'" & FechaDesde & "', 103), CONVERT(DATETIME,'" & FechaHasta & "', 103), COD.CODCODIGO, SD.CODDEPOSITO)) AS FIFO," & _
-                "SUCURSAL.DESSUCURSAL, SUCURSAL.CODSUCURSAL " & _
-                                "FROM            CODIGOS AS COD INNER JOIN " & _
-                                                    "PRODUCTOS ON COD.CODPRODUCTO = PRODUCTOS.CODPRODUCTO INNER JOIN " & _
-                                                    "STOCKDEPOSITO AS SD ON COD.CODCODIGO = SD.CODCODIGO INNER JOIN " & _
-                                                    "SUCURSAL ON SD.CODDEPOSITO = SUCURSAL.CODSUCURSAL LEFT OUTER JOIN " & _
-                                                    "UNIDADMEDIDA ON PRODUCTOS.CODMEDIDA = UNIDADMEDIDA.CODMEDIDA LEFT OUTER JOIN " & _
-                                                    "dbo.RUBRO ON dbo.PRODUCTOS.CODRUBRO = dbo.RUBRO.CODRUBRO LEFT OUTER JOIN " & _
-                                                    "dbo.LINEA ON dbo.PRODUCTOS.CODLINEA = dbo.LINEA.CODLINEA LEFT OUTER JOIN " & _
-                                                    "dbo.FAMILIA ON dbo.PRODUCTOS.CODFAMILIA = dbo.FAMILIA.CODFAMILIA)  AS STOCK " & _
-                                "WHERE (CODSUCURSAL IN (SELECT item FROM dbo.fnPartir('" & FormatF1 & "' , ',') AS fnPartir_1)) " & _
-                                " GROUP BY CODFAMILIA, DESFAMILIA, DESLINEA, PRODUCTO, CODIGO, CODCODIGO, FIFO  "
 
 
-            Else
+        Dim Hasta As String = dtpFechaDesde.Value
+        FechaHasta = Hasta & " 23:59:59"
 
-                Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText = "SELECT CODFAMILIA, DESFAMILIA,DESLINEA, PRODUCTO, CODIGO, CODCODIGO, AVG(PRECIO) AS PRECIO, SUM(STOCKFECHA) AS STOCKFECHA, CASE WHEN ISNULL (AVG(FIFO) * SUM(STOCKFECHA),0) = 0 THEN 0 ELSE AVG(FIFO) * SUM(STOCKFECHA) END  AS VALOR, CASE WHEN FIFO <> 0 THEN FIFO ELSE 0 END AS COSTO " & _
-                "FROM (SELECT TOP (100) PERCENT dbo.FAMILIA.CODFAMILIA, dbo.FAMILIA.DESFAMILIA,dbo.LINEA.DESLINEA, PRODUCTOS.DESPRODUCTO + ISNULL(COD.DESCODIGO1, '') + ISNULL(COD.DESCODIGO2, '') AS PRODUCTO, COD.CODIGO, COD.CODCODIGO, COD.PRECIO, ISNULL " & _
-                                                        "((SELECT top (1) STOCK FROM STOCKHISTORICO WHERE (MONTH(FECHA) = '" & dtpFechaDesde.Value.Month & "') AND (YEAR(FECHA) = " & año & ") AND (CODCODIGO = COD.CODCODIGO) AND (CODDEPOSITO = SD.CODDEPOSITO)) + ISNULL " & _
-                                                        "((SELECT SUM(CANTIDAD) AS Expr1 FROM MOVPRODUCTO " & _
-                                                            "WHERE (FECHAMOVIMIENTO >= CONVERT(DATETIME,'" & primerdiadelmes & "',103)) AND (FECHAMOVIMIENTO <= CONVERT(DATETIME,'" & FechaHasta & "',103)) AND (CODCODIGO = COD.CODCODIGO) AND (CODDEPOSITO = SD.CODDEPOSITO)), 0), 0) AS STOCKFECHA, " & _
-                                                            "(SELECT dbo.fnFifoAFecha(CONVERT(DATETIME,'" & FechaDesde & "', 103), CONVERT(DATETIME,'" & FechaHasta & "', 103), COD.CODCODIGO, SD.CODDEPOSITO)) AS FIFO," & _
-                                                        "SUCURSAL.DESSUCURSAL, SUCURSAL.CODSUCURSAL " & _
-                                "FROM            CODIGOS AS COD INNER JOIN " & _
-                                                    "PRODUCTOS ON COD.CODPRODUCTO = PRODUCTOS.CODPRODUCTO INNER JOIN " & _
-                                                    "STOCKDEPOSITO AS SD ON COD.CODCODIGO = SD.CODCODIGO INNER JOIN " & _
-                                                    "SUCURSAL ON SD.CODDEPOSITO = SUCURSAL.CODSUCURSAL LEFT OUTER JOIN " & _
-                                                    "UNIDADMEDIDA ON PRODUCTOS.CODMEDIDA = UNIDADMEDIDA.CODMEDIDA LEFT OUTER JOIN " & _
-                                                    "dbo.RUBRO ON dbo.PRODUCTOS.CODRUBRO = dbo.RUBRO.CODRUBRO LEFT OUTER JOIN " & _
-                                                    "dbo.LINEA ON dbo.PRODUCTOS.CODLINEA = dbo.LINEA.CODLINEA LEFT OUTER JOIN " & _
-                                                    "dbo.FAMILIA ON dbo.PRODUCTOS.CODFAMILIA = dbo.FAMILIA.CODFAMILIA)  AS STOCK " & _
-                                "WHERE (CODSUCURSAL IN (SELECT item FROM dbo.fnPartir('" & FormatF1 & "' , ',') AS fnPartir_1)) " & _
-                                " GROUP BY CODFAMILIA, DESFAMILIA, DESLINEA,PRODUCTO, CODIGO, CODCODIGO, FIFO  "
+        'Dim CodSucursal As String = cmbSucursal.Text
+        FormatF1 = FormatearFiltroCheckCombo(cmbSucursal, dtSucursal, "CODSUCURSAL", "NO")
 
-            End If
+        Dim dsStockHistorico As New DSStockHistorico
+        Dim stockDA As New DSStockHistoricoTableAdapters.StockHistSimpleTableAdapter
 
-            Dim sqlhaving As String = obtenerwhere(cmbFamilia.Text, "DESFAMILIA", cbxLinea.Text, "DESLINEA", cbxRubro.Text, "RUBRO.DESRUBRO", "%", "", "Cadena Text", "Cadena Text", "Cadena Text", "Cadena Text")
+        'stockDA.SelectCommand.CommandText += " WHERE (CODSUCURSAL IN (SELECT item FROM dbo.fnPartir('" & FormatF1 & "' , ',') AS fnPartir_1)) ORDER BY PRODUCTO, CODIGO"
+        stockDA.SelectCommand.CommandText += " WHERE (SUCURSAL.CODSUCURSAL IN (SELECT item FROM dbo.fnPartir('" & FormatF1 & "' , ',') AS fnPartir_1)) ORDER BY DESPRODUCTO"
+        stockDA.Fill(dsStockHistorico.StockHistSimple, FechaHasta)
 
-            Dim primerocontitulo As Boolean = False
-            Dim sqlhaving2 As String = ""
-            If rbEstadosEsp.Checked = True Then
-                If sqlhaving <> "" Then
-                    primerocontitulo = True
-                End If
+        Dim rpt As New Reportes.InvStockHistoricoSimple
+        rpt.SetDataSource(dsStockHistorico)
+        Dim frm = New VerInformes
+        If chbxNuevaVent.Checked = True Then
+            frm.CrystalReportViewer1.ReportSource = rpt
+            frm.WindowState = FormWindowState.Maximized
+            frm.Show()
+        Else
+            CrystalReportViewer.ReportSource = rpt
+            CrystalReportViewer.Refresh()
+        End If
 
-                If chbxConStock.Checked = True Then
-                    If primerocontitulo = True Then
-                        sqlhaving2 = sqlhaving2 + " or SUM(STOCKFECHA)>0 "
-                    Else
-                        primerocontitulo = True
-                        sqlhaving2 = " SUM(STOCKFECHA)>0 "
-                    End If
-                End If
-                If chbxStock0.Checked = True Then
-                    If primerocontitulo = True Then
-                        sqlhaving2 = sqlhaving2 + " or SUM(STOCKFECHA)=0"
-                    Else
-                        primerocontitulo = True
-                        sqlhaving2 = " SUM(STOCKFECHA)=0 "
-                    End If
-                End If
-                If chbxStockNeg.Checked = True Then
-                    If primerocontitulo = True Then
-                        sqlhaving2 = sqlhaving2 + " or SUM(STOCKFECHA)<0"
-                    Else
-                        primerocontitulo = True
-                        sqlhaving2 = " SUM(STOCKFECHA)<0 "
-                    End If
-                End If
-            End If
+        'Try
+        '    Dim Hasta As String = dtpFechaDesde.Value
+        '    FechaDesde = Hasta & " 00:00:00"
+        '    FechaHasta = Hasta & " 23:59:59"
+        '    Dim año As Integer = dtpFechaDesde.Value.Year
+        '    'OBTENER PRIMER DIA DEL MES DE LA FECHA SELECCIONADA
+        '    Dim primerdiadelmes As New DateTime
+        '    primerdiadelmes = FechaDesde
+        '    primerdiadelmes = primerdiadelmes.AddDays(-primerdiadelmes.Day + 1)
 
-            If sqlhaving2 <> "" Then
-                sqlhaving = sqlhaving + sqlhaving2
-            End If
+        '    FormatF1 = FormatearFiltroCheckCombo(cmbSucursal, dtSucursal, "CODSUCURSAL", "NO")
+        '    FormatF2 = FormatearFiltroCheckCombo(cmbFamilia, dtFamilia, "CODFAMILIA", "NO")
+        '    'Me.RvfistockaunafechaTableAdapter.FillByListaProd(Me.DsRVFiltroInventario.RVFISTOCKAUNAFECHA, dtpFechaDesde.Value.Month, año, primerdiadelmes, FechaHasta, tbxcodProd.Text, FormatF1)
 
-            If sqlhaving = "" Then
-                If chbxCodProducto.Checked = True Then
-                    Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING (CODIGO IN (SELECT item FROM dbo.fnPartir('" & tbxcodProd.Text & "' , ',') AS fnPartir_1))  ORDER BY PRODUCTO, CODIGO"
-                ElseIf cmbProducto.Text = "%" Then
-                    Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " ORDER BY PRODUCTO, CODIGO"
-                Else
-                    Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING  (CODCODIGO= " & cmbProducto.SelectedValue & ") ORDER BY PRODUCTO, CODIGO"
-                End If
-            Else
-                If chbxCodProducto.Checked = True Then
-                    Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING " & sqlhaving & " AND (CODIGO IN (SELECT item FROM dbo.fnPartir('" & tbxcodProd.Text & "' , ',') AS fnPartir_1))  ORDER BY PRODUCTO, CODIGO"
-                ElseIf cmbProducto.Text = "%" Then
-                    Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING " & sqlhaving & " ORDER BY PRODUCTO, CODIGO"
-                Else
-                    Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING " & sqlhaving & " AND (CODCODIGO= " & cmbProducto.SelectedValue & ") ORDER BY PRODUCTO, CODIGO"
-                End If
-            End If
+        '    If chbxCosto0Neg.Checked = True Then
 
-            Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandTimeout = 100000
-            Me.RiprodstockaunafechaTableAdapter.Fill(DsRIProductos.RIPRODSTOCKAUNAFECHA)
+        '        Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText = "SELECT CODFAMILIA, DESFAMILIA, DESLINEA,PRODUCTO, CODIGO, CODCODIGO, AVG(PRECIO) AS PRECIO, SUM(STOCKFECHA) AS STOCKFECHA, CASE WHEN SUM(STOCKFECHA)< 0 THEN 0 ELSE (CASE WHEN ISNULL (AVG(FIFO) * SUM(STOCKFECHA),0) = 0 THEN 0 ELSE AVG(FIFO) * SUM(STOCKFECHA) END) END  AS VALOR, CASE WHEN FIFO <> 0 THEN FIFO ELSE 0 END AS COSTO " & _
+        '        "FROM (SELECT dbo.FAMILIA.CODFAMILIA, dbo.FAMILIA.DESFAMILIA,dbo.LINEA.DESLINEA, PRODUCTOS.DESPRODUCTO + ISNULL(COD.DESCODIGO1, '') + ISNULL(COD.DESCODIGO2, '') AS PRODUCTO, COD.CODIGO, COD.CODCODIGO, COD.PRECIO, ISNULL " & _
+        '                                                "((SELECT top (1) STOCK FROM STOCKHISTORICO WHERE (MONTH(FECHA) = '" & dtpFechaDesde.Value.Month & "') AND (YEAR(FECHA) = " & año & ") AND (CODCODIGO = COD.CODCODIGO) AND (CODDEPOSITO = SD.CODDEPOSITO)) + ISNULL " & _
+        '                                                "((SELECT SUM(CANTIDAD) AS Expr1 FROM MOVPRODUCTO " & _
+        '                                                    "WHERE (FECHAMOVIMIENTO >= CONVERT(DATETIME,'" & primerdiadelmes & "',103)) AND (FECHAMOVIMIENTO <= CONVERT(DATETIME,'" & FechaHasta & "',103)) AND (CODCODIGO = COD.CODCODIGO) AND (CODDEPOSITO = SD.CODDEPOSITO)), 0), 0) AS STOCKFECHA, " & _
+        '                                                    "(SELECT dbo.fnFifoAFecha(CONVERT(DATETIME,'" & FechaDesde & "', 103), CONVERT(DATETIME,'" & FechaHasta & "', 103), COD.CODCODIGO, SD.CODDEPOSITO)) AS FIFO," & _
+        '        "SUCURSAL.DESSUCURSAL, SUCURSAL.CODSUCURSAL " & _
+        '                        "FROM            CODIGOS AS COD INNER JOIN " & _
+        '                                            "PRODUCTOS ON COD.CODPRODUCTO = PRODUCTOS.CODPRODUCTO INNER JOIN " & _
+        '                                            "STOCKDEPOSITO AS SD ON COD.CODCODIGO = SD.CODCODIGO INNER JOIN " & _
+        '                                            "SUCURSAL ON SD.CODDEPOSITO = SUCURSAL.CODSUCURSAL LEFT OUTER JOIN " & _
+        '                                            "UNIDADMEDIDA ON PRODUCTOS.CODMEDIDA = UNIDADMEDIDA.CODMEDIDA LEFT OUTER JOIN " & _
+        '                                            "dbo.RUBRO ON dbo.PRODUCTOS.CODRUBRO = dbo.RUBRO.CODRUBRO LEFT OUTER JOIN " & _
+        '                                            "dbo.LINEA ON dbo.PRODUCTOS.CODLINEA = dbo.LINEA.CODLINEA LEFT OUTER JOIN " & _
+        '                                            "dbo.FAMILIA ON dbo.PRODUCTOS.CODFAMILIA = dbo.FAMILIA.CODFAMILIA)  AS STOCK " & _
+        '                        "WHERE (CODSUCURSAL IN (SELECT item FROM dbo.fnPartir('" & FormatF1 & "' , ',') AS fnPartir_1)) " & _
+        '                        " GROUP BY CODFAMILIA, DESFAMILIA, DESLINEA, PRODUCTO, CODIGO, CODCODIGO, FIFO  "
 
-            If rbAgrupFamillia.Checked = True Then
-                Dim rpt As New Reportes.InvStockValorizadoAgrupadoAFam
-                rpt.SetDataSource([DsRIProductos])
-                rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
-                rpt.SetParameterValue("pmtSucursal", cmbSucursal.Text)
-                rpt.SetParameterValue("pmtFecha", dtpFechaDesde.Text)
 
-                Dim frm = New VerInformes
-                If chbxNuevaVent.Checked = True Then
-                    frm.CrystalReportViewer1.ReportSource = rpt
-                    frm.WindowState = FormWindowState.Maximized
-                    frm.Show()
-                Else
-                    CrystalReportViewer.ReportSource = rpt
-                    CrystalReportViewer.Refresh()
-                End If
-            Else
-                Dim rpt As New Reportes.InvStockValorizadoAgrupado
-                rpt.SetDataSource([DsRIProductos])
-                rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
-                rpt.SetParameterValue("pmtSucursal", cmbSucursal.Text)
-                rpt.SetParameterValue("pmtFecha", dtpFechaDesde.Text)
-                Dim frm = New VerInformes
-                If chbxNuevaVent.Checked = True Then
-                    frm.CrystalReportViewer1.ReportSource = rpt
-                    frm.WindowState = FormWindowState.Maximized
-                    frm.Show()
-                Else
-                    CrystalReportViewer.ReportSource = rpt
-                    CrystalReportViewer.Refresh()
-                End If
-            End If
+        '    Else
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-        'Dim informe = New Reportes.InfFifo
+        '        Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText = "SELECT CODFAMILIA, DESFAMILIA,DESLINEA, PRODUCTO, CODIGO, CODCODIGO, AVG(PRECIO) AS PRECIO, SUM(STOCKFECHA) AS STOCKFECHA, CASE WHEN ISNULL (AVG(FIFO) * SUM(STOCKFECHA),0) = 0 THEN 0 ELSE AVG(FIFO) * SUM(STOCKFECHA) END  AS VALOR, CASE WHEN FIFO <> 0 THEN FIFO ELSE 0 END AS COSTO " & _
+        '        "FROM (SELECT TOP (100) PERCENT dbo.FAMILIA.CODFAMILIA, dbo.FAMILIA.DESFAMILIA,dbo.LINEA.DESLINEA, PRODUCTOS.DESPRODUCTO + ISNULL(COD.DESCODIGO1, '') + ISNULL(COD.DESCODIGO2, '') AS PRODUCTO, COD.CODIGO, COD.CODCODIGO, COD.PRECIO, ISNULL " & _
+        '                                                "((SELECT top (1) STOCK FROM STOCKHISTORICO WHERE (MONTH(FECHA) = '" & dtpFechaDesde.Value.Month & "') AND (YEAR(FECHA) = " & año & ") AND (CODCODIGO = COD.CODCODIGO) AND (CODDEPOSITO = SD.CODDEPOSITO)) + ISNULL " & _
+        '                                                "((SELECT SUM(CANTIDAD) AS Expr1 FROM MOVPRODUCTO " & _
+        '                                                    "WHERE (FECHAMOVIMIENTO >= CONVERT(DATETIME,'" & primerdiadelmes & "',103)) AND (FECHAMOVIMIENTO <= CONVERT(DATETIME,'" & FechaHasta & "',103)) AND (CODCODIGO = COD.CODCODIGO) AND (CODDEPOSITO = SD.CODDEPOSITO)), 0), 0) AS STOCKFECHA, " & _
+        '                                                    "(SELECT dbo.fnFifoAFecha(CONVERT(DATETIME,'" & FechaDesde & "', 103), CONVERT(DATETIME,'" & FechaHasta & "', 103), COD.CODCODIGO, SD.CODDEPOSITO)) AS FIFO," & _
+        '                                                "SUCURSAL.DESSUCURSAL, SUCURSAL.CODSUCURSAL " & _
+        '                        "FROM            CODIGOS AS COD INNER JOIN " & _
+        '                                            "PRODUCTOS ON COD.CODPRODUCTO = PRODUCTOS.CODPRODUCTO INNER JOIN " & _
+        '                                            "STOCKDEPOSITO AS SD ON COD.CODCODIGO = SD.CODCODIGO INNER JOIN " & _
+        '                                            "SUCURSAL ON SD.CODDEPOSITO = SUCURSAL.CODSUCURSAL LEFT OUTER JOIN " & _
+        '                                            "UNIDADMEDIDA ON PRODUCTOS.CODMEDIDA = UNIDADMEDIDA.CODMEDIDA LEFT OUTER JOIN " & _
+        '                                            "dbo.RUBRO ON dbo.PRODUCTOS.CODRUBRO = dbo.RUBRO.CODRUBRO LEFT OUTER JOIN " & _
+        '                                            "dbo.LINEA ON dbo.PRODUCTOS.CODLINEA = dbo.LINEA.CODLINEA LEFT OUTER JOIN " & _
+        '                                            "dbo.FAMILIA ON dbo.PRODUCTOS.CODFAMILIA = dbo.FAMILIA.CODFAMILIA)  AS STOCK " & _
+        '                        "WHERE (CODSUCURSAL IN (SELECT item FROM dbo.fnPartir('" & FormatF1 & "' , ',') AS fnPartir_1)) " & _
+        '                        " GROUP BY CODFAMILIA, DESFAMILIA, DESLINEA,PRODUCTO, CODIGO, CODCODIGO, FIFO  "
+
+        '    End If
+
+        '    Dim sqlhaving As String = obtenerwhere(cmbFamilia.Text, "DESFAMILIA", cbxLinea.Text, "DESLINEA", cbxRubro.Text, "RUBRO.DESRUBRO", "%", "", "Cadena Text", "Cadena Text", "Cadena Text", "Cadena Text")
+
+        '    Dim primerocontitulo As Boolean = False
+        '    Dim sqlhaving2 As String = ""
+        '    If rbEstadosEsp.Checked = True Then
+        '        If sqlhaving <> "" Then
+        '            primerocontitulo = True
+        '        End If
+
+        '        If chbxConStock.Checked = True Then
+        '            If primerocontitulo = True Then
+        '                sqlhaving2 = sqlhaving2 + " or SUM(STOCKFECHA)>0 "
+        '            Else
+        '                primerocontitulo = True
+        '                sqlhaving2 = " SUM(STOCKFECHA)>0 "
+        '            End If
+        '        End If
+        '        If chbxStock0.Checked = True Then
+        '            If primerocontitulo = True Then
+        '                sqlhaving2 = sqlhaving2 + " or SUM(STOCKFECHA)=0"
+        '            Else
+        '                primerocontitulo = True
+        '                sqlhaving2 = " SUM(STOCKFECHA)=0 "
+        '            End If
+        '        End If
+        '        If chbxStockNeg.Checked = True Then
+        '            If primerocontitulo = True Then
+        '                sqlhaving2 = sqlhaving2 + " or SUM(STOCKFECHA)<0"
+        '            Else
+        '                primerocontitulo = True
+        '                sqlhaving2 = " SUM(STOCKFECHA)<0 "
+        '            End If
+        '        End If
+        '    End If
+
+        '    If sqlhaving2 <> "" Then
+        '        sqlhaving = sqlhaving + sqlhaving2
+        '    End If
+
+        '    If sqlhaving = "" Then
+        '        If chbxCodProducto.Checked = True Then
+        '            Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING (CODIGO IN (SELECT item FROM dbo.fnPartir('" & tbxcodProd.Text & "' , ',') AS fnPartir_1))  ORDER BY PRODUCTO, CODIGO"
+        '        ElseIf cmbProducto.Text = "%" Then
+        '            Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " ORDER BY PRODUCTO, CODIGO"
+        '        Else
+        '            Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING  (CODCODIGO= " & cmbProducto.SelectedValue & ") ORDER BY PRODUCTO, CODIGO"
+        '        End If
+        '    Else
+        '        If chbxCodProducto.Checked = True Then
+        '            Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING " & sqlhaving & " AND (CODIGO IN (SELECT item FROM dbo.fnPartir('" & tbxcodProd.Text & "' , ',') AS fnPartir_1))  ORDER BY PRODUCTO, CODIGO"
+        '        ElseIf cmbProducto.Text = "%" Then
+        '            Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING " & sqlhaving & " ORDER BY PRODUCTO, CODIGO"
+        '        Else
+        '            Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandText += " HAVING " & sqlhaving & " AND (CODCODIGO= " & cmbProducto.SelectedValue & ") ORDER BY PRODUCTO, CODIGO"
+        '        End If
+        '    End If
+
+        '    Me.RiprodstockaunafechaTableAdapter.selectcommand.CommandTimeout = 100000
+        '    Me.RiprodstockaunafechaTableAdapter.Fill(DsRIProductos.RIPRODSTOCKAUNAFECHA)
+
+        '    If rbAgrupFamillia.Checked = True Then
+        '        Dim rpt As New Reportes.InvStockValorizadoAgrupadoAFam
+        '        rpt.SetDataSource([DsRIProductos])
+        '        rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
+        '        rpt.SetParameterValue("pmtSucursal", cmbSucursal.Text)
+        '        rpt.SetParameterValue("pmtFecha", dtpFechaDesde.Text)
+
+        '        Dim frm = New VerInformes
+        '        If chbxNuevaVent.Checked = True Then
+        '            frm.CrystalReportViewer1.ReportSource = rpt
+        '            frm.WindowState = FormWindowState.Maximized
+        '            frm.Show()
+        '        Else
+        '            CrystalReportViewer.ReportSource = rpt
+        '            CrystalReportViewer.Refresh()
+        '        End If
+        '    Else
+        '        Dim rpt As New Reportes.InvStockValorizadoAgrupado
+        '        rpt.SetDataSource([DsRIProductos])
+        '        rpt.SetParameterValue("pmtEmpresa", EmpNomFantasia)
+        '        rpt.SetParameterValue("pmtSucursal", cmbSucursal.Text)
+        '        rpt.SetParameterValue("pmtFecha", dtpFechaDesde.Text)
+        '        Dim frm = New VerInformes
+        '        If chbxNuevaVent.Checked = True Then
+        '            frm.CrystalReportViewer1.ReportSource = rpt
+        '            frm.WindowState = FormWindowState.Maximized
+        '            frm.Show()
+        '        Else
+        '            CrystalReportViewer.ReportSource = rpt
+        '            CrystalReportViewer.Refresh()
+        '        End If
+        '    End If
+
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+        'End Try
+        ''Dim informe = New Reportes.InfFifo
 
     End Sub
 
     Sub ReporteStockValPorSucursal()
+
         Try
             Dim Hasta As String = dtpFechaDesde.Value
             FechaDesde = Hasta & " 00:00:00"

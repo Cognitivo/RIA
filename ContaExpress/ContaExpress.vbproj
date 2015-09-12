@@ -462,6 +462,11 @@
     <Compile Include="Contabilidad\DsPeriodoFiscal.vb">
       <DependentUpon>DsPeriodoFiscal.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Contabilidad\DSPeriodoFiscalForm.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPeriodoFiscalForm.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Contabilidad\LibroCompraV2.Designer.vb">
       <DependentUpon>LibroCompraV2.vb</DependentUpon>
     </Compile>
@@ -501,7 +506,11 @@
     <Compile Include="Contabilidad\PeriodoFiscal.Designer.vb">
       <DependentUpon>PeriodoFiscal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Contabilidad\PeriodoFiscal.vb">
+    <Compile Include="Contabilidad\PeriodoFiscal.vb" />
+    <Compile Include="Contabilidad\PeriodoFiscalV2.Designer.vb">
+      <DependentUpon>PeriodoFiscalV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\PeriodoFiscalV2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Contabilidad\PlanCuentaV2.Designer.vb">
@@ -539,6 +548,14 @@
     </Compile>
     <Compile Include="Contactos.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATASET\DSStockHistorico.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSStockHistorico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASET\DSStockHistorico.vb">
+      <DependentUpon>DSStockHistorico.xsd</DependentUpon>
     </Compile>
     <Compile Include="DsBalanceGeneral.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1803,6 +1820,9 @@
       <DependentUpon>PeriodoFiscal.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Contabilidad\PeriodoFiscalV2.resx">
+      <DependentUpon>PeriodoFiscalV2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Contabilidad\PlanCuentaV2.resx">
       <DependentUpon>PlanCuentaV2.vb</DependentUpon>
     </EmbeddedResource>
@@ -2075,6 +2095,28 @@
     </None>
     <None Include="Contabilidad\DsCosteo.xss">
       <DependentUpon>DsCosteo.xsd</DependentUpon>
+    </None>
+    <None Include="Contabilidad\DSPeriodoFiscalForm.xsc">
+      <DependentUpon>DSPeriodoFiscalForm.xsd</DependentUpon>
+    </None>
+    <None Include="Contabilidad\DSPeriodoFiscalForm.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPeriodoFiscalForm.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Contabilidad\DSPeriodoFiscalForm.xss">
+      <DependentUpon>DSPeriodoFiscalForm.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\DSStockHistorico.xsc">
+      <DependentUpon>DSStockHistorico.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\DSStockHistorico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSStockHistorico.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASET\DSStockHistorico.xss">
+      <DependentUpon>DSStockHistorico.xsd</DependentUpon>
     </None>
     <None Include="DsBalanceGeneral.xsc">
       <DependentUpon>DsBalanceGeneral.xsd</DependentUpon>

@@ -827,6 +827,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="InvStockHistoricoSimple.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvStockHistoricoSimple.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LiquidacionSemanalVendedores.vb">
       <DependentUpon>LiquidacionSemanalVendedores.rpt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -3330,6 +3336,10 @@
     <EmbeddedResource Include="EtiquetasProductos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EtiquetasProductos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvStockHistoricoSimple.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvStockHistoricoSimple.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LiquidacionSemanalVendedores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

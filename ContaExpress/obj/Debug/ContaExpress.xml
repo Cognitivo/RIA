@@ -5186,6 +5186,90 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.PERIODOFISCALPRESUPUESTODataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.periodofiscalDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.plancuentasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.PERIODOFISCALPRESUPUESTORow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.periodofiscalRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.plancuentasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.PERIODOFISCALPRESUPUESTORowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.periodofiscalRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm.plancuentasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalForm">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalFormTableAdapters.PERIODOFISCALPRESUPUESTOTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalFormTableAdapters.periodofiscalTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalFormTableAdapters.plancuentasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ContaExpress.DSPeriodoFiscalFormTableAdapters.TableAdapterManager.UpdateUpdatedRows(ContaExpress.DSPeriodoFiscalForm,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ContaExpress.DSPeriodoFiscalFormTableAdapters.TableAdapterManager.UpdateInsertedRows(ContaExpress.DSPeriodoFiscalForm,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ContaExpress.DSPeriodoFiscalFormTableAdapters.TableAdapterManager.UpdateDeletedRows(ContaExpress.DSPeriodoFiscalForm,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ContaExpress.DSPeriodoFiscalFormTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ContaExpress.DSPeriodoFiscalFormTableAdapters.TableAdapterManager.UpdateAll(ContaExpress.DSPeriodoFiscalForm)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalFormTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalFormTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ContaExpress.DSPeriodoFiscalFormTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
 </member><member name="T:ContaExpress.dsPagos2.PagosHechosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -14117,6 +14201,14 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.plancuentasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.PERIODOFISCALPRESUPUESTODataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.periodofiscalRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -14133,6 +14225,14 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.plancuentasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.PERIODOFISCALPRESUPUESTORow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.periodofiscalRowChangeEvent">
 	<summary>
 Row event argument class
@@ -14146,6 +14246,14 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscal.BalanceGeneralImpositivoCabRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.plancuentasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscal.PERIODOFISCALPRESUPUESTORowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -14166,6 +14274,14 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ContaExpress.DsPeriodoFiscalTableAdapters.BalanceGeneralImpositivoCabTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscalTableAdapters.plancuentasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DsPeriodoFiscalTableAdapters.PERIODOFISCALPRESUPUESTOTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -18914,6 +19030,74 @@ Update Order Option
 Used to sort self-referenced table's rows
 </summary>
 </member><member name="T:ContaExpress.DsRegistroModuloTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:ContaExpress.DSStockHistorico.StockHistoricoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DSStockHistorico.StockHistSimpleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ContaExpress.DSStockHistorico.StockHistoricoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DSStockHistorico.StockHistSimpleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ContaExpress.DSStockHistorico.StockHistoricoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DSStockHistorico.StockHistSimpleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ContaExpress.DSStockHistorico">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ContaExpress.DSStockHistoricoTableAdapters.StockHistoricoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ContaExpress.DSStockHistoricoTableAdapters.StockHistSimpleTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ContaExpress.DSStockHistoricoTableAdapters.TableAdapterManager.UpdateUpdatedRows(ContaExpress.DSStockHistorico,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ContaExpress.DSStockHistoricoTableAdapters.TableAdapterManager.UpdateInsertedRows(ContaExpress.DSStockHistorico,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ContaExpress.DSStockHistoricoTableAdapters.TableAdapterManager.UpdateDeletedRows(ContaExpress.DSStockHistorico,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ContaExpress.DSStockHistoricoTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ContaExpress.DSStockHistoricoTableAdapters.TableAdapterManager.UpdateAll(ContaExpress.DSStockHistorico)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ContaExpress.DSStockHistoricoTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ContaExpress.DSStockHistoricoTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ContaExpress.DSStockHistoricoTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>

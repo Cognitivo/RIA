@@ -963,7 +963,7 @@ Public Class Dashboard
         If Contabilidad = 1 Or ContabilidadLite = 1 Then
             Dim F As New Funciones.Funciones
             Me.Cursor = Cursors.AppStarting
-            PeriodoFiscal.Show()
+            PeriodoFiscalV2.Show()
             Me.Cursor = Cursors.Arrow
             PeriodoFiscal.Opacity = 1
         Else

@@ -822,3 +822,4 @@ C:\Users\Cognitivo\Desktop\RIA\trunk\ContaExpress\bin\Debug\ContaExpress.exe.con
 C:\Users\Cognitivo\Desktop\RIA\trunk\ContaExpress\obj\Debug\ContaExpress.exe
 C:\Users\Cognitivo\Desktop\RIA\trunk\ContaExpress\obj\Debug\ContaExpress.xml
 C:\Users\Cognitivo\Desktop\RIA\trunk\ContaExpress\obj\Debug\ContaExpress.pdb
+C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\ContaExpress\obj\Debug\ContaExpress.PeriodoFiscalV2.resources

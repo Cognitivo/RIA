@@ -15,6 +15,5 @@ C:\Users\Yolanda\Desktop\RIA\TicketCS\obj\Debug\TicketCS.dll
 C:\Users\Yolanda\Desktop\RIA\TicketCS\obj\Debug\TicketCS.pdb
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\TicketCS\bin\Debug\TicketCS.dll
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\TicketCS\bin\Debug\TicketCS.pdb
-C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\TicketCS\obj\Debug\TicketCS.csprojResolveAssemblyReference.cache
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\TicketCS\obj\Debug\TicketCS.dll
 C:\Users\Yolanda\Desktop\Old Software\RIA\trunk\TicketCS\obj\Debug\TicketCS.pdb

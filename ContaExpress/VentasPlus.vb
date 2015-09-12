@@ -343,6 +343,7 @@ Public Class VentasPlus
         Try
             Dim CantImpresion As Integer
             Dim nrofactura As String = NroFacturaLabel.Text
+            Dim nroTimbrado As Integer = f.FuncionConsultaDecimal("TIMBRADO", "DETPC", "ACTIVO", TipoComprobanteComboBox.SelectedValue)
             Dim k As Integer = 1
             Dim c As Integer = DetalleVentaGridView.RowCount()
 
@@ -469,6 +470,7 @@ Public Class VentasPlus
                     row.Item("NUMERO11") = TotalItems5
                     row.Item("NUMERO12") = TotalItems10
                     row.Item("NUMERO10") = TotalItemsExento
+                    row.Item("NUMERO15") = nroTimbrado
 
                     If TotalDescuento > 0 Then
                         Dim Desc As String
